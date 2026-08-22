@@ -1,15 +1,16 @@
 {
-  "name": "AL-NOOR Sanctuary",
+  "name": "AL-NOOR",
   "short_name": "Al-Noor",
-  "start_url": "index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#010403",
-  "theme_color": "#020d09",
+  "background_color": "#000000",
+  "theme_color": "#064e3b",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "icon-512.png.jpeg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ]
 }
