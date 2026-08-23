@@ -4,127 +4,148 @@
 <link rel="icon" type="image/jpeg" href="icon-512.png.jpeg">
 <link rel="apple-touch-icon" href="icon-512.png.jpeg">
 <meta name="theme-color" content="#064e3b">
-<link rel="apple-touch-icon" href="icon-512.png.jpeg">
 <link rel="manifest" href="manifest.json">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AL-NOOR — Islamic Audio Sanctuary</title>
+<title>AL-NOOR — Islamic Sanctuary & Authentic Knowledge</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-body{
-font-family:'Plus Jakarta Sans',sans-serif;
-background:radial-gradient(circle at 50% 0%,#061e14 0%,#030d09 45%,#010403 100%);
-color:#f8fafc;
-overflow-x:hidden;
-min-height:100vh;
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: radial-gradient(circle at 50% 0%, #061e14 0%, #030d09 45%, #010403 100%);
+  color: #f8fafc;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-.font-cinzel{
-font-family:'Cinzel',serif;
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-amiri { font-family: 'Amiri', serif; }
+.font-urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
+.font-manuscript { font-family: 'Playfair Display', serif; }
+
+.sanctuary-card {
+  background: linear-gradient(145deg, rgba(8, 28, 20, 0.88) 0%, rgba(2, 12, 8, 0.96) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.85);
+  transition: all 0.3s ease;
 }
 
-.font-amiri{
-font-family:'Amiri',serif;
+.sanctuary-card:hover {
+  border-color: rgba(245, 158, 11, 0.45);
 }
 
-.font-urdu{
-font-family:'Noto Nastaliq Urdu',serif;
-line-height:2.3;
+.track-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.sanctuary-card{
-background:linear-gradient(
-145deg,
-rgba(8,28,20,.85) 0%,
-rgba(2,12,8,.95) 100%
-);
-backdrop-filter:blur(20px);
-border:1px solid rgba(16,185,129,.2);
-box-shadow:0 10px 30px -10px rgba(0,0,0,.85);
-transition:.3s ease;
+.track-card:hover {
+  transform: translateY(-3px);
 }
 
-.sanctuary-card:hover{
-border-color:rgba(245,158,11,.45);
-}
-
-.track-card{
-cursor:pointer;
-transition:.25s ease;
-}
-
-.track-card:hover{
-transform:translateY(-2px);
-}
-
-audio{
-width:100%;
-}
-
-audio::-webkit-media-controls-panel{
-background-color:#062016;
-}
-
+audio { width: 100%; }
+audio::-webkit-media-controls-panel { background-color: #062016; }
 audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display{
-color:#f59e0b;
+audio::-webkit-media-controls-time-remaining-display { color: #f59e0b; }
+
+.lang-btn.active {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.8);
+  color: #fbbf24;
 }
 
-.lang-btn.active{
-background:rgba(245,158,11,.2);
-border-color:rgba(245,158,11,.6);
-color:#fbbf24;
+/* Vintage Manuscript Page Styles */
+.vintage-parchment {
+  background-color: #f2e3c6;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(139, 94, 60, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 90% 90%, rgba(101, 67, 33, 0.2) 0%, transparent 70%),
+    radial-gradient(circle at 50% 50%, #f7ecd5 0%, #ecd6af 100%);
+  box-shadow: inset 0 0 50px rgba(112, 66, 20, 0.35), 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+  color: #2b1d0c;
+  border: 1px solid #c8a876;
+  position: relative;
+}
+
+.vintage-parchment::before {
+  content: "";
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 1px dashed rgba(112, 66, 20, 0.35);
+  pointer-events: none;
+}
+
+.folded-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, transparent 50%, #d8be92 50%);
+  border-bottom: 1px solid #9c7849;
+  border-left: 1px solid #9c7849;
+}
+
+/* Antique Wooden Tasbih Device */
+.antique-tasbih-frame {
+  background: linear-gradient(145deg, #2d180b 0%, #150904 100%);
+  border: 3px solid #855325;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.8), 0 15px 30px rgba(0,0,0,0.9);
+}
+
+.antique-brass-dial {
+  background: radial-gradient(circle, #ecd08c 0%, #a67c33 70%, #523a10 100%);
+  color: #1e1102;
+  box-shadow: inset 0 3px 6px rgba(255,255,255,0.4), 0 4px 10px rgba(0,0,0,0.7);
 }
 </style>
 </head>
 
 <body class="min-h-screen pb-32 antialiased">
 
-<!-- Background Glow -->
+<!-- Ambient Glow -->
 <div class="fixed top-0 left-1/4 w-[600px] h-[400px] bg-emerald-500/10 blur-[180px] rounded-full pointer-events-none -z-10"></div>
 <div class="fixed top-1/2 right-10 w-[500px] h-[400px] bg-amber-500/10 blur-[170px] rounded-full pointer-events-none -z-10"></div>
 
 <!-- HEADER -->
-<header class="border-b border-emerald-950/60 sticky top-0 z-50 bg-[#020d09]/90 backdrop-blur-2xl">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-3.5">
-<div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-emerald-500 to-teal-700 p-[1.5px] shadow-lg">
-<div class="w-full h-full bg-[#020d09] rounded-[14px] flex items-center justify-center text-amber-300">
-<i data-lucide="moon-star" class="w-5 h-5"></i>
-</div>
-</div>
-<div>
-<div class="flex items-center gap-2">
-<span class="font-cinzel tracking-widest text-2xl font-black bg-gradient-to-r from-amber-200 via-emerald-300 to-teal-200 bg-clip-text text-transparent">
-AL-NOOR
-</span>
-<span class="text-[9px] bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 px-2 py-0.5 rounded-full font-bold">
-AUDIO SANCTUARY
-</span>
-</div>
-<span class="text-[11px] block text-slate-400">
-Authentic Quran Audio • Ayat al-Kursi • Qasas-ul-Anbiya
-</span>
-</div>
-</div>
+<header class="border-b border-emerald-950/60 sticky top-0 z-40 bg-[#020d09]/90 backdrop-blur-2xl">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="flex items-center gap-3.5">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-emerald-500 to-teal-700 p-[1.5px] shadow-lg">
+        <div class="w-full h-full bg-[#020d09] rounded-[14px] flex items-center justify-center text-amber-300">
+          <i data-lucide="moon-star" class="w-5 h-5"></i>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-cinzel tracking-widest text-2xl font-black bg-gradient-to-r from-amber-200 via-emerald-300 to-teal-200 bg-clip-text text-transparent">
+            AL-NOOR
+          </span>
+          <span class="text-[9px] bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 px-2 py-0.5 rounded-full font-bold">
+            SANCTUARY
+          </span>
+        </div>
+        <span class="text-[11px] block text-slate-400">Authentic Audio • Ancient Manuscripts • AI Guidance</span>
+      </div>
+    </div>
 
-<div class="hidden sm:flex">
-<span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1.5 rounded-xl">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-Audio Engine Ready
-</span>
-</div>
-</div>
+    <div class="hidden sm:flex items-center gap-3">
+      <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1.5 rounded-xl">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Authenticity Engine 2.0
+      </span>
+    </div>
+  </div>
 </header>
 
 <main class="max-w-7xl mx-auto px-6 pt-8 space-y-12">
@@ -133,164 +154,364 @@ Audio Engine Ready
 <!-- SECTION 1: ARABIC SANCTUARY                       -->
 <!-- ================================================= -->
 <section class="space-y-4">
-<div class="flex items-center justify-between">
-<div>
-<div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 px-3 py-1 rounded-full mb-1">
-<i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-400"></i>
-<span class="text-[10px] font-bold uppercase tracking-widest text-blue-300">Section 01</span>
-</div>
-<h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">
-Arabic Sanctuary — Quran Tilawat
-</h2>
-</div>
-<span id="arabic-status" class="text-xs text-blue-300 font-mono">Player Ready</span>
-</div>
+  <div class="flex items-center justify-between">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 px-3 py-1 rounded-full mb-1">
+        <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-400"></i>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-300">Section 01</span>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">Arabic Sanctuary — Quran Tilawat</h2>
+    </div>
+    <span id="arabic-status" class="text-xs text-blue-300 font-mono">Player Ready</span>
+  </div>
 
-<div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-6">
-<div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-emerald-950/40">
-<div class="flex items-center gap-4 w-full md:w-auto">
-<div class="w-14 h-14 rounded-2xl bg-blue-400/10 border border-blue-400/30 flex items-center justify-center text-blue-300">
-<i data-lucide="music" class="w-7 h-7"></i>
-</div>
-<div>
-<h3 id="arabic-title" class="text-lg font-bold text-white font-cinzel">Surah Al-Fatihah</h3>
-<p id="arabic-reciter" class="text-xs text-blue-400">Mishary Rashid Alafasy</p>
-</div>
-</div>
-<div class="w-full md:w-80">
-<audio id="arabic-player" controls preload="none"></audio>
-</div>
-</div>
+  <div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-emerald-950/40">
+      <div class="flex items-center gap-4 w-full md:w-auto">
+        <div class="w-14 h-14 rounded-2xl bg-blue-400/10 border border-blue-400/30 flex items-center justify-center text-blue-300">
+          <i data-lucide="music" class="w-7 h-7"></i>
+        </div>
+        <div>
+          <h3 id="arabic-title" class="text-lg font-bold text-white font-cinzel">Surah Al-Fatihah</h3>
+          <p id="arabic-reciter" class="text-xs text-blue-400">Mishary Rashid Alafasy</p>
+        </div>
+      </div>
+      <div class="w-full md:w-80">
+        <audio id="arabic-player" controls preload="none"></audio>
+      </div>
+    </div>
 
-<div id="arabic-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"></div>
-</div>
+    <div id="arabic-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"></div>
+  </div>
 </section>
 
 <!-- ================================================= -->
-<!-- SECTION 2: URDU QURAN (AYAT AL-KURSI ONLY)        -->
+<!-- SECTION 2: URDU QURAN (AYAT AL-KURSI)             -->
 <!-- ================================================= -->
 <section class="space-y-4">
-<div class="flex items-center justify-between">
-<div>
-<div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full mb-1">
-<i data-lucide="headphones" class="w-3.5 h-3.5 text-emerald-400"></i>
-<span class="text-[10px] font-bold uppercase tracking-widest text-emerald-300">Section 02</span>
-</div>
-<h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">
-Urdu Quran Audio — آیت الکرسی اردو ترجمہ
-</h2>
-</div>
-<span id="urdu-status" class="text-xs text-emerald-400 font-mono">Player Ready</span>
-</div>
+  <div class="flex items-center justify-between">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full mb-1">
+        <i data-lucide="headphones" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-300">Section 02</span>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">Urdu Quran Audio — Ayat al-Kursi (آیت الکرسی)</h2>
+    </div>
+    <span id="urdu-status" class="text-xs text-emerald-400 font-mono">Player Ready</span>
+  </div>
 
-<div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-6">
-<div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-emerald-950/40">
-<div class="flex items-center gap-4 w-full md:w-auto">
-<div class="w-14 h-14 rounded-2xl bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
-<i data-lucide="book-open" class="w-7 h-7"></i>
-</div>
-<div>
-<h3 id="urdu-title" class="text-lg font-bold text-white font-cinzel">Ayat al-Kursi</h3>
-<p class="text-xs text-emerald-400">Maulana Shamshad Ali Khan</p>
-</div>
-</div>
-<div class="w-full md:w-80">
-<audio id="urdu-player" controls preload="none"></audio>
-</div>
-</div>
+  <div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-emerald-950/40">
+      <div class="flex items-center gap-4 w-full md:w-auto">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+          <i data-lucide="book-open" class="w-7 h-7"></i>
+        </div>
+        <div>
+          <h3 id="urdu-title" class="text-lg font-bold text-white font-cinzel">Ayat al-Kursi</h3>
+          <p class="text-xs text-emerald-400">Maulana Shamshad Ali Khan</p>
+        </div>
+      </div>
+      <div class="w-full md:w-80">
+        <audio id="urdu-player" controls preload="none"></audio>
+      </div>
+    </div>
 
-<div id="urdu-grid" class="grid grid-cols-1 gap-3.5"></div>
-
-<div id="urdu-text" class="space-y-5 pt-3 border-t border-emerald-950/30"></div>
-</div>
+    <div id="urdu-grid" class="grid grid-cols-1 gap-3.5"></div>
+    <div id="urdu-text" class="space-y-5 pt-3 border-t border-emerald-950/30"></div>
+  </div>
 </section>
 
 <!-- ================================================= -->
-<!-- SECTION 3: 15 MASHHOOR AMBIYA-E-KIRAM (WITH TRANSLATOR) -->
+<!-- SECTION 3: 15 PROPHETS (ANCIENT PARCHMENT SHEETS) -->
 <!-- ================================================= -->
 <section class="space-y-4">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-<div>
-<div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full mb-1">
-<i data-lucide="book-marked" class="w-3.5 h-3.5 text-amber-400"></i>
-<span class="text-[10px] font-bold uppercase tracking-widest text-amber-300">Section 03 • Qasas-ul-Anbiya</span>
-</div>
-<h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">
-15 Mashhoor Ambiya-e-Kiram — Seerat & Ahwal
-</h2>
-</div>
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full mb-1">
+        <i data-lucide="scroll" class="w-3.5 h-3.5 text-amber-400"></i>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-amber-300">Section 03 • Qasas-ul-Anbiya</span>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">15 Prominent Prophets — Old Manuscript Vault</h2>
+    </div>
 
-<!-- Language Switcher Controls -->
-<div class="flex flex-wrap items-center gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-white/10">
-<span class="text-[11px] font-mono text-slate-400 px-2 flex items-center gap-1">
-<i data-lucide="languages" class="w-3.5 h-3.5 text-amber-400"></i>
-Language:
-</span>
-<button onclick="changeLanguage('ur')" id="btn-ur" class="lang-btn active px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition">اردو</button>
-<button onclick="changeLanguage('en')" id="btn-en" class="lang-btn px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition text-slate-300">English</button>
-<button onclick="changeLanguage('hi')" id="btn-hi" class="lang-btn px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition text-slate-300">हिन्दी</button>
-<button onclick="changeLanguage('ar')" id="btn-ar" class="lang-btn px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition text-slate-300">العربية</button>
-</div>
-</div>
+    <!-- Multi-language Switcher -->
+    <div class="flex flex-wrap items-center gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-white/10">
+      <span class="text-[11px] font-mono text-slate-400 px-2 flex items-center gap-1">
+        <i data-lucide="languages" class="w-3.5 h-3.5 text-amber-400"></i>
+        Language:
+      </span>
+      <button onclick="changeLanguage('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition">English</button>
+      <button onclick="changeLanguage('ur')" id="btn-ur" class="lang-btn px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition text-slate-300">اردو</button>
+      <button onclick="changeLanguage('hi')" id="btn-hi" class="lang-btn px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition text-slate-300">हिन्दी</button>
+      <button onclick="changeLanguage('ar')" id="btn-ar" class="lang-btn px-3 py-1 text-xs rounded-xl border border-white/5 font-semibold transition text-slate-300">العربية</button>
+    </div>
+  </div>
+  <p class="text-xs text-slate-400">Click on any Prophet's card to unveil their comprehensive life biography on an ancient parchment sheet.</p>
 
-<div class="sanctuary-card rounded-3xl p-6 lg:p-8">
-<div id="prophets-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-slate-300 text-sm"></div>
-</div>
+  <div class="sanctuary-card rounded-3xl p-6 lg:p-8">
+    <div id="prophets-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-slate-300 text-sm"></div>
+  </div>
 </section>
 
 <!-- ================================================= -->
-<!-- SECTION 4: AUTHENTIC ISLAMIC QUOTES & AHADITH     -->
+<!-- SECTION 4: NOOR-AI ISLAMIC LLM (DEMO & SUB)       -->
 <!-- ================================================= -->
 <section class="space-y-4">
-<div class="flex items-center justify-between">
-<div>
-<div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full mb-1">
-<i data-lucide="quote" class="w-3.5 h-3.5 text-emerald-400"></i>
-<span class="text-[10px] font-bold uppercase tracking-widest text-emerald-300">Section 04 • Irshadat & Aqwal</span>
-</div>
-<h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">
-Authentic Islamic Quotes & Guidance
-</h2>
-</div>
-</div>
+  <div class="flex items-center justify-between">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 px-3 py-1 rounded-full mb-1">
+        <i data-lucide="bot" class="w-3.5 h-3.5 text-purple-400"></i>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-purple-300">Section 04 • AI Sanctuary LLM</span>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">Noor-AI — Verified Islamic Knowledge Model</h2>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-purple-300 font-mono bg-purple-950/40 border border-purple-500/30 px-3 py-1 rounded-xl">
+        Free Queries: <span id="queries-left" class="font-bold text-amber-300">5</span>/5 Left
+      </span>
+    </div>
+  </div>
 
-<div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-4">
-<div id="quotes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
-</div>
+  <div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-6">
+    <!-- Chat Display Area -->
+    <div id="chat-messages" class="h-64 overflow-y-auto space-y-3 p-4 rounded-2xl bg-black/40 border border-white/5 text-xs text-slate-300">
+      <div class="p-3.5 rounded-xl bg-purple-950/30 border border-purple-500/20 text-purple-200">
+        <p class="font-bold flex items-center gap-2 text-purple-300 mb-1">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Assalamu Alaikum!
+        </p>
+        I am Noor-AI, trained strictly on authenticated Quranic verses, Sahih Hadith, and validated classical tafsir. Ask any Islamic question. You have 5 free queries in your preview tier.
+      </div>
+    </div>
+
+    <!-- Suggested Fast Prompts -->
+    <div class="flex flex-wrap gap-2 text-[11px]">
+      <span class="text-slate-400 self-center">Try asking:</span>
+      <button onclick="fillQuery('What is the greatest Ayah in the Quran and its virtues?')" class="px-3 py-1 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 text-slate-300">Greatest Ayah?</button>
+      <button onclick="fillQuery('Explain the 5 pillars of Islam briefly with authentic references.')" class="px-3 py-1 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 text-slate-300">5 Pillars of Islam</button>
+      <button onclick="fillQuery('What are the Sunnah etiquettes of sleeping and waking up?')" class="px-3 py-1 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 text-slate-300">Sunnah of Sleeping</button>
+    </div>
+
+    <!-- Chat Input Box -->
+    <div class="flex gap-2">
+      <input id="llm-input" type="text" placeholder="Ask any Islamic query (in English, Urdu, Hindi, or Arabic)..." class="flex-1 bg-slate-900/60 border border-white/10 rounded-2xl px-4 py-3 text-xs text-white focus:outline-none focus:border-purple-500">
+      <button id="llm-send-btn" onclick="sendLLMQuery()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-600 font-bold text-xs text-white flex items-center gap-2 active:scale-95 transition">
+        <span>Ask AI</span>
+        <i data-lucide="send" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+  </div>
 </section>
 
 <!-- ================================================= -->
-<!-- SECTION 5: TASBIH                                -->
+<!-- SECTION 5: AUTHENTIC ISLAMIC QUOTES & AHADITH     -->
 <!-- ================================================= -->
 <section class="space-y-4">
-<h2 class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 flex items-center gap-2">
-<i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
-Digital Sunnah Tasbih Counter
-</h2>
+  <div class="flex items-center justify-between">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full mb-1">
+        <i data-lucide="quote" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-300">Section 05 • Irshadat & Aqwal</span>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">Authentic Quotes & Wisdom</h2>
+    </div>
+  </div>
 
-<div class="sanctuary-card rounded-3xl p-7 flex flex-col md:flex-row items-center justify-between gap-6">
-<div class="text-center md:text-left">
-<p class="text-xs text-slate-400 uppercase tracking-widest">Active Dhikr</p>
-<h3 id="dhikr-name" class="text-xl font-bold text-emerald-300 font-cinzel">SubhanAllah</h3>
-</div>
+  <div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-4">
+    <div id="quotes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+  </div>
+</section>
 
-<div id="counter" class="font-mono text-6xl font-black text-amber-300 tracking-widest">00</div>
+<!-- ================================================= -->
+<!-- SECTION 6: OLD MODEL ANTIQUE SUNNAH TASBIH        -->
+<!-- ================================================= -->
+<section class="space-y-4">
+  <div class="flex items-center justify-between">
+    <h2 class="text-xs font-extrabold uppercase tracking-widest text-amber-400 flex items-center gap-2">
+      <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+      Section 06 • Antique Wood & Brass Sunnah Tasbih
+    </h2>
+    <span id="tasbih-target-badge" class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300">Target: 33</span>
+  </div>
 
-<div class="flex items-center gap-3 w-full md:w-auto">
-<button id="tap" class="flex-1 md:flex-none py-4 px-8 rounded-2xl bg-gradient-to-r from-amber-400 via-emerald-500 to-teal-600 text-black font-black text-xs uppercase tracking-widest">
-Tap to Count
-</button>
-<button id="next-dhikr" class="py-4 px-4 rounded-2xl bg-white/5 border border-white/10 text-slate-300">
-<i data-lucide="skip-forward" class="w-4 h-4"></i>
-</button>
-<button id="reset" class="py-4 px-4 rounded-2xl bg-white/5 border border-white/10 text-rose-400">
-<i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-</button>
-</div>
-</div>
+  <div class="antique-tasbih-frame rounded-3xl p-7 flex flex-col lg:flex-row items-center justify-between gap-8">
+    <div class="text-center lg:text-left space-y-2">
+      <span class="text-[10px] text-amber-400/80 uppercase font-mono tracking-widest block">Sacred Dhikr</span>
+      <h3 id="dhikr-name" class="text-2xl font-bold text-amber-200 font-cinzel">SubhanAllah</h3>
+      <p id="dhikr-meaning" class="text-xs text-amber-300/70 italic font-manuscript">"Glory be to Allah"</p>
+      
+      <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
+        <button onclick="setTarget(33)" class="text-xs px-3 py-1 rounded-lg bg-black/40 border border-amber-800 text-amber-300 hover:border-amber-500">33x</button>
+        <button onclick="setTarget(99)" class="text-xs px-3 py-1 rounded-lg bg-black/40 border border-amber-800 text-amber-300 hover:border-amber-500">99x</button>
+        <button onclick="setTarget(100)" class="text-xs px-3 py-1 rounded-lg bg-black/40 border border-amber-800 text-amber-300 hover:border-amber-500">100x</button>
+        <button onclick="setTarget(Infinity)" class="text-xs px-3 py-1 rounded-lg bg-black/40 border border-amber-800 text-amber-300 hover:border-amber-500">Free</button>
+      </div>
+    </div>
+
+    <!-- Antique Dial Display -->
+    <div class="flex flex-col items-center">
+      <div class="antique-brass-dial w-36 h-36 rounded-full flex flex-col items-center justify-center border-4 border-[#3a2007]">
+        <div id="counter" class="font-mono text-5xl font-black tracking-widest">00</div>
+        <span class="text-[9px] font-bold uppercase tracking-widest text-[#41290a]">Count</span>
+      </div>
+      <span id="lap-counter" class="text-xs text-amber-400/80 font-mono mt-3">Completed Rounds: 0</span>
+    </div>
+
+    <div class="flex items-center gap-3 w-full lg:w-auto">
+      <button id="tap" class="flex-1 lg:flex-none py-5 px-10 rounded-2xl bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-600 text-black font-black text-sm uppercase tracking-wider shadow-lg active:scale-95 transition">
+        Press Bead (Count)
+      </button>
+      <button id="next-dhikr" title="Next Dhikr" class="py-5 px-4 rounded-2xl bg-black/50 border border-amber-900 hover:border-amber-500 text-amber-300 active:scale-95 transition">
+        <i data-lucide="skip-forward" class="w-5 h-5"></i>
+      </button>
+      <button id="reset" title="Reset Count" class="py-5 px-4 rounded-2xl bg-black/50 border border-amber-900 hover:border-rose-700 text-rose-400 active:scale-95 transition">
+        <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================= -->
+<!-- SECTION 7: MULTILINGUAL ERROR & CORRECTION REPORT -->
+<!-- ================================================= -->
+<section class="space-y-4">
+  <div class="flex items-center justify-between">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-rose-500/10 border border-rose-500/30 px-3 py-1 rounded-full mb-1">
+        <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-rose-400"></i>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-rose-300">Section 07 • Quality & Accuracy</span>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-wide text-white font-cinzel">Report Misinformation / Translation Inaccuracies</h2>
+    </div>
+  </div>
+
+  <div class="sanctuary-card rounded-3xl p-6 lg:p-8 space-y-4 border-rose-950/40">
+    <p class="text-xs text-slate-300 leading-relaxed">
+      Agar aapko is platform par kisi bhi Quranic Ayah, Hadith ref, Arabic/Urdu spelling, ya translation me koi galti dikhe, toh kripya niche diye gaye form me report karein. Aap kisi bhi zaban (Urdu, English, Hindi, Arabic) me likh sakte hain.
+    </p>
+
+    <form id="feedback-form" onsubmit="submitFeedback(event)" class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Issue Category / Galti ki Qism</label>
+          <select id="report-category" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
+            <option value="quran-audio">Quran Audio / Pronunciation Issue</option>
+            <option value="translation">Translation Inaccuracy (Tarjuma)</option>
+            <option value="prophets-seerat">Prophet Seerat Historical Detail</option>
+            <option value="spelling">Spelling / Linguistic Error</option>
+            <option value="other">Other Suggestions / Feedback</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name / Email (Optional)</label>
+          <input id="report-contact" type="text" placeholder="e.g., student@example.com" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Detailed Explanation / Tashreeh (Write in any language)</label>
+        <textarea id="report-message" required rows="3" placeholder="Yahan tafseel se likhein ke konsi galti kahan par hai aur sahi version kya hona chahiye..." class="w-full bg-slate-900/60 border border-white/10 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
+      </div>
+
+      <div class="flex items-center justify-between pt-2">
+        <span id="report-toast" class="text-xs font-mono text-emerald-400 hidden">✓ JazakAllahu Khair. Your correction report has been logged!</span>
+        <button type="submit" class="ml-auto px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs flex items-center gap-2 transition active:scale-95">
+          <i data-lucide="flag" class="w-3.5 h-3.5"></i>
+          <span>Submit Correction</span>
+        </button>
+      </div>
+    </form>
+  </div>
 </section>
 
 </main>
+
+<!-- ================================================= -->
+<!-- VINTAGE A4 OLD PARCHMENT MANUSCRIPT MODAL         -->
+<!-- ================================================= -->
+<div id="parchment-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 lg:p-8 overflow-y-auto">
+  <div class="vintage-parchment w-full max-w-2xl rounded-sm p-8 sm:p-12 relative my-auto min-h-[600px] flex flex-col justify-between">
+    <div class="folded-corner"></div>
+
+    <div class="space-y-6">
+      <div class="flex items-start justify-between border-b-2 border-[#8c673d]/40 pb-4">
+        <div>
+          <span class="text-[11px] tracking-widest uppercase font-bold text-[#7a4e21] font-cinzel block">
+            Ancient Manuscript • Qasas-ul-Anbiya
+          </span>
+          <h2 id="parchment-name" class="text-2xl sm:text-3xl font-extrabold text-[#3d240d] font-manuscript mt-1">
+            Prophet Name
+          </h2>
+          <p id="parchment-title" class="text-xs sm:text-sm font-semibold text-[#805423] font-cinzel mt-0.5">
+            Divine Title & Lineage
+          </p>
+        </div>
+        <button onclick="closeParchmentModal()" class="w-9 h-9 rounded-full bg-[#3d240d]/10 hover:bg-[#3d240d]/20 flex items-center justify-center text-[#3d240d] transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Main Detailed Seerat Manuscript Text -->
+      <div class="space-y-4 text-[#2e1d0d]">
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#7a4e21] font-cinzel mb-1">Historical Account & Seerat</h4>
+          <p id="parchment-seerat" class="text-sm sm:text-base font-manuscript leading-relaxed italic"></p>
+        </div>
+
+        <div class="bg-[#e2cb9f]/50 p-4 rounded border border-[#c19f6a]/60 space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#633a12] font-cinzel">Key Divine Signs & Miracles</h4>
+          <p id="parchment-miracles" class="text-xs sm:text-sm font-manuscript leading-relaxed text-[#35210d]"></p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#7a4e21] font-cinzel mb-1">Core Spiritual Lesson</h4>
+          <p id="parchment-lesson" class="text-xs sm:text-sm font-manuscript leading-relaxed text-[#3a2512] font-semibold"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-[#8c673d]/30 flex items-center justify-between text-[11px] text-[#704a20] font-cinzel">
+      <span>Authentic Quranic Chronology</span>
+      <span>Al-Noor Islamic Archives</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================= -->
+<!-- AI SUBSCRIPTION PAYWALL MODAL                     -->
+<!-- ================================================= -->
+<div id="subscription-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+  <div class="sanctuary-card rounded-3xl max-w-md w-full p-7 space-y-6 border border-amber-500/40 text-center shadow-2xl">
+    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 mx-auto flex items-center justify-center text-amber-400">
+      <i data-lucide="crown" class="w-8 h-8"></i>
+    </div>
+    
+    <div class="space-y-1">
+      <h3 class="text-xl font-black text-white font-cinzel">Free Demo Completed</h3>
+      <p class="text-xs text-slate-300">You have exhausted your 5 free authenticated queries.</p>
+    </div>
+
+    <div class="bg-black/40 p-4 rounded-2xl border border-white/5 space-y-2 text-left text-xs text-slate-300">
+      <div class="flex items-center gap-2 text-amber-300 font-bold">
+        <i data-lucide="check" class="w-4 h-4"></i> Unlimited AI Questions & Tafsir
+      </div>
+      <div class="flex items-center gap-2 text-amber-300 font-bold">
+        <i data-lucide="check" class="w-4 h-4"></i> Full Hadith Sanad Verification
+      </div>
+      <div class="flex items-center gap-2 text-amber-300 font-bold">
+        <i data-lucide="check" class="w-4 h-4"></i> 24/7 Scholar-Validated Responses
+      </div>
+    </div>
+
+    <div class="space-y-3">
+      <button onclick="alert('Subscription gateway will connect here in production deployment.')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-black font-black text-xs uppercase tracking-wider shadow-lg active:scale-95 transition">
+        Upgrade to Noor-AI Pro ($2.99 / Month)
+      </button>
+      <button onclick="closeSubModal()" class="text-xs text-slate-400 hover:text-white underline">
+        Close Window
+      </button>
+    </div>
+  </div>
+</div>
 
 <script>
 "use strict";
@@ -299,564 +520,928 @@ Tap to Count
    DATA: ARABIC & URDU AUDIO
 ===================================================== */
 const ARABIC = [
-{
-title:"Surah Al-Fatihah",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/001.mp3"
-},
-{
-title:"Surah Al-Ikhlas",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/112.mp3"
-},
-{
-title:"Surah Al-Falaq",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/113.mp3"
-},
-{
-title:"Surah An-Nas",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/114.mp3"
-},
-{
-title:"Surah Ya-Sin",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/036.mp3"
-},
-{
-title:"Surah Al-Asr",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/103.mp3"
-},
-{
-title:"Surah Al-Kawthar",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/108.mp3"
-},
-{
-title:"Surah Al-Kafirun",
-reciter:"Mishary Rashid Alafasy",
-url:"https://server8.mp3quran.net/afs/109.mp3"
-}
+  { title: "Surah Al-Fatihah", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/001.mp3" },
+  { title: "Surah Al-Ikhlas", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/112.mp3" },
+  { title: "Surah Al-Falaq", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/113.mp3" },
+  { title: "Surah An-Nas", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/114.mp3" },
+  { title: "Surah Ya-Sin", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/036.mp3" },
+  { title: "Surah Al-Asr", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/103.mp3" },
+  { title: "Surah Al-Kawthar", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/108.mp3" },
+  { title: "Surah Al-Kafirun", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/109.mp3" }
 ];
 
 const URDU = [
-{
-title:"Ayat al-Kursi (آیت الکرسی)",
-arabic:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
-urdu:"اللہ وہ ہے جس کے سوا کوئی معبود نہیں، وہ زندہ اور سب کو قائم رکھنے والا ہے۔ اسے نہ اونگھ آتی ہے اور نہ نیند۔ جو کچھ آسمانوں میں اور جو کچھ زمین میں ہے اسی کا ہے۔ کون ہے جو اس کی اجازت کے بغیر اس کے سامنے سفارش کر سکے؟ وہ جانتا ہے جو کچھ ان کے آگے ہے اور جو کچھ ان کے پیچھے ہے، اور وہ اس کے علم میں سے کسی چیز کا احاطہ نہیں کر سکتے مگر جتنا وہ چاہے۔ اس کی کرسی آسمانوں اور زمین پر چھائی ہوئی ہے، اور ان دونوں کی حفاظت اسے نہیں تھکاتی، اور وہ بہت بلند اور عظمت والا ہے۔",
-url:"https://everyayah.com/data/translations/urdu_shamshad_ali_khan_46kbps/002255.mp3"
-}
+  {
+    title: "Ayat al-Kursi (آیت الکرسی)",
+    arabic: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+    urdu: "اللہ وہ معبود برحق ہے جس کے سوا کوئی عبادت کے لائق نہیں، وہ ہمیشہ زندہ رہنے والا اور تمام کائنات کو سنبھالنے والا ہے۔ نہ اسے اونگھ آتی ہے اور نہ نیند۔ جو کچھ آسمانوں میں ہے اور جو کچھ زمین میں ہے، سب اسی کی ملکیت ہے۔ کون ہے جو اس کی اجازت کے بغیر اس کے حضور سفارش کر سکے؟ وہ جانتا ہے جو کچھ بندوں کے سامنے ہے اور جو کچھ ان کے پیچھے ہے، اور وہ اس کے علم میں سے کسی چیز کا احاطہ نہیں کر سکتے مگر جتنا وہ چاہے۔ اس کی سلطنت اور کرسی تمام آسمانوں اور زمین پر چھائی ہوئی ہے، اور ان دونوں کی حفاظت کرنا اس کے لیے ذرا بھی بوجھ نہیں، اور وہ سب سے بلند اور سب سے بڑا ہے۔",
+    url: "https://everyayah.com/data/translations/urdu_shamshad_ali_khan_46kbps/002255.mp3"
+  }
 ];
 
 /* =====================================================
-   MULTILINGUAL DATA: 15 PROPHETS
+   DATA: 15 PROPHETS (DEEP MANUSCRIPT DATA)
 ===================================================== */
-let currentLang = "ur";
+let currentLang = "en";
 
 const PROPHETS = [
-{
-id: 1,
-name: {
-ur: "1. حضرت آدم (عَلَيْهِ ٱلسَّلَامُ)",
-en: "1. Prophet Adam (Peace Be Upon Him)",
-hi: "1. हज़रत आदम (अलैहिस्सलाम)",
-ar: "١. نبي الله آدم (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "انسانیت کے جدِ امجد اور روئے زمین پر اللہ کے پہلے نبی اور خلیفہ ہیں۔ اللہ تعالیٰ نے انہیں مٹی سے پیدا کر کے تمام اشیاء کے نام سکھائے۔",
-en: "The father of humanity and the first prophet and vicegerent of Allah on Earth. Allah created him from clay and taught him the names of all things.",
-hi: "मानवता के पिता और धरती पर अल्लाह के पहले पैगंबर और ख़लीफ़ा हैं। अल्लाह ने उन्हें मिट्टी से पैदा किया और सभी चीज़ों के नाम सिखाए।",
-ar: "أبو البشرية وأول نبي وخليفة لله في الأرض، خلقه الله تعالى من طين وعلّمه الأسماء كلها."
-}
-},
-{
-id: 2,
-name: {
-ur: "2. حضرت ادریس (عَلَيْهِ ٱلسَّلَامُ)",
-en: "2. Prophet Idris / Enoch (PBUH)",
-hi: "2. हज़रत इदरीस (अलैहिस्सलाम)",
-ar: "٢. نبي الله إدريس (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "قلم سے لکھنے اور کپڑے سینے کی ابتدا آپ سے ہوئی۔ قرآن میں آپ کے بلند مقام اور سچے نبی ہونے کا تذکرہ ہے۔",
-en: "Known for being among the earliest to write with a pen and sew garments. The Quran praises him as a man of truth and high status.",
-hi: "क़लम से लिखने और कपड़े सिलने की शुरुआत आपसे हुई। क़ुरआन में आपके उच्च मक़ाम और सच्चे नबी होने का ज़िक्र है।",
-ar: "أول من خط بالقلم وخاط الثياب، وذكره القرآن الكريم بصدقه ومقامه الرفيع."
-}
-},
-{
-id: 3,
-name: {
-ur: "3. حضرت نوح (عَلَيْهِ ٱلسَّلَامُ)",
-en: "3. Prophet Nuh / Noah (PBUH)",
-hi: "3. हज़रत नूह (अलैहिस्सलाम)",
-ar: "٣. نبي الله نوح (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "شیخ الانبیاء کہلاتے ہیں؛ ساڑھے نو سو سال توحید کی تبلیغ کی۔ اللہ کے حکم سے کشتی بنائی اور طوفان سے ایمان والوں کو نجات ملی۔",
-en: "Preached monotheism for 950 years. By Allah's command, he built the Ark to save the righteous from the great flood.",
-hi: "शेख़ुल अंबिया कहलाते हैं; 950 वर्षों तक तौहीद की दावत दी। अल्लाह के हुक्म से कश्ती बनाई और ईमान वालों को तूफ़ान से बचाया।",
-ar: "شيخ الأنبياء، دعا قومه ٩٥٠ عاماً، وبأمر الله بنى السفينة لنجاة المؤمنين من الطوفان."
-}
-},
-{
-id: 4,
-name: {
-ur: "4. حضرت ہود (عَلَيْهِ ٱلسَّلَامُ)",
-en: "4. Prophet Hud (PBUH)",
-hi: "4. हज़रत हूद (अलैहिस्सलाम)",
-ar: "٤. نبي الله هود (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "قومِ عاد کی طرف مبعوث ہوئے جو طاقتور اور عمارت سازی میں ماہر تھے۔ نافرمانی پر تیز ہوا کا عذاب نازل ہوا۔",
-en: "Sent to the mighty tribe of 'Aad. When they rejected divine guidance and relied on their strength, a furious wind was sent upon them.",
-hi: "क़ौम-ए-आद की तरफ़ भेजे गए जो बहुत ताक़तवर थे। नाफ़रमानी पर तेज़ हवा के अज़ाब से वे हलाक हुए।",
-ar: "أُرسل إلى قوم عاد الأقوياء، ولما كذبوا وطغوا أهلكهم الله بريح صرصر عاتية."
-}
-},
-{
-id: 5,
-name: {
-ur: "5. حضرت صالح (عَلَيْهِ ٱلسَّلَامُ)",
-en: "5. Prophet Salih (PBUH)",
-hi: "5. हज़रत सालेह (अलैहिस्सलाम)",
-ar: "٥. نبي الله صالح (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "قومِ ثمود کے لیے مبعوث ہوئے۔ معجزے کے طور پر اونٹنی ظاہر ہوئی، جسے قوم نے قتل کر کے عذابِ الٰہی کو دعوت دی۔",
-en: "Sent to the people of Thamud with the miracle of a she-camel. The transgressors harmed the camel and faced a devastating blast.",
-hi: "क़ौम-ए-समूद की तरफ़ भेजे गए। उनके लिए ऊंटनी का मोजज़ा ज़ाहिर हुआ, जिसे क़ौम ने मार डाला और अज़ाब आया।",
-ar: "أُرسل إلى قوم ثمود وجاءهم بآية الناقة، فلما عقروها أخذتهم الرجفة والصيحة."
-}
-},
-{
-id: 6,
-name: {
-ur: "6. حضرت ابراہیم (عَلَيْهِ ٱلسَّلَامُ)",
-en: "6. Prophet Ibrahim / Abraham (PBUH)",
-hi: "6. हज़रत इब्राहीम (अलैहिस्सलाम)",
-ar: "٦. نبي الله إبراهيم (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "خلیل اللہ اور جد الانبیاء؛ نمرود کی آگ آپ پر گلزار بنی۔ آپ نے خانہ کعبہ کی تعمیر فرمائی اور عظیم قربانی پیش کی۔",
-en: "Khalilullah (Friend of Allah); the fire of Nimrod was turned cool and safe for him. He built the holy Kaaba with his son.",
-hi: "ख़लीलुल्लाह और पैगंबरों के पूर्वज; नमरूद की आग आपके लिए ठंडी व सलामती बन गई। आपने काबा का निर्माण किया।",
-ar: "خليل الله وأبو الأنبياء، جعل الله عليه نار نمرود برداً وسلاماً، ورفع قواعد البيت الحرام."
-}
-},
-{
-id: 7,
-name: {
-ur: "7. حضرت اسماعیل (عَلَيْهِ ٱلسَّلَامُ)",
-en: "7. Prophet Ismail / Ishmael (PBUH)",
-hi: "7. हज़रत इस्माईल (अलैहिस्सलाम)",
-ar: "٧. نبي الله إسماعيل (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "ذبیح اللہ؛ اپنے والد حضرت ابراہیم کے حکم پر بخوشی قربان ہونے کو تیار ہوئے۔ آبِ زمزم کا چشمہ ان کے قدموں سے جاری ہوا۔",
-en: "Zabihullah; willingly submitted to Allah's command in sacrifice. The miraculous Zamzam well sprang beneath his infant feet.",
-hi: "ज़बीहुल्लाह; पिता के आदेश पर अल्लाह के लिए क़ुर्बानी को तैयार हुए। आबे-ज़मज़म का चश्मा आपके क़दमों से जारी हुआ।",
-ar: "ذبيح الله، فداه الله بذبح عظيم، وتفجرت من تحت قدميه بئر زمزم المباركة."
-}
-},
-{
-id: 8,
-name: {
-ur: "8. حضرت یعقوب (عَلَيْهِ ٱلسَّلَامُ)",
-en: "8. Prophet Yaqub / Jacob (PBUH)",
-hi: "8. हज़रत याक़ूब (अलैहिस्सलाम)",
-ar: "٨. نبي الله يعقوب (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "لقب اسرائیل؛ بنی اسرائیل کے جدِ امجد۔ بیٹے حضرت یوسف کی جدائی میں بے مثال صبر کیا اور صبرِ جمیل کی مثال قائم کی۔",
-en: "Titled Isra'il; patriarch of the Twelve Tribes. Exemplified 'Sabrun Jameel' (beautiful patience) during separation from his son Yusuf.",
-hi: "उपाधि इसराईल; बनी इसराईल के पूर्वज। बेटे यूसुफ़ के वियोग में अद्वितीय सब्र की मिसाल क़ायम की।",
-ar: "إسرائيل، أبو الأسباط، ضرب أروع الأمثلة في الصبر الجميل عند فراق ابنه يوسف."
-}
-},
-{
-id: 9,
-name: {
-ur: "9. حضرت یوسف (عَلَيْهِ ٱلسَّلَامُ)",
-en: "9. Prophet Yusuf / Joseph (PBUH)",
-hi: "9. हज़रत यूसुफ़ (अलैहिस्सलाम)",
-ar: "٩. نبي الله يوسف (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "حسن و پاکدامنی کے پیکر؛ جن کا واقعہ قرآن میں احسن القصص قرار پایا۔ کنویں اور قید سے نکل کر مصر کی حکمرانی تک پہنچے۔",
-en: "Exemplar of purity and integrity. His story is described in the Quran as the 'Best of Stories' (Ahsan-ul-Qasas), rising from a well to Egypt's treasury.",
-hi: "सदाचार और पवित्रता के प्रतीक। आपकी दास्तान को क़ुरआन में 'अहसनुल क़सस' कहा गया; कुएं से मिस्र के शासन तक पहुंचे।",
-ar: "رمز العفة والجمال، ذُكرت قصته كأحسن القصص، انتقل من غياهب الجب والسجن إلى خزائن مصر."
-}
-},
-{
-id: 10,
-name: {
-ur: "10. حضرت ایوب (عَلَيْهِ ٱلسَّلَامُ)",
-en: "10. Prophet Ayyub / Job (PBUH)",
-hi: "10. हज़रत अय्यूब (अलैहिस्सलाम)",
-ar: "١٠. نبي الله أيوب (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "صبرِ ایوب ضرب المثل ہے۔ مال، اولاد اور صحت کے کڑے امتحان میں بھی اللہ کی حمد و شکر گزاری میں ثابت قدم رہے۔",
-en: "Legendary for his unwavering patience. Endured severe loss of health, wealth, and family while constantly praising Allah.",
-hi: "अय्यूब का सब्र मिसाल है। स्वास्थ्य, धन और परिवार के कड़े इम्तिहान में भी निरंतर अल्लाह का शुक्र अदा करते रहे।",
-ar: "رمز الصبر المطلق، ابتُلي في ماله وأهله وجسده فما زاد إلا حمداً وشكراً لله تعالى."
-}
-},
-{
-id: 11,
-name: {
-ur: "11. حضرت موسیٰ (عَلَيْهِ ٱلسَّلَامُ)",
-en: "11. Prophet Musa / Moses (PBUH)",
-hi: "11. हज़रत मूसा (अलैहिस्सलाम)",
-ar: "١١. نبي الله موسى (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "کلیم اللہ؛ فرعون کے استبداد کا مقابلہ کیا، بنی اسرائیل کو نجات دلائی اور اللہ نے ان پر مقدس کتاب تورات نازل فرمائی۔",
-en: "Kalimullah (spoke directly with Allah). Defied Pharaoh's tyranny, parted the sea to free his people, and received the Torah.",
-hi: "कलीमुल्लाह; फ़िरऔन के ज़ुल्म का सामना किया, अपनी क़ौम को बचाया और आप पर तौरात नाज़िल हुई।",
-ar: "كليم الله، جاهد طغيان فرعون ونجى ببني إسرائيل وأُنزل عليه كتاب التوراة."
-}
-},
-{
-id: 12,
-name: {
-ur: "12. حضرت داؤد (عَلَيْهِ ٱلسَّلَامُ)",
-en: "12. Prophet Dawud / David (PBUH)",
-hi: "12. हज़रत दाऊद (अलैहिस्सलाम)",
-ar: "١٢. نبي الله داود (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "اللہ نے ان پر زبور اتاری اور نہایت خوبصورت لحن عطا کیا؛ لوہا ان کے ہاتھ میں موم ہوتا تھا اور عظیم عادل بادشاہ تھے۔",
-en: "Granted the Zabur (Psalms) and an enchanting voice in praise of Allah. Iron was softened in his hands and he was a just king.",
-hi: "अल्लाह ने ज़बूर अता की और सुंदर आवाज़ दी; लोहा आपके हाथ में मोम बन जाता था, और आप एक न्यायप्रिय बादशाह थे।",
-ar: "آتاه الله الزبور وصوتاً عذباً يسبح معه الطير والجبال، وألان له الحديد وكان ملكاً عادلاً."
-}
-},
-{
-id: 13,
-name: {
-ur: "13. حضرت سلیمان (عَلَيْهِ ٱلسَّلَامُ)",
-en: "13. Prophet Sulaiman / Solomon (PBUH)",
-hi: "13. हज़रत सुलेमान (अलैहिस्सलाम)",
-ar: "١٣. نبي الله سليمان (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "جنوں، پرندوں اور ہوا پر مکمل تسلط دیا گیا۔ بیت المقدس کی تعمیر کروائی اور بے مثل عدل و دانائی کی حکمرانی قائم کی۔",
-en: "Gifted unmatched wisdom and dominion over the wind, jinn, and animal kingdom. Built Bayt al-Maqdis with sublime leadership.",
-hi: "हवा, जिन्नात और परिंदों की बोली पर हुकूमत दी गई। बैतुल मक़दिस की तामीर करवाई और महान इंसाफ़ क़ायम किया।",
-ar: "سخر الله له الريح والجن وفهم منطق الطير، وبنى بيت المقدس بحكمة وسلطان لا مثيل له."
-}
-},
-{
-id: 14,
-name: {
-ur: "14. حضرت عیسیٰ (عَلَيْهِ ٱلسَّلَامُ)",
-en: "14. Prophet Isa / Jesus (PBUH)",
-hi: "14. हज़रत ईसा (अलैहिस्सलाम)",
-ar: "١٤. نبي الله عيسى (عَلَيْهِ ٱلسَّلَامُ)"
-},
-text: {
-ur: "روح اللہ اور کلمۃ اللہ؛ بن باپ کے حضرت مریم کے بطن سے پیدا ہوئے۔ کوڑھیوں کو شفا، مردوں کو زندہ کرنے کا معجزہ اور انجیل عطا ہوئی۔",
-en: "Ruhullah and Kalimatullah; born miraculously to Maryam. Performed miracles of healing and resurrecting the dead by Allah's permission, and received the Injeel.",
-hi: "रूह़ुल्लाह; बिना पिता के मरियम के कोख से जन्मे। अल्लाह के हुक्म से अंधों और कोढ़ियों को शिफ़ा दी, और इंजील प्राप्त की।",
-ar: "روح الله وكلمته، وُلد من مريم العذراء بمعجزة، وأبرأ الأكمه والأبرص وأحيا الموتى بإذن الله وأُنزل عليه الإنجيل."
-}
-},
-{
-id: 15,
-name: {
-ur: "15. حضرت محمد (ﷺ)",
-en: "15. Prophet Muhammad (Peace & Blessings Be Upon Him)",
-hi: "15. हज़रत मुहम्मद (सल्लल्लाहु अलैहि वसल्लम)",
-ar: "١٥. نبي الهدى محمد (ﷺ)"
-},
-text: {
-ur: "خاتم النبیین اور رحمۃ للعالمین؛ تمام انسانیت کے آخری ہادی و رہبر جن پر ابدی معجزہ قرآن مجید نازل ہوا۔",
-en: "The Seal of the Prophets and a Mercy to the Worlds (Rahmatul-lil-'Alamin). The ultimate guide for mankind upon whom the final Quran was revealed.",
-hi: "ख़ातमुन नबिय्यीन और रहमतुल लिल आलमीन; सारी इंसानियत के अंतिम मार्गदर्शक जिन पर पवित्र क़ुरआन नाज़िल हुआ।",
-ar: "خاتم الأنبياء والمرسلين ورحمة للعالمين، بعثه الله هادياً ومبشراً ونذيراً وأنزل عليه القرآن الكريم هدى للناس."
-}
-}
+  {
+    id: 1,
+    name: {
+      en: "1. Prophet Adam (Peace Be Upon Him)",
+      ur: "۱. حضرت آدم (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "1. हज़रत आदम (अलैहिस्सलाम)",
+      ar: "١. نبي الله آدم (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Abu al-Bashar (Father of Humanity) • First Vicegerent",
+      ur: "ابو البشر • خلیفۃ اللہ فی الارض",
+      hi: "अबुल बशर (मानवता के पिता) • प्रथम पैगंबर",
+      ar: "أبو البشر وأول خليفة في الأرض"
+    },
+    seerat: {
+      en: "Prophet Adam (PBUH) was fashioned directly by Allah from clays of varying earths. Allah breathed into him his soul and instructed all the angels to prostrate in reverence to the knowledge Allah bestowed upon him. Adam and Hawwa (Eve) lived in Paradise before being sent down to Earth to fulfill mankind's sacred trusteeship.",
+      ur: "حضرت آدم علیہ السلام روئے زمین پر اللہ تعالیٰ کے پہلے نبی اور تمام انسانیت کے جدِ امجد ہیں۔ اللہ تعالیٰ نے انہیں مٹی سے پیدا فرما کر تمام کائنات کی اشیاء کے نام سکھائے اور فرشتوں کو ان کے آگے سجدہِ تعظیمی کا حکم دیا۔ توبہ اور انابت کا درس ان کے ذریعے نسلِ انسانی کو ملا۔",
+      hi: "हज़रत आदम (अलैहिस्सलाम) मानवजाति के प्रथम पुरुष और अल्लाह के पहले रसूल हैं। अल्लाह ने उन्हें मिट्टी से तराशा और सभी वस्तुओं का विशेष ज्ञान प्रदान किया। उन्होंने धरती पर अल्लाह की बंदगी और तौबा की नींव रखी।",
+      ar: "أول إنسان ونبي خلقه الله بيده ونفخ فيه من روحه وعلمه الأسماء كلها، وأسجد له الملائكة إكراماً لعلمه وفضله، وأنزل إلى الأرض ليعمرها بالتوحيد والعبادة."
+    },
+    miracles: {
+      en: "Creation without parents; endowed with intuitive mastery of the names and natures of all created things.",
+      ur: "بغیر والدین کے تخلیق؛ تمام کائنات کے اسماء و علوم کا الہامی علم۔",
+      hi: "बिना माता-पिता के सृष्टि; समस्त पदार्थों के नाम और स्वभाव का इल्हामी ज्ञान।",
+      ar: "خلقه من غير أب وأم، وتعليمه الأسماء كلها بفيض إلهي مباشر."
+    },
+    lesson: {
+      en: "Sincere repentance (Tawbah) turns mistakes into divine elevation.",
+      ur: "خلوصِ دل سے مانگی گئی توبہ انسان کو قربِ الٰہی سے سرفراز کرتی ہے۔",
+      hi: "सच्चे दिल से मांगी गई तौबा इंसान को अल्लाह की रहमत का हक़दार बनाती है।",
+      ar: "التوبة الصادقة ترفع مقام العبد وتفتح له أبواب المغفرة."
+    }
+  },
+  {
+    id: 2,
+    name: {
+      en: "2. Prophet Idris / Enoch (PBUH)",
+      ur: "۲. حضرت ادریس (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "2. हज़रत इदरीस (अलैहिस्सलाम)",
+      ar: "٢. نبي الله إدريس (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "The Truthful Scribe • Raised to a High Station",
+      ur: "صدیق النبی • بلند مرتبت والے پیغمبر",
+      hi: "सत्यवादी नबी • उच्च मक़ाम वाले रसूल",
+      ar: "الصديق المرفوع مكاناً علياً"
+    },
+    seerat: {
+      en: "Prophet Idris (PBUH) was a man of immense scholarship, truthfulness, and continuous worship. He guided early mankind toward civil order, astronomy, mathematics, and writing with the pen, and Allah elevated his spiritual rank high into the heavens.",
+      ur: "حضرت ادریس علیہ السلام نہایت سچے، عالم اور عبادت گزار پیغمبر تھے۔ روایات کے مطابق قلم سے تحریر، کپڑے سینے اور علمِ فلکیات کی بنیادی رہنمائی آپ کے دور میں انسانیت کو عطا ہوئی۔",
+      hi: "हज़रत इदरीस (अलैहिस्सलाम) अत्यधिक सच्चे और ज्ञानी पैगंबर थे। क़लम से लिखने और वस्त्र सिलने की कला आपके माध्यम से आरंभ हुई।",
+      ar: "اشتهر بالصدق والتقوى، وهو أول من خط بالقلم واستعمل خياطة الثياب، ورفعه الله مكاناً علياً."
+    },
+    miracles: {
+      en: "Elevated bodily to high celestial stations by divine will; pioneer of scholarly writing.",
+      ur: "اللہ کی بارگاہ میں بلند مقام پر اٹھایا جانا؛ قلمی کتابت کا اولین آغاز۔",
+      hi: "उच्च आकाशों में उठाया जाना; लेखन और ज्ञान का प्रसार।",
+      ar: "رفعه الله إلى السموات العلى، وتفوقه في الحكمة والعلوم."
+    },
+    lesson: {
+      en: "Pursuit of sacred knowledge and truth elevates humanity before the Creator.",
+      ur: "علم اور سچائی کا حصول انسان کو دربارِ الٰہی میں بلند کرتا ہے۔",
+      hi: "ज्ञान और सच्चाई इंसान को ईश्वर के दरबार में उच्च स्थान दिलाते हैं।",
+      ar: "العلم والصدق هما أساس الرفعة عند الله تعالى."
+    }
+  },
+  {
+    id: 3,
+    name: {
+      en: "3. Prophet Nuh / Noah (PBUH)",
+      ur: "۳. حضرت نوح (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "3. हज़रत नूह (अलैहिस्सलाम)",
+      ar: "٣. نبي الله نوح (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Shaykh al-Anbiya (Elder of Prophets) • The Great Deliverer",
+      ur: "شیخ الانبیاء • طوفان سے نجات دہندہ",
+      hi: "शेख़ुल अंबिया • महाप्रलय से रक्षक",
+      ar: "شيخ المرسلين وصاحب الفلك العظيم"
+    },
+    seerat: {
+      en: "For 950 continuous years, Prophet Nuh called his idolatrous people to worship the One Creator day and night. When they obstinately refused truth, Allah instructed him to build the massive Ark in the desert, preserving the faithful and species from the cataclysmic flood.",
+      ur: "آپ نے ساڑھے نو سو برس تک اپنی قوم کو رات دن توحید کی طرف بلایا۔ قوم کی سرکشی پر اللہ کے حکم سے صحرا میں عظیم الشان سفینہ تعمیر کیا جس نے اہل ایمان کو طوفان سے محفوظ کیا۔",
+      hi: "आपने 950 वर्षों तक निरंतर अपनी क़ौम को एक ईश्वर की उपासना की दावत दी। अल्लाह के हुक्म से विशाल कश्ती बनाकर ईमान वालों को जल प्रलय से बचाया।",
+      ar: "لبث في قومه ٩٥٠ عاماً يدعوهم إلى التوحيد، وصنع السفينة بأمر ربه لإنقاذ المؤمنين وزوجين من كل دابة."
+    },
+    miracles: {
+      en: "Construction of the legendary Ark without prior blueprints; miraculous surviving of the Earth-engulfing deluge.",
+      ur: "خشک زمین پر بغیر سمندر کے کشتی کی تعمیر اور عالمی طوفان سے امن و سلامتی کے ساتھ نجات۔",
+      hi: "सूखी भूमि पर विशाल नौका निर्माण और महाप्रलय से सुरक्षित निकलना।",
+      ar: "بناء الفلك بمعجزة وتوجيه إلهي والنجاة من الطوفان العظيم."
+    },
+    lesson: {
+      en: "Enduring persistence in righteousness, even when standing alone against an entire generation.",
+      ur: "حق کی راہ میں استقامت اور صبر چاہے پوری قوم مخالفت پر اتر آئے۔",
+      hi: "सत्य की राह में अडिग रहना, भले ही सारी दुनिया आपके विरोध में हो।",
+      ar: "الصبر والثبات على الحق رغم طول البلاء واستهزاء المعاندين."
+    }
+  },
+  {
+    id: 4,
+    name: {
+      en: "4. Prophet Hud (PBUH)",
+      ur: "۴. حضرت ہود (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "4. हज़रत हूद (अलैहिस्सलाम)",
+      ar: "٤. نبي الله هود (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Warner to the Mighty Giants of 'Aad",
+      ur: "پیغمبرِ قومِ عاد • منادیِ توحید",
+      hi: "क़ौम-ए-आद के मार्गदर्शक नबी",
+      ar: "رسول الله إلى عاد ذات العماد"
+    },
+    seerat: {
+      en: "Sent to the ancient people of 'Aad who possessed towering fortresses and immense physical prowess. Prophet Hud warned them against tyranny and idolatry. When they arrogantly challenged Allah's power, a devastating freezing windstorm raged for seven nights and eight days.",
+      ur: "قومِ عاد کی جانب بھیجے گئے جو طاقتور اور فلک بوس عمارتوں کے بانی تھے۔ ان کے گھمنڈ اور شرک پر حضرت ہود نے انہیں تنبیہ کی۔ جب وہ باز نہ آئے تو خوفناک تیز ہوا کا عذاب آیا۔",
+      hi: "क़ौम-ए-आद के पास भेजे गए जो बहुत बलवान और विशाल भवनों के निर्माता थे। उनके घमंड और नाफ़रमानी पर सात रात और आठ दिन तक भीषण तूफ़ान आया।",
+      ar: "أُرسل إلى قوم عاد الأقوياء، ولما استكبروا واغتروا بقوتهم أهلكهم الله بريح صرصر عاتية استمرت سبع ليال وثمانية أيام."
+    },
+    miracles: {
+      en: "Complete miraculous shielding of Hud and his small follower circle from the hurricane wind.",
+      ur: "ہولناک ہوا کے طوفان سے حضرت ہود اور ان کے قلیل پیروکاروں کا مکمل محفوظ رہنا۔",
+      hi: "विनाशकारी आंधी से हज़रत हूद और ईमान वालों का सुरक्षित बचना।",
+      ar: "نجاة هود والمؤمنين معه سالمين من الريح المهلكة."
+    },
+    lesson: {
+      en: "Physical might, money, and technological pride cannot overcome divine truth.",
+      ur: "طاقت اور مادی ترقی انسان کو اللہ کے محاسبے سے نہیں بچا سکتی۔",
+      hi: "शारीरिक बल और धन-दौलत का अहंकार ईश्वर के न्याय के सामने टिक नहीं सकता।",
+      ar: "القوة المادية والعمرانية لا تغني شيئاً أمام بطش الله وعذابه."
+    }
+  },
+  {
+    id: 5,
+    name: {
+      en: "5. Prophet Salih (PBUH)",
+      ur: "۵. حضرت صالح (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "5. हज़रत सालेह (अलैहिस्सलाम)",
+      ar: "٥. نبي الله صالح (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Bringer of the Miraculous She-Camel",
+      ur: "پیغمبرِ قومِ ثمود • صاحبِ ناقۃ اللہ",
+      hi: "नाक़ा-ए-सालेह के पैगंबर",
+      ar: "صاحب آية الناقة المعجزة"
+    },
+    seerat: {
+      en: "Sent to the nation of Thamud who carved luxury mansions directly into rock mountains. As proof of his prophethood, Allah brought forth a pregnant, living she-camel out of solid rock. Despite warnings, the disbelievers hamstrung the animal, triggering an overwhelming sonic blast.",
+      ur: "قومِ ثمود کے لیے مبعوث ہوئے جو پہاڑوں کو تراش کر محلات بناتے تھے۔ ان کے مطالبے پر ٹھوس چٹان سے ایک معجزانہ اونٹنی ظاہر ہوئی۔ قوم نے اسے مار ڈالا اور لرزہ خیز چیخ کے عذاب سے فنا ہوئی۔",
+      hi: "क़ौम-ए-समूद की ओर भेजे गए जो पहाड़ों को काटकर महल बनाते थे। चमत्कार के रूप में पत्थर से जीवित ऊंटनी प्रकट हुई। जब उन्होंने ऊंटनी को मारा, तो भयानक गर्जना से वे नष्ट हुए।",
+      ar: "أُرسل إلى ثمود الذين جابوا الصخر بالواد، وأخرج الله لهم ناقة من الصخرة آية مبصرة، فلما عقروها أخذتهم الرجفة والصيحة."
+    },
+    miracles: {
+      en: "Emergence of a full-grown pregnant she-camel out of a hard, barren mountain rock face.",
+      ur: "سخت پہاڑی چٹان کے اندر سے زندہ اونٹنی کا برآمد ہونا اور پورے شہر کے برابر دودھ فراہم کرنا۔",
+      hi: "ठोस चट्टान से जीवित ऊंटनी का जन्म और पूरे नगर के लिए दूध का साधन बनना।",
+      ar: "خروج ناقة حية من قلب الصخرة الصماء وإروائها لجميع القوم باللبن."
+    },
+    lesson: {
+      en: "Violating sacred public trusts and mocking divine signs invites irreversible ruin.",
+      ur: "اللہ کی نشانیوں کی توہین اور معاہدات کی خلاف ورزی تباہی کا پیش خیمہ ہے۔",
+      hi: "ईश्वरीय संकेतों का मज़ाक उड़ाना और वचनों को तोड़ना विनाश लाता है।",
+      ar: "التعدي على آيات الله والاستهزاء بالعهود يجلب الهلاك السريع."
+    }
+  },
+  {
+    id: 6,
+    name: {
+      en: "6. Prophet Ibrahim / Abraham (PBUH)",
+      ur: "۶. حضرت ابراہیم (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "6. हज़रत इब्राहीम (अलैहिस्सलाम)",
+      ar: "٦. نبي الله إبراهيم (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Khalilullah (Friend of the Most Merciful) • Patriarch of Faith",
+      ur: "خلیل اللہ • جدِ انبیاء و معمارِ کعبہ",
+      hi: "ख़लीलुल्लाह • एकेश्वरवाद के जनक",
+      ar: "خليل الرحمن وأبو الأنبياء"
+    },
+    seerat: {
+      en: "The patriarch of monotheism who systematically dismantled idol worship with flawless logic. Cast into a raging furnace by tyrant Nimrod, Allah ordered the flames to become cool and serene. With his son Ismail, he laid the foundations of the Holy Kaaba in Makkah.",
+      ur: "خلیل اللہ اور تمام الہامی مذاہب کے روحانی جد؛ نمرود نے دہکتی آگ میں ڈالا تو اللہ کا حکم ہوا 'اے آگ! ابراہیم پر ٹھنڈی اور سلامتی والی بن جا'۔ آپ نے اپنے فرزند کے ساتھ خانہ کعبہ تعمیر کیا۔",
+      hi: "एकेश्वरवाद के महान स्तंभ। जब नमरूद ने आपको दहकती आग में फेंका, तो ईश्वर के आदेश से आग शीतल व शांत हो गई। आपने मक्का में पवित्र काबा की स्थापना की।",
+      ar: "إمام الموحدين، حطم الأصنام وجعل الله عليه نار النمرود برداً وسلاماً، ورفع مع ابنه إسماعيل قواعد البيت العتيق بمكة."
+    },
+    miracles: {
+      en: "Surviving the inferno unscratched; bird resurrection test; establishment of the perennial pilgrimage rites.",
+      ur: "دہکتی آگ کا باغ و گلزار بن جانا؛ چار پرندوں کو زندہ کرنے کا مشاہدہ؛ کعبہ کی تعمیر۔",
+      hi: "भीषण आग का शीतल हो जाना; पक्षियों के पुनर्जीवन का चमत्कार; काबा का निर्माण।",
+      ar: "إخماد حر النار وتحويلها إلى برد وسلام، وإحياء الطيور الأربعة بإذن الله."
+    },
+    lesson: {
+      en: "Absolute, unshakeable surrender (Islam) to the will of the Creator.",
+      ur: "اللہ کی رضا کے آگے مکمل اور غیر مشروط سرِ تسلیم خم کرنا۔",
+      hi: "ईश्वर की इच्छा के आगे बिना किसी शर्त के पूर्ण समर्पण।",
+      ar: "التسليم المطلق والتوكل الكامل على الله في كل الملمات."
+    }
+  },
+  {
+    id: 7,
+    name: {
+      en: "7. Prophet Ismail / Ishmael (PBUH)",
+      ur: "۷. حضرت اسماعیل (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "7. हज़रत इस्माईल (अलैहिस्सलाम)",
+      ar: "٧. نبي الله إسماعيل (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Zabihullah (The Sacrifice of Allah) • Forefather of Arabs",
+      ur: "ذبیح اللہ • جدِ قریش و عرب",
+      hi: "ज़बीहुल्लाह • मक्का के संस्थापक",
+      ar: "ذبيح الله وجد النبي المصطفى ﷺ"
+    },
+    seerat: {
+      en: "As an infant left in the barren desert of Bakkah, the sacred spring of Zamzam miraculously erupted beneath his heels. As a youth, he willingly offered his life when informed of his father's divine dream of sacrifice, prompting Allah to replace him with an immense ram.",
+      ur: "مکہ کی خشک وادی میں ننھے قدموں کی ٹھوکر سے آبِ زمزم کا چشمہ رواں ہوا۔ اپنے والد حضرت ابراہیم علیہ السلام کے خواب پر بخوشی قربان ہونے کو تیار ہوئے اور اطاعت کی بے مثال تاریخ لکھی۔",
+      hi: "बचपन में मक्का के निर्जन मरुस्थल में आपके क़दमों से पवित्र ज़मज़म का जलस्रोत फूटा। पिता के सपने पर स्वयं को ईश्वर के लिए बलिदान हेतु प्रस्तुत किया।",
+      ar: "تفجرت من تحت قدميه بئر زمزم، وانقاد لأمر ربه وأبيه في الذبح ففداه الله بذبح عظيم، وشارك في بناء الكعبة."
+    },
+    miracles: {
+      en: "The perpetual flow of the Zamzam well for thousands of years; preservation during the great sacrifice.",
+      ur: "ہزاروں سال سے جاری زمزم کا چشمہ؛ قربانی کی آزمائش میں معجزانہ نجات۔",
+      hi: "युगों से प्रवाहित पवित्र ज़मज़म जल; महान क़ुर्बानी के इम्तिहान में ईश्वरीय सहायता।",
+      ar: "نبع ماء زمزم المبارك إلى يوم القيامة، ونجاته من الذبح بالفداء."
+    },
+    lesson: {
+      en: "Pious filial obedience and willingness to give up what is dearest for Allah.",
+      ur: "والدین کی اطاعت اور عزیز ترین شے کو رب کے راستے میں قربان کرنے کا جذبہ۔",
+      hi: "माता-पिता की आज्ञाकारिता और प्रियतम वस्तु का ईश्वर मार्ग में त्याग।",
+      ar: "بر الوالدين والاستجابة الفورية لأوامر الله تعالى."
+    }
+  },
+  {
+    id: 8,
+    name: {
+      en: "8. Prophet Yaqub / Jacob (PBUH)",
+      ur: "۸. حضرت یعقوب (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "8. हज़रत याक़ूब (अलैहिस्सलाम)",
+      ar: "٨. نبي الله يعقوب (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Isra'il • Master of Beautiful Patience (Sabr Jameel)",
+      ur: "اسرائیل • مظهرِ صبرِ جمیل",
+      hi: "इसराईल • सब्र-ए-जमील के प्रतीक",
+      ar: "إسرائيل ومضرب المثل في الصبر الجميل"
+    },
+    seerat: {
+      en: "Father of the Twelve Tribes of Israel. When separated from his most beloved son Yusuf through the betrayal of older siblings, Prophet Yaqub wept until he lost his eyesight, yet his heart never despaired of Allah's mercy, constantly displaying 'Sabrun Jameel.'",
+      ur: "بنی اسرائیل کے بارہ قبائل کے جدِ امجد۔ اپنے پیارے بیٹے یوسف علیہ السلام کے فراق میں برسوں روئے جس سے بینائی چلی گئی، لیکن کبھی شکوہ نہیں کیا اور کہا: 'میں اپنی پریشانی کی فریاد صرف اللہ سے کرتا ہوں'۔",
+      hi: "बनी इसराईल के पूर्वज। पुत्र यूसुफ़ के वियोग में आंखों की रोशनी चली गई, किंतु कभी धैर्य नहीं खोया और सदा ईश्वर की दया पर भरोसा रखा।",
+      ar: "أبو الأسباط، فقد بصره من شدة الحزن على فراق ابنه يوسف دون أن ييأس من روح الله، فضرب أروع الأمثلة في الصبر الجميل."
+    },
+    miracles: {
+      en: "Miraculous restoration of full eyesight upon the touch of Prophet Yusuf's blessed shirt.",
+      ur: "حضرت یوسف کی قمیض آنکھوں پر لگتے ہی بینائی کا مکمل واپس لوٹ آنا۔",
+      hi: "हज़रत यूसुफ़ के कुर्ते के स्पर्श से आंखों की रोशनी का पुनः वापस आना।",
+      ar: "ارتداد بصره بصيراً فور إلقاء قميص يوسف على وجهه."
+    },
+    lesson: {
+      en: "Grief must be channeled solely to Allah; true faith never succumbs to hopeless despair.",
+      ur: "اپنے دکھ اور غم کا شکوہ صرف اپنے رب سے کرنا اور کبھی مایوس نہ ہونا۔",
+      hi: "अपने दुखों का निवेदन केवल ईश्वर से करना और कभी आशा न छोड़ना।",
+      ar: "بث الحزن والشكوى إلى الله وحده، واليقين بأن الفرج آتٍ لا محالة."
+    }
+  },
+  {
+    id: 9,
+    name: {
+      en: "9. Prophet Yusuf / Joseph (PBUH)",
+      ur: "۹. حضرت یوسف (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "9. हज़रत यूसुफ़ (अलैहिस्सलाम)",
+      ar: "٩. نبي الله يوسف (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Al-Siddiq (The Sincere) • Custodian of Egypt's Treasures",
+      ur: "یوسف صدیق • عزیزِ مصر و پیکرِ عفت",
+      hi: "यूसुफ़ सिद्दीक़ • मिस्र के न्यायप्रिय शासक",
+      ar: "الصديق وعزيز مصر ونموذج العفة"
+    },
+    seerat: {
+      en: "Endured betrayal by his brothers who threw him down a dark well, sold into Egyptian slavery, resisted illicit seduction, and spent years in prison unjustly. Allah interpreted dreams through him and elevated him to govern the grain stores, where he forgave all his tormentors.",
+      ur: "بھائیوں کے حسد سے کنویں میں ڈالے گئے، غلام بنا کر بیچے گئے، تہمت پر قید کاٹی، اور بالآخر تعبیرِ خواب کی حکمت سے مصر کے فرمانروا بنے۔ طاقت ملنے پر تمام ظالم بھائیوں کو معاف کر دیا۔",
+      hi: "भाइयों द्वारा कुएं में फेंके जाने और अन्यायपूर्ण जेल सहने के बाद, सपनों की सही व्याख्या के ज्ञान से मिस्र के सर्वोच्च शासक बने और सभी को क्षमा कर दिया।",
+      ar: "مرّ بمحن الجب والاسترقاق والسجن ظلماً، فمكن الله له في الأرض وأوتي علم تأويل الأحاديث، وعفا عن إخوته عند المقدرة."
+    },
+    miracles: {
+      en: "God-given precision in prophetic dream interpretations; his tunic curing his father's blindness.",
+      ur: "خوابوں کی بالکل درست اور الہامی تعبیر؛ قمیض سے والد کی بصارت کی بحالی۔",
+      hi: "सपनों की अचूक व इल्हामी व्याख्या; आपके कुर्ते से दृष्टि की बहाली।",
+      ar: "علم تأويل الرؤى والأحلام بصدق معجز، وشفاء عين أبيه بقميصه."
+    },
+    lesson: {
+      en: "Chastity, moral integrity, and majestic forgiveness over revenge.",
+      ur: "پاکدامنی، اخلاقی پاکیزگی اور بدلہ لینے کی مکمل قدرت کے باوجود معاف کر دینا۔",
+      hi: "चारित्रिक पवित्रता, सत्यनिष्ठा और बदला लेने के सामर्थ्य के बावजूद क्षमाशीलता।",
+      ar: "العفة في زمن الفتن، ومقابلة الإساءة بالإحسان والعفو عند المقدرة."
+    }
+  },
+  {
+    id: 10,
+    name: {
+      en: "10. Prophet Ayyub / Job (PBUH)",
+      ur: "۱۰. حضرت ایوب (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "10. हज़रत अय्यूब (अलैहिस्सलाम)",
+      ar: "١٠. نبي الله أيوب (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "The Paragon of Fortitude & Gratitude",
+      ur: "مظہرِ صبرِ ایوب • شاکر و صابر پیغمبر",
+      hi: "अतुलनीय धैर्य के प्रतीक",
+      ar: "رمز الصبر والشكر في البلاء"
+    },
+    seerat: {
+      en: "Tested with the complete loss of his vast wealth, the death of all his children, and an agonizing physical illness that lasted many years. His tongue never ceased uttering praises and thanksgiving to Allah until Allah told him to strike the ground, springing cool curative water.",
+      ur: "صحت، تمام دولت اور اولاد کے چھن جانے کے بعد سالہا سال تک بیماری کی آزمائش میں رہے۔ زبان پر کبھی شکوہ نہ آیا، صرف تسبیح و تحمید رہی۔ اللہ نے قدم سے ٹھنڈا شفا بخش چشمہ جاری فرما کر سب لوٹا دیا۔",
+      hi: "धन, संपत्ति, संतान और लंबे समय तक गंभीर रोग की कठिन परीक्षा से गुज़रे। हमेशा ईश्वर की स्तुति करते रहे। अंततः धरती से निकले चमत्कारी जल से पूर्ण स्वस्थ हुए।",
+      ar: "ابتلي بفقد الأموال والأولاد ومرض الجسد لسنوات طوال، فلم يفتر لسانه عن ذكر ربه، فأمره الله بضرب الأرض فتفجر ماء بارد اغتسل منه وشُفي تماماً."
+    },
+    miracles: {
+      en: "Instant instantaneous rejuvenation and healing via divine sub-surface mineral spring.",
+      ur: "زمین پر پاؤں مارتے ہی پھوٹنے والے چشمے سے فوری شفا اور جوانی کی واپسی۔",
+      hi: "ज़मीन से निकले चमत्कारी शीतल जल से तुरंत पूर्ण स्वास्थ्य लाभ।",
+      ar: "نبع الماء الشافي من الأرض وإعادة أهله وماله مضاعفاً."
+    },
+    lesson: {
+      en: "Unconditional gratitude in adversity; pain is a catalyst for spiritual elevation.",
+      ur: "تکلیف و پریشانی میں صبر اور اللہ کی نعمتوں کا شکر کبھی نہ چھوڑنا۔",
+      hi: "कठिनाइयों में भी निरंतर कृतज्ञता और ईश्वर पर अटूट विश्वास।",
+      ar: "الشكر والحمد في السراء والضراء، وأن البلاء علامة حب الله للعبد."
+    }
+  },
+  {
+    id: 11,
+    name: {
+      en: "11. Prophet Musa / Moses (PBUH)",
+      ur: "۱۱. حضرت موسیٰ (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "11. हज़रत मूसा (अलैहिस्सलाम)",
+      ar: "١١. نبي الله موسى (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Kalimullah (Direct Interlocutor with Allah) • Lawgiver",
+      ur: "کلیم اللہ • فرعون کے مقابل مجاہدِ اعظم",
+      hi: "कलीमुल्लाह • तौरात प्राप्तकर्ता",
+      ar: "كليم الله وقاهر الفراعنة"
+    },
+    seerat: {
+      en: "Spoke directly with Allah at Mount Sinai without angelic intermediaries. Armed with his miraculous staff and glowing white hand, he confronted Pharaoh. By Allah's decree, he struck the Red Sea, creating twelve dry escape channels for Bani Isra'il before receiving the Torah tablets.",
+      ur: "کوہِ طور پر اللہ سے بغیر واسطے کے ہم کلام ہوئے۔ عصا اور یدِ بیضا کے معجزات کے ساتھ فرعون کے دربار میں توحید کا پرچم بلند کیا۔ بحرِ احمر کو چیر کر بنی اسرائیل کو پار لگایا اور تورات حاصل کی۔",
+      hi: "तूर पर्वत पर सीधे ईश्वर से वार्तालाप किया। लाठी के अजगर बनने और चमकते हाथ के चमत्कार से फ़िरऔन को चुनौती दी और समुद्र पार कराकर क़ौम को बचाया।",
+      ar: "كلمه الله تكليماً عند الطور، وأيده بمعجزة العصا واليد البيضاء، وفلق الله له البحر اثني عشر مسلكاً وأغرق فرعون وجنوده وأنزل عليه التوراة."
+    },
+    miracles: {
+      en: "Staff transforming into an apex serpent; radiant hand shining like sunlight; parting of the Red Sea; water springs from rock.",
+      ur: "عصا کا اژدہا بن جانا؛ یدِ بیضا (چمکتا ہاتھ)؛ بحیرہ قلزم کا دو لخت ہونا؛ پتھر سے بارہ چشمے جاری ہونا۔",
+      hi: "लाठी का विशाल सर्प बनना; चमकता हाथ; समुद्र का दो भागों में बंटना; चट्टान से 12 झरने फूटना।",
+      ar: "تحول العصا إلى حية تسعى، واليد البيضاء، وانفلاق البحر العظيم، وانبجاس اثنتي عشرة عيناً من الحجر."
+    },
+    lesson: {
+      en: "Tyranny and state terror collapse when faced with genuine divine reliance.",
+      ur: "باطل اور ظلم جتنا بھی طاقتور ہو، اللہ پر بھروسہ کرنے والوں کے سامنے مٹ جاتا ہے۔",
+      hi: "अत्याचार कितना भी शक्तिशाली क्यों न हो, ईश्वर पर भरोसे से पराजित होता है।",
+      ar: "الشجاعة في مواجهة الطغيان واليقين التام بنصر الله للمستضعفين."
+    }
+  },
+  {
+    id: 12,
+    name: {
+      en: "12. Prophet Dawud / David (PBUH)",
+      ur: "۱۲. حضرت داؤد (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "12. हज़रत दाऊद (अलैहिस्सलाम)",
+      ar: "١٢. نبي الله داود (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Recipient of the Zabur (Psalms) • The Just Monarch",
+      ur: "صاحبِ زبور • عادل بادشاہ و لحنِ داؤدی کے مالک",
+      hi: "ज़बूर के प्राप्तकर्ता • न्यायप्रिय राजा",
+      ar: "صاحب الزبور والملك العادل"
+    },
+    seerat: {
+      en: "Slew giant Goliath (Jalut) with a slingshot stones as a youth. Allah granted him both kingship and prophetic revelation (the Psalms). When he praised Allah with his hypnotic, beautiful vocal melody, birds and mountain peaks echoed his praises, and raw iron melted like soft wax in his bare hands.",
+      ur: "جوانی میں جالوت ظالم کو شکست دی۔ اللہ نے بادشاہت اور نبوت دونوں عطا کیں اور زبور نازل فرمائی۔ جب تسبیح کرتے تو پرندے اور پہاڑ ساتھ گنگناتے، اور لوہا ان کے ہاتھ میں موم بن جاتا تھا۔",
+      hi: "जालूत का वध कर न्याय की स्थापना की। अल्लाह ने ज़बूर और राजपाट प्रदान किया। जब वे ईश्वर की स्तुति गाते तो पक्षी और पर्वत साथ गाते थे, और लोहा मोम बन जाता था।",
+      ar: "قتل جالوت الجبار، وآتاه الله الملك والنبوة والزبور، وسخر معه الجبال والطير يسبحن بصوته الندي الرخيم، وألان له الحديد لصنع الدروع."
+    },
+    miracles: {
+      en: "Softening and molding solid iron without fire/tools; mountains and birds joining his hymnal chants.",
+      ur: "لوہے کا بغیر آگ اور اوزار کے ہاتھوں میں موم ہونا؛ پرندوں اور پہاڑوں کا لحن کے ساتھ تسبیح کرنا۔",
+      hi: "बिना आग के लोहे का हाथों में मोम की तरह ढलना; पर्वतों व पक्षियों का साथ गाना।",
+      ar: "إلانة الحديد بيده دون نار، وتسبيح الجبال والطيور معه."
+    },
+    lesson: {
+      en: "Humility and ceaseless devotion to worship even when occupying supreme worldly power.",
+      ur: "حکومت اور اقتدار کے باوجود ہر لمحہ عاجزی اور ذکرِ الٰہی میں مستغرق رہنا۔",
+      hi: "सर्वोच्च शक्ति और सत्ता में रहते हुए भी विनम्रता और निरंतर ईश्वर भक्ति।",
+      ar: "الجمع بين الملك العادل والعبادة الخاشعة والعمل باليد لكسب الرزق."
+    }
+  },
+  {
+    id: 13,
+    name: {
+      en: "13. Prophet Sulaiman / Solomon (PBUH)",
+      ur: "۱۳. حضرت سلیمان (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "13. हज़रत सुलेमान (अलैहिस्सलाम)",
+      ar: "١٣. نبي الله سليمان (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Monarch of Jinn, Wind, and Animals • Rebuilder of Bayt al-Maqdis",
+      ur: "سلیمان علیہ السلام • جن و انس اور چرند پرند کے فرمانروا",
+      hi: "समस्त सृष्टि पर न्याय करने वाले राजा व नबी",
+      ar: "الملك النبي الذي سُخرت له الرياح والجن والطير"
+    },
+    seerat: {
+      en: "Granted a kingdom the likes of which no human after him would ever possess. Commanded armies composed of men, jinn, and birds; understood animal communications directly; directed fast winds across continents and oversaw the grand construction of the Holy Sanctuary in Jerusalem (Bayt al-Maqdis).",
+      ur: "ایسی عظیم سلطنت عطا ہوئی جس کی نظیر قیامت تک ممکن نہیں۔ جنات، پرندے اور ہوائیں ان کے تابع تھیں۔ چیونٹیوں اور پرندوں کی بولیاں سمجھتے تھے اور بیت المقدس کی عظیم تعمیر مکمل کروائی۔",
+      hi: "अद्वितीय साम्राज्य प्राप्त था। हवाएं, जिन्नात और पशु-पक्षी आपके आदेश का पालन करते थे। चींटी और परिंदों की भाषा समझते थे और बैतुल मक़दिस का भव्य निर्माण कराया।",
+      ar: "وهبه الله ملكاً لا ينبغي لأحد من بعده، فسخر له الريح تجري بأمره، وعلمه لغة الطير والحيوان، وجنّد له الإنس والجن لبناء بيت المقدس ونشر التوحيد."
+    },
+    miracles: {
+      en: "Control of storm-velocity winds for instant transport; comprehension of animal languages; command over jinn artisans and molten copper springs.",
+      ur: "ہواؤں پر سواری؛ جانوروں اور کیڑے مکوڑوں کی بولیاں سمجھنا؛ تانبے کے پگھلے ہوئے چشمے؛ جنات سے تعمیراتی کام لینا۔",
+      hi: "हवाओं पर नियंत्रण; समस्त जीवों की बोली समझना; तांबे का पिघला चश्मा; जिन्नों पर नियंत्रण।",
+      ar: "تسخير الرياح، ومنطق الطير، وإسالة عين القطر (النحاس)، وتسخير مردة الجن للعمل."
+    },
+    lesson: {
+      en: "Unsurpassed wealth and power must be channeled strictly into justice and worship.",
+      ur: "بے مثال دولت اور غلبے کو صرف اور صرف عدل اور احکامِ الٰہی کے نفاذ کے لیے وقف کرنا۔",
+      hi: "अपार धन और सत्ता का उपयोग केवल न्याय और सत्य की स्थापना में करना।",
+      ar: "استخدام النفوذ والملك والعلوم لخدمة الدين والعدل بين الخلائق."
+    }
+  },
+  {
+    id: 14,
+    name: {
+      en: "14. Prophet Isa / Jesus (PBUH)",
+      ur: "۱۴. حضرت عیسیٰ (عَلَيْهِ ٱلسَّلَامُ)",
+      hi: "14. हज़रत ईसा (अलैहिस्सलाम)",
+      ar: "١٤. نبي الله عيسى (عَلَيْهِ ٱلسَّلَامُ)"
+    },
+    title: {
+      en: "Ruhullah & Kalimatullah (Spirit & Word from Allah) • The Messiah",
+      ur: "روح اللہ و کلمۃ اللہ • مسیحِ پاک و صاحبِ انجیل",
+      hi: "रूह़ुल्लाह • मसीह और इंजील के प्राप्तकर्ता",
+      ar: "المسيح عيسى بن مريم وكلمة الله وروحه"
+    },
+    seerat: {
+      en: "Born miraculously to the Virgin Maryam without human paternity. Spoke lucidly as a newborn infant in the cradle defending his mother's purity. By Allah's permission, he fashioned clay birds into living creatures, cured chronic blindness and vitiligo, raised the dead, and was bodily ascended to heaven.",
+      ur: "حضرت مریم کے بطن سے بغیر باپ کے معجزانہ ولادت ہوئی۔ گود میں بول کر والدہ کی پاکدامنی ثابت کی۔ مٹی کے پرندے بنا کر پھونک ماری تو وہ زندہ ہو گئے، اندھوں اور کوڑھیوں کو شفا بخشی اور مردوں کو زندہ کیا۔ زندہ آسمان پر اٹھائے گئے۔",
+      hi: "माता मरियम से बिना पिता के चमत्कारी जन्म हुआ। पालने में ही बोलकर मां की पवित्रता स्पष्ट की। मिट्टी के परिंदों में जान फूंकी, अंधों व रोगियों को स्वस्थ किया, मृतकों को जीवित किया और जीवित आकाश में उठाए गए।",
+      ar: "وُلد بمعجزة من العذراء مريم، تكلم في المهد صبياً، وصنع من الطين كهيئة الطير ونفخ فيه فكان طيراً بإذن الله، وأبرأ الأكمه والأبرص وأحيا الموتى، ورفعه الله إليه حياً إلى السماء."
+    },
+    miracles: {
+      en: "Virgin birth; infant speech in the cradle; animating clay birds; instant curing of leprosy/blindness; reviving dead corpses; celestial heavenly descent of the Feast table (Al-Ma'idah).",
+      ur: "بن باپ پیدائش؛ گود میں گفتگو؛ پرندوں کی تخلیق باِذنِ الٰہی؛ مادر زاد اندھوں اور کوڑھیوں کا علاج؛ مردوں کو زندہ کرنا؛ دسترخوان (مائدہ) کا نزول۔",
+      hi: "चमत्कारिक जन्म; पालने में वार्ता; मिट्टी के पक्षी जीवित करना; असाध्य रोग ठीक करना; मृतकों को जीवित करना; आसमान से दस्तरख़्वान का उतरना।",
+      ar: "كلامه في المهد، وخلق الطير من الطين بإذن الله، وشفاء المرضى وإحياء الموتى، ونزول المائدة من السماء، ورفعه حياً."
+    },
+    lesson: {
+      en: "Mercy, detachment from worldly materialism (Zuhd), and pure spiritual devotion.",
+      ur: "رحمت، دنیا کی مادہ پرستی سے بے رغبتی اور خالص روحانی پاکیزگی۔",
+      hi: "दया, सांसारिक लालच से मुक्ति और विशुद्ध आध्यात्मिक समर्पण।",
+      ar: "الزهد في حطام الدنيا، والرحمة بالفقراء والمساكين، والتجرد للعبادة."
+    }
+  },
+  {
+    id: 15,
+    name: {
+      en: "15. Prophet Muhammad (Peace & Blessings Be Upon Him)",
+      ur: "۱۵. حضرت محمد مصطفیٰ (ﷺ)",
+      hi: "15. हज़रत मुहम्मद मुस्तफ़ا (सल्लल्लाहु अलैहि वसल्लम)",
+      ar: "١٥. نبي الهدى محمد (ﷺ)"
+    },
+    title: {
+      en: "Khatam an-Nabiyyin (Seal of Prophets) • Rahmatul-lil-'Alamin (Mercy to All Worlds)",
+      ur: "خاتم النبیین • رحمۃ للعالمین • امام الانبیاء",
+      hi: "ख़ातमुन नबिय्यीन • सारे संसार के लिए रहमत",
+      ar: "خاتم الأنبياء والمرسلين وحبيب رب العالمين"
+    },
+    seerat: {
+      en: "The greatest personality in human history and the final messenger for all humanity. Known as Al-Amin (the Trustworthy). Received the eternal, unalterable miracle of the Holy Quran, undertook the miraculous Night Journey (Isra & Mi'raj) to the divine presence, united fractured tribes, and established universal ethics of brotherhood, justice, and human rights.",
+      ur: "ساری کائنات کے آخری رسول اور تمام انسانیت کے لیے رحمتِ مجسم۔ آپ صادق اور امین کہلائے۔ آپ پر ابدی معجزہ قرآن مجید نازل ہوا، معراج کی رات سدرۃ المنتہیٰ سے آگے بارگاہِ الٰہی تک پہنچے۔ ظلم و بربریت کے دور کو مٹا کر عدل و مساوات اور اخلاقِ حسنہ کا عالمگیر نظام قائم کیا۔",
+      hi: "समस्त मानवजाति के अंतिम संदेशवाहक और रहमतुल लिल आलमीन। सच्चे और अमानतदार कहलाए। आप पर शाश्वत चमत्कार पवित्र क़ुरआन नाज़िल हुआ। मेराज की रात्रि सातों आकाश पार कर ईश्वर के सामीप्य पहुंचे और मानवता को न्याय, दया और भ्रातृत्व का मार्ग दिखाया।",
+      ar: "سيد ولد آدم وخاتم الرسل، بعثه الله رحمة للعالمين وكافة للناس بشيراً ونذيراً. أُنزل عليه القرآن الكريم المعجزة الخالدة، وأسرى به ربه إلى المسجد الأقصى وعرج به إلى سدرة المنتهى، وأرسى دعائم مكارم الأخلاق والعدالة والسلام."
+    },
+    miracles: {
+      en: "The eternal, preserved Holy Quran; the physical splitting of the moon (Shaqq al-Qamar); Isra & Mi'raj ascension; water springing profusely from his blessed fingers to quench armies; weeping palm trunk.",
+      ur: "قرآن مجید کا زندہ و جاوید معجزہ؛ شق القمر (چاند کا دو ٹکڑے ہونا)؛ معراج شریف؛ انگلیوں مبارک سے پانی کے چشمے رواں ہونا؛ حنین اور بدر میں غیبی نصرت۔",
+      hi: "अविनाशी पवित्र क़ुरआन; चंद्रमा का दो टुकड़ों में विभक्त होना; मेराज की यात्रा; मुबारक उंगलियों से जल प्रवाहित होना।",
+      ar: "القرآن الكريم المعجزة الباقية، وانشقاق القمر، ورحلة الإسراء والمعراج، ونبع الماء من بين أصابعه الشريفة، وحنين الجذع إليه."
+    },
+    lesson: {
+      en: "The perfect, comprehensive practical template of character, justice, patience, and divine love for all time.",
+      ur: "زندگی کے تمام شعبوں میں کامل ترین اسوہ حسنہ، بے مثال عدل، عفو و درگزر اور رحمت۔",
+      hi: "मानव जीवन के हर क्षेत्र में संपूर्ण आदर्श, सर्वोच्च चरित्र, दया और ईश्वरीय प्रेम।",
+      ar: "الكمال الأخلاقي والتشريعي في كل مناحي الحياة، والرحمة المهداة لجميع خلق الله."
+    }
+  }
 ];
 
 /* =====================================================
-   MULTILINGUAL DATA: QUOTES & AHADITH
+   DATA: AUTHENTIC ISLAMIC QUOTES
 ===================================================== */
 const QUOTES = [
-{
-source: {
-ur: "صحیح بخاری ۱",
-en: "Sahih al-Bukhari 1",
-hi: "सहीह अल-बुख़ारी 1",
-ar: "صحيح البخاري ١"
-},
-original: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ",
-trans: {
-ur: "تمام اعمال کا دارومدار نیتوں پر ہے۔",
-en: "Actions are judged by motives and intentions.",
-hi: "कर्मों का दारोमदार केवल नीयतों पर है।",
-ar: "إنما تُقبل وتُوزن الأعمال بحسب نية صاحبها."
-},
-author: {
-ur: "— فرمانِ مصطفیٰ ﷺ",
-en: "— Prophet Muhammad ﷺ",
-hi: "— फ़रमान-ए-मुस्तफ़ा ﷺ",
-ar: "— رسول الله ﷺ"
-}
-},
-{
-source: {
-ur: "سورۃ الشرح (۹۴:۶)",
-en: "Surah Ash-Sharh (94:6)",
-hi: "सूरह अश-शर्ह़ (94:6)",
-ar: "سورة الشرح (٩٤:٦)"
-},
-original: "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
-trans: {
-ur: "بے شک مشکل کے ساتھ ہی آسانی ہے۔",
-en: "Indeed, with hardship comes ease.",
-hi: "निस्संदेह, हर कठिनाई के साथ ही आसानी है।",
-ar: "إن مع كل ضيق ومحنة فرجاً وتيسيراً."
-}
-},
-{
-source: {
-ur: "سورۃ الرعد (۱۳:۲۸)",
-en: "Surah Ar-Ra'd (13:28)",
-hi: "सूरह अर-रअद (13:28)",
-ar: "سورة الرعد (١٣:٢٨)"
-},
-original: "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
-trans: {
-ur: "سنو! اللہ کے ذکر ہی سے دلوں کو اطمینان ملتا ہے۔",
-en: "Unquestionably, by the remembrance of Allah hearts are assured.",
-hi: "सुनो! अल्लाह के ज़िक्र से ही दिलों को सुकून मिलता है।",
-ar: "ألا بذكر الله وطاعته تسكن القلوب وتطمئن."
-}
-}
+  {
+    source: { en: "Sahih al-Bukhari 1", ur: "صحیح بخاری ۱", hi: "सहीह अल-बुख़ारी 1", ar: "صحيح البخاري ١" },
+    original: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ",
+    trans: {
+      en: "Actions are judged solely by intentions.",
+      ur: "تمام اعمال کا دارومدار صرف اور صرف نیتوں پر ہے۔",
+      hi: "कर्मों का प्रतिफल केवल नीयतों पर निर्भर है।",
+      ar: "إنما تُقبل وتُوزن الأعمال بحسب نية صاحبها."
+    },
+    author: { en: "— Prophet Muhammad ﷺ", ur: "— فرمانِ مصطفیٰ ﷺ", hi: "— फ़रमान-ए-मुस्तफ़ا ﷺ", ar: "— رسول الله ﷺ" }
+  },
+  {
+    source: { en: "Surah Ash-Sharh (94:6)", ur: "سورۃ الشرح (۹۴:۶)", hi: "सूरह अश-शर्ह़ (94:6)", ar: "سورة الشرح (٩٤:٦)" },
+    original: "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+    trans: {
+      en: "Indeed, with every hardship comes ease.",
+      ur: "بے شک ہر تنگی اور مشکل کے ساتھ ہی آسانی ہے۔",
+      hi: "निस्संदेह, हर कठिनाई के साथ ही आसानी है।",
+      ar: "إن مع كل ضيق ومحنة فرجاً وتيسيراً قريباً."
+    }
+  },
+  {
+    source: { en: "Surah Ar-Ra'd (13:28)", ur: "سورۃ الرعد (۱۳:۲۸)", hi: "सूरह अर-رअد (13:28)", ar: "سورة الرعد (١٣:٢٨)" },
+    original: "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+    trans: {
+      en: "Unquestionably, by the remembrance of Allah hearts find solace.",
+      ur: "سن لو! اللہ کے ذکر ہی سے دلوں کو حقیقی اطمینان اور سکون ملتا ہے۔",
+      hi: "सुनो! अल्लाह के स्मरण से ही दिलों को सच्चा सुकून मिलता है।",
+      ar: "ألا بذكر الله وطاعته تسكن القلوب وتطمئن النفوس."
+    }
+  }
 ];
 
 /* =====================================================
-   PLAYERS & AUDIO HELPERS
+   PLAYERS & AUDIO
 ===================================================== */
 const arabicPlayer = document.getElementById("arabic-player");
 const urduPlayer = document.getElementById("urdu-player");
 
-function stopAllExcept(player){
-[arabicPlayer, urduPlayer].forEach(p => {
-if(p && p !== player){
-p.pause();
-}
-});
+function stopAllExcept(player) {
+  [arabicPlayer, urduPlayer].forEach(p => {
+    if (p && p !== player) {
+      p.pause();
+    }
+  });
 }
 
-function loadAudio(player, url, statusElement){
-if(!player || !url){
-if(statusElement) statusElement.textContent = "Audio URL not available";
-return;
-}
-stopAllExcept(player);
-player.pause();
-player.src = url;
-player.load();
-player.play().then(() => {
-if(statusElement) statusElement.textContent = "Now Playing";
-}).catch(() => {
-if(statusElement) statusElement.textContent = "Tap Play";
-});
+function loadAudio(player, url, statusElement) {
+  if (!player || !url) return;
+  stopAllExcept(player);
+  player.pause();
+  player.src = url;
+  player.load();
+  player.play().then(() => {
+    if (statusElement) statusElement.textContent = "Now Playing";
+  }).catch(() => {
+    if (statusElement) statusElement.textContent = "Tap Play to Listen";
+  });
 }
 
 /* =====================================================
-   RENDER SECTIONS
+   RENDER FUNCTIONS
 ===================================================== */
-function renderArabic(){
-const grid = document.getElementById("arabic-grid");
-grid.innerHTML = "";
-ARABIC.forEach((item, index) => {
-const card = document.createElement("div");
-card.className = "track-card p-4 rounded-2xl border border-white/5 bg-slate-900/40 hover:border-blue-500/50";
-card.innerHTML = `
-<span class="text-[10px] font-mono text-blue-400 font-bold">TRACK ${String(index+1).padStart(2,"0")}</span>
-<h4 class="text-sm font-bold text-white mt-2">${item.title}</h4>
-<p class="text-xs text-slate-400 mt-1">${item.reciter}</p>
-`;
-card.onclick = () => {
-document.getElementById("arabic-title").textContent = item.title;
-document.getElementById("arabic-reciter").textContent = item.reciter;
-loadAudio(arabicPlayer, item.url, document.getElementById("arabic-status"));
-};
-grid.appendChild(card);
-});
+function renderArabic() {
+  const grid = document.getElementById("arabic-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  ARABIC.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "track-card p-4 rounded-2xl border border-white/5 bg-slate-900/40 hover:border-blue-500/50";
+    card.innerHTML = `
+      <span class="text-[10px] font-mono text-blue-400 font-bold">TRACK ${String(index + 1).padStart(2, "0")}</span>
+      <h4 class="text-sm font-bold text-white mt-2 font-cinzel">${item.title}</h4>
+      <p class="text-xs text-slate-400 mt-1">${item.reciter}</p>
+    `;
+    card.onclick = () => {
+      document.getElementById("arabic-title").textContent = item.title;
+      document.getElementById("arabic-reciter").textContent = item.reciter;
+      loadAudio(arabicPlayer, item.url, document.getElementById("arabic-status"));
+    };
+    grid.appendChild(card);
+  });
 }
 
-function renderUrdu(){
-const grid = document.getElementById("urdu-grid");
-grid.innerHTML = "";
-URDU.forEach((item, index) => {
-const card = document.createElement("div");
-card.className = "track-card p-4 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 hover:border-emerald-500/60";
-card.innerHTML = `
-<div class="flex items-center justify-between">
-<div>
-<span class="text-[10px] font-mono text-emerald-400 font-bold">QURANIC AYAH</span>
-<h4 class="text-sm font-bold text-white mt-1">${item.title}</h4>
-<p class="text-xs text-emerald-300 mt-0.5">مکمل مستند اردو ترجمہ و صوتی تلاوت</p>
-</div>
-<i data-lucide="play-circle" class="w-7 h-7 text-emerald-400"></i>
-</div>
-`;
-card.onclick = () => {
-document.getElementById("urdu-title").textContent = item.title;
-loadAudio(urduPlayer, item.url, document.getElementById("urdu-status"));
-renderUrduText(item);
-};
-grid.appendChild(card);
-});
+function renderUrdu() {
+  const grid = document.getElementById("urdu-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  URDU.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "track-card p-4 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 hover:border-emerald-500/60";
+    card.innerHTML = `
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-mono text-emerald-400 font-bold">QURANIC AYAH</span>
+          <h4 class="text-sm font-bold text-white mt-1 font-cinzel">${item.title}</h4>
+          <p class="text-xs text-emerald-300 mt-0.5">مکمل مستند اردو ترجمہ و صوتی تلاوت</p>
+        </div>
+        <i data-lucide="play-circle" class="w-7 h-7 text-emerald-400"></i>
+      </div>
+    `;
+    card.onclick = () => {
+      document.getElementById("urdu-title").textContent = item.title;
+      loadAudio(urduPlayer, item.url, document.getElementById("urdu-status"));
+      renderUrduText(item);
+    };
+    grid.appendChild(card);
+  });
 }
 
-function renderUrduText(item){
-const box = document.getElementById("urdu-text");
-box.innerHTML = `
-<div class="space-y-2">
-<span class="text-[10px] uppercase font-bold text-amber-300">Original Arabic</span>
-<p class="text-right text-2xl lg:text-3xl font-amiri leading-loose text-amber-100 bg-slate-900/40 p-5 rounded-2xl border border-white/5">
-${item.arabic}
-</p>
-</div>
-<div class="space-y-2">
-<span class="text-[10px] uppercase font-bold text-emerald-400">اردو ترجمہ (مستند)</span>
-<p class="text-right text-lg lg:text-xl font-urdu text-emerald-100 bg-emerald-950/20 p-5 rounded-2xl border border-emerald-900/30">
-${item.urdu}
-</p>
-</div>
-`;
+function renderUrduText(item) {
+  const box = document.getElementById("urdu-text");
+  if (!box) return;
+  box.innerHTML = `
+    <div class="space-y-2">
+      <span class="text-[10px] uppercase font-bold text-amber-300">Original Arabic</span>
+      <p class="text-right text-2xl lg:text-3xl font-amiri leading-loose text-amber-100 bg-slate-900/40 p-5 rounded-2xl border border-white/5">
+        ${item.arabic}
+      </p>
+    </div>
+    <div class="space-y-2">
+      <span class="text-[10px] uppercase font-bold text-emerald-400">اردو ترجمہ (مستند)</span>
+      <p class="text-right text-base lg:text-lg font-urdu text-emerald-100 bg-emerald-950/20 p-5 rounded-2xl border border-emerald-900/30">
+        ${item.urdu}
+      </p>
+    </div>
+  `;
 }
 
-function renderProphets(){
-const grid = document.getElementById("prophets-grid");
-grid.innerHTML = "";
-const isRTL = currentLang === 'ur' || currentLang === 'ar';
-const fontClass = currentLang === 'ur' ? 'font-urdu text-base' : currentLang === 'ar' ? 'font-amiri text-lg leading-relaxed' : 'text-xs leading-relaxed';
+function renderProphets() {
+  const grid = document.getElementById("prophets-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const isRTL = currentLang === "ur" || currentLang === "ar";
+  const fontClass = currentLang === "ur" ? "font-urdu text-sm" : currentLang === "ar" ? "font-amiri text-base" : "text-xs";
 
-PROPHETS.forEach(p => {
-const card = document.createElement("div");
-card.className = "p-5 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-amber-500/40 transition duration-300 flex flex-col justify-between";
-card.innerHTML = `
-<div class="space-y-2 ${isRTL ? 'text-right' : 'text-left'}">
-<h4 class="text-amber-300 font-bold font-cinzel text-base tracking-wide border-b border-white/5 pb-2">
-${p.name[currentLang] || p.name.en}
-</h4>
-<p class="text-slate-300 ${fontClass}">
-${p.text[currentLang] || p.text.en}
-</p>
-</div>
-`;
-grid.appendChild(card);
-});
+  PROPHETS.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "p-5 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-amber-500/50 hover:bg-slate-900/70 transition duration-300 flex flex-col justify-between cursor-pointer group";
+    card.innerHTML = `
+      <div class="space-y-2.5 ${isRTL ? "text-right" : "text-left"}">
+        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+          <h4 class="text-amber-300 font-bold font-cinzel text-sm group-hover:text-amber-200">
+            ${p.name[currentLang] || p.name.en}
+          </h4>
+          <i data-lucide="scroll" class="w-4 h-4 text-amber-400/60 group-hover:text-amber-300"></i>
+        </div>
+        <p class="text-slate-300 ${fontClass} line-clamp-3 leading-relaxed">
+          ${p.seerat[currentLang] || p.seerat.en}
+        </p>
+      </div>
+      <div class="pt-3 mt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-amber-400/80 font-mono">
+        <span>Open Manuscript Page</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </div>
+    `;
+    card.onclick = () => openParchmentModal(p);
+    grid.appendChild(card);
+  });
 }
 
-function renderQuotes(){
-const grid = document.getElementById("quotes-grid");
-grid.innerHTML = "";
-const isRTL = currentLang === 'ur' || currentLang === 'ar';
-const transFontClass = currentLang === 'ur' ? 'font-urdu text-sm' : currentLang === 'ar' ? 'font-amiri text-base' : 'text-xs';
+function renderQuotes() {
+  const grid = document.getElementById("quotes-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const isRTL = currentLang === "ur" || currentLang === "ar";
+  const transFontClass = currentLang === "ur" ? "font-urdu text-sm" : currentLang === "ar" ? "font-amiri text-base" : "text-xs";
 
-QUOTES.forEach(q => {
-const card = document.createElement("div");
-card.className = "p-5 rounded-2xl bg-slate-900/40 border border-white/5 flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition";
-card.innerHTML = `
-<div>
-<span class="text-[10px] font-mono text-amber-400 uppercase tracking-wider block mb-2">
-${q.source[currentLang] || q.source.en}
-</span>
-<p class="text-right text-lg font-amiri text-amber-100 mb-3 bg-white/5 p-3 rounded-xl">
-"${q.original}"
-</p>
-<p class="text-slate-300 ${transFontClass} ${isRTL ? 'text-right' : 'text-left'}">
-${q.trans[currentLang] || q.trans.en}
-</p>
-</div>
-<span class="text-[11px] text-emerald-400 font-cinzel font-semibold ${isRTL ? 'text-left' : 'text-right'}">
-${q.author ? (q.author[currentLang] || q.author.en) : '— Al-Quran Al-Kareem'}
-</span>
-`;
-grid.appendChild(card);
-});
+  QUOTES.forEach(q => {
+    const card = document.createElement("div");
+    card.className = "p-5 rounded-2xl bg-slate-900/40 border border-white/5 flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition";
+    card.innerHTML = `
+      <div>
+        <span class="text-[10px] font-mono text-amber-400 uppercase tracking-wider block mb-2">
+          ${q.source[currentLang] || q.source.en}
+        </span>
+        <p class="text-right text-lg font-amiri text-amber-100 mb-3 bg-white/5 p-3 rounded-xl">
+          "${q.original}"
+        </p>
+        <p class="text-slate-300 ${transFontClass} ${isRTL ? "text-right" : "text-left"}">
+          ${q.trans[currentLang] || q.trans.en}
+        </p>
+      </div>
+      <span class="text-[11px] text-emerald-400 font-cinzel font-semibold ${isRTL ? "text-left" : "text-right"}">
+        ${q.author ? (q.author[currentLang] || q.author.en) : "— Al-Quran Al-Kareem"}
+      </span>
+    `;
+    grid.appendChild(card);
+  });
 }
 
-function changeLanguage(lang){
-currentLang = lang;
-document.querySelectorAll('.lang-btn').forEach(btn => {
-btn.classList.remove('active', 'text-amber-400');
-btn.classList.add('text-slate-300');
-});
-const activeBtn = document.getElementById(`btn-${lang}`);
-if(activeBtn){
-activeBtn.classList.add('active');
-activeBtn.classList.remove('text-slate-300');
-}
-renderProphets();
-renderQuotes();
-if(window.lucide) lucide.createIcons();
+function changeLanguage(lang) {
+  currentLang = lang;
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.classList.remove("active", "text-amber-400");
+    btn.classList.add("text-slate-300");
+  });
+  const activeBtn = document.getElementById(`btn-${lang}`);
+  if (activeBtn) {
+    activeBtn.classList.add("active");
+    activeBtn.classList.remove("text-slate-300");
+  }
+  renderProphets();
+  renderQuotes();
+  if (window.lucide) lucide.createIcons();
 }
 
 /* =====================================================
-   AUDIO ERROR HANDLING
+   VINTAGE PARCHMENT MODAL
 ===================================================== */
-[arabicPlayer, urduPlayer].forEach(player => {
-player.addEventListener("error", () => {
-let status = player === arabicPlayer ? document.getElementById("arabic-status") : document.getElementById("urdu-status");
-if(status) status.textContent = "Audio unavailable";
-});
-});
+function openParchmentModal(prophet) {
+  const modal = document.getElementById("parchment-modal");
+  document.getElementById("parchment-name").textContent = prophet.name[currentLang] || prophet.name.en;
+  document.getElementById("parchment-title").textContent = prophet.title[currentLang] || prophet.title.en;
+  document.getElementById("parchment-seerat").textContent = prophet.seerat[currentLang] || prophet.seerat.en;
+  document.getElementById("parchment-miracles").textContent = prophet.miracles[currentLang] || prophet.miracles.en;
+  document.getElementById("parchment-lesson").textContent = prophet.lesson[currentLang] || prophet.lesson.en;
+
+  modal.classList.remove("hidden");
+  if (window.lucide) lucide.createIcons();
+}
+
+function closeParchmentModal() {
+  document.getElementById("parchment-modal").classList.add("hidden");
+}
 
 /* =====================================================
-   TASBIH COUNTER
+   NOOR-AI ISLAMIC LLM SIMULATION
+===================================================== */
+let freeQueriesRemaining = 5;
+
+const VERIFIED_KNOWLEDGE_BASE = {
+  "greatest ayah": "The greatest Ayah in the Quran is Ayat al-Kursi (Surah Al-Baqarah 2:255). The Prophet ﷺ confirmed to Ubayy ibn Ka'b (Sahih Muslim 810) that it contains the greatest name of Allah (Al-Hayy, Al-Qayyum) and affords divine protection against all evil when recited after prayers and before sleeping.",
+  "5 pillars": "The 5 Pillars of Islam (Sahih al-Bukhari 8): 1. Shahadah (Testimony of Faith: No god but Allah and Muhammad ﷺ is His Messenger), 2. Salah (5 Daily Prayers), 3. Zakat (Purifying Alms to the needy), 4. Sawm (Fasting the month of Ramadan), 5. Hajj (Pilgrimage to Makkah once in a lifetime for those able).",
+  "sunnah of sleeping": "Authentic Sunnahs before sleeping (Sahih al-Bukhari 6311 & 5017): 1. Perform Wudu, 2. Dust the bed three times, 3. Lie on the right side, 4. Recite Ayat al-Kursi & the 3 Quls (Ikhlas, Falaq, Nas) blowing into cupped hands and wiping over the body, 5. Make the sleeping Du'a (Bismika Rabbi wada'tu janbi...)."
+};
+
+function fillQuery(text) {
+  document.getElementById("llm-input").value = text;
+}
+
+function sendLLMQuery() {
+  const input = document.getElementById("llm-input");
+  const query = input.value.trim();
+  if (!query) return;
+
+  if (freeQueriesRemaining <= 0) {
+    document.getElementById("subscription-modal").classList.remove("hidden");
+    if (window.lucide) lucide.createIcons();
+    return;
+  }
+
+  const chat = document.getElementById("chat-messages");
+
+  // Append user bubble
+  const userMsg = document.createElement("div");
+  userMsg.className = "p-3 rounded-xl bg-purple-900/40 border border-purple-500/30 text-purple-100 text-right";
+  userMsg.textContent = query;
+  chat.appendChild(userMsg);
+
+  input.value = "";
+  freeQueriesRemaining--;
+  document.getElementById("queries-left").textContent = freeQueriesRemaining;
+
+  // Bot response generation
+  setTimeout(() => {
+    const botMsg = document.createElement("div");
+    botMsg.className = "p-3 rounded-xl bg-slate-900/80 border border-emerald-500/20 text-slate-200";
+
+    const lowerQ = query.toLowerCase();
+    let responseText = "Based on verified Quranic sources and classical Hadith consensus, every act in Islam is guided by divine intention (Niyyah), reverence to Allah's boundaries, and following the Sunnah of Prophet Muhammad ﷺ. Continuous remembrance (Dhikr) and preservation of Salah remain the highest daily virtues.";
+
+    if (lowerQ.includes("greatest") || lowerQ.includes("kursi")) {
+      responseText = VERIFIED_KNOWLEDGE_BASE["greatest ayah"];
+    } else if (lowerQ.includes("5 pillars") || lowerQ.includes("pillars")) {
+      responseText = VERIFIED_KNOWLEDGE_BASE["5 pillars"];
+    } else if (lowerQ.includes("sleeping") || lowerQ.includes("sleep")) {
+      responseText = VERIFIED_KNOWLEDGE_BASE["sunnah of sleeping"];
+    }
+
+    botMsg.innerHTML = `<span class="font-bold text-emerald-400 block mb-1">Noor-AI Response:</span> ${responseText}`;
+    chat.appendChild(botMsg);
+    chat.scrollTop = chat.scrollHeight;
+
+    if (freeQueriesRemaining === 0) {
+      setTimeout(() => {
+        document.getElementById("subscription-modal").classList.remove("hidden");
+        if (window.lucide) lucide.createIcons();
+      }, 900);
+    }
+  }, 500);
+}
+
+function closeSubModal() {
+  document.getElementById("subscription-modal").classList.add("hidden");
+}
+
+/* =====================================================
+   ANTIQUE WOODEN MODEL TASBIH
 ===================================================== */
 let count = 0;
+let laps = 0;
+let target = 33;
 let dhikrIndex = 0;
-const dhikrs = ["SubhanAllah", "Alhamdulillah", "Allahu Akbar", "Astaghfirullah", "La ilaha illallah"];
 
-const counter = document.getElementById("counter");
-const dhikrName = document.getElementById("dhikr-name");
+const dhikrs = [
+  { name: "SubhanAllah", meaning: '"Glory be to Allah"' },
+  { name: "Alhamdulillah", meaning: '"All praise is due to Allah"' },
+  { name: "Allahu Akbar", meaning: '"Allah is the Greatest"' },
+  { name: "Astaghfirullah", meaning: '"I seek forgiveness from Allah"' },
+  { name: "La ilaha illallah", meaning: '"There is no deity except Allah"' },
+  { name: "Subhan Allahi wa bihamdihi", meaning: '"Glory be to Allah and His is the praise"' }
+];
+
+const counterElem = document.getElementById("counter");
+const dhikrNameElem = document.getElementById("dhikr-name");
+const dhikrMeaningElem = document.getElementById("dhikr-meaning");
+const lapCounterElem = document.getElementById("lap-counter");
+const targetBadgeElem = document.getElementById("tasbih-target-badge");
+
+function updateDhikrUI() {
+  dhikrNameElem.textContent = dhikrs[dhikrIndex].name;
+  dhikrMeaningElem.textContent = dhikrs[dhikrIndex].meaning;
+}
+
+function setTarget(newTarget) {
+  target = newTarget;
+  targetBadgeElem.textContent = target === Infinity ? "Target: Free Mode" : `Target: ${target}`;
+  count = 0;
+  counterElem.textContent = "00";
+}
 
 document.getElementById("tap").addEventListener("click", () => {
-count++;
-counter.textContent = String(count).padStart(2, "0");
-if(navigator.vibrate) navigator.vibrate(25);
+  count++;
+  if (target !== Infinity && count >= target) {
+    laps++;
+    count = 0;
+    lapCounterElem.textContent = `Completed Rounds: ${laps}`;
+    if (navigator.vibrate) navigator.vibrate([60, 80, 60]);
+  } else {
+    if (navigator.vibrate) navigator.vibrate(25);
+  }
+  counterElem.textContent = String(count).padStart(2, "0");
 });
 
 document.getElementById("next-dhikr").addEventListener("click", () => {
-dhikrIndex = (dhikrIndex + 1) % dhikrs.length;
-dhikrName.textContent = dhikrs[dhikrIndex];
-count = 0;
-counter.textContent = "00";
+  dhikrIndex = (dhikrIndex + 1) % dhikrs.length;
+  updateDhikrUI();
+  count = 0;
+  counterElem.textContent = "00";
 });
 
 document.getElementById("reset").addEventListener("click", () => {
-count = 0;
-counter.textContent = "00";
+  count = 0;
+  laps = 0;
+  counterElem.textContent = "00";
+  lapCounterElem.textContent = "Completed Rounds: 0";
 });
+
+/* =====================================================
+   FEEDBACK & CORRECTION REPORT HANDLER
+===================================================== */
+function submitFeedback(e) {
+  e.preventDefault();
+  const category = document.getElementById("report-category").value;
+  const contact = document.getElementById("report-contact").value;
+  const message = document.getElementById("report-message").value;
+  const toast = document.getElementById("report-toast");
+
+  console.log("Correction Report Logged:", { category, contact, message, timestamp: new Date().toISOString() });
+
+  toast.classList.remove("hidden");
+  document.getElementById("report-message").value = "";
+
+  setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 4000);
+}
 
 /* =====================================================
    INITIALIZATION
 ===================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-if(window.lucide) lucide.createIcons();
-renderArabic();
-renderUrdu();
-renderUrduText(URDU[0]);
-renderProphets();
-renderQuotes();
+  renderArabic();
+  renderUrdu();
+  renderUrduText(URDU[0]);
+  renderProphets();
+  renderQuotes();
+  updateDhikrUI();
+  if (window.lucide) lucide.createIcons();
 });
 </script>
+
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   }
 </script>
 
