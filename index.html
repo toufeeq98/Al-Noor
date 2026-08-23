@@ -75,7 +75,7 @@ body {
 <body class="antialiased pb-24">
 
 <!-- Top Bar -->
-<header class="sticky top-0 z-40 bg-[#0b0f0e]/95 backdrop-blur-xl border-b border-white/5 px-5 py-4 flex items-center justify-between">
+<header class="sticky top-0 z-40 bg-[#0b0f0e]/95 backdrop-blur-xl border-b border-white/5 px-5 py-3 flex items-center justify-between">
   <div class="flex items-center gap-3">
     <div class="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
       <i data-lucide="moon" class="w-5 h-5"></i>
@@ -86,12 +86,20 @@ body {
     </div>
   </div>
 
-  <!-- Multi-Language Selector -->
-  <div class="flex items-center gap-1.5 bg-[#141b18] p-1 rounded-xl border border-white/10 text-xs">
-    <button onclick="setAppLanguage('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-lg font-bold bg-emerald-500 text-black">EN</button>
-    <button onclick="setAppLanguage('ur')" id="lang-btn-ur" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">اردو</button>
-    <button onclick="setAppLanguage('hi')" id="lang-btn-hi" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">हिन्दी</button>
-    <button onclick="setAppLanguage('ar')" id="lang-btn-ar" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">العربية</button>
+  <div class="flex items-center gap-3">
+    <!-- Aesthetic Date Banner -->
+    <div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-[10px] font-mono text-emerald-300">
+      <i data-lucide="calendar" class="w-3 h-3 text-emerald-400"></i>
+      <span>August 23, 2026</span>
+    </div>
+
+    <!-- Multi-Language Selector -->
+    <div class="flex items-center gap-1.5 bg-[#141b18] p-1 rounded-xl border border-white/10 text-xs">
+      <button onclick="setAppLanguage('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-lg font-bold bg-emerald-500 text-black">EN</button>
+      <button onclick="setAppLanguage('ur')" id="lang-btn-ur" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">اردو</button>
+      <button onclick="setAppLanguage('hi')" id="lang-btn-hi" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">हिन्दी</button>
+      <button onclick="setAppLanguage('ar')" id="lang-btn-ar" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">العربية</button>
+    </div>
   </div>
 </header>
 
@@ -129,7 +137,7 @@ body {
         </div>
         <div>
           <h3 class="text-sm font-bold text-white group-hover:text-emerald-300 transition" id="lbl-99-names">99 Names of Allah</h3>
-          <p class="text-xs text-slate-400" id="sub-99-names">Asma-ul-Husna with Meanings & Transliteration</p>
+          <p class="text-xs text-slate-400" id="sub-99-names">Complete Asma-ul-Husna with Meanings & Transliteration</p>
         </div>
       </div>
       <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
@@ -313,7 +321,7 @@ body {
     
     <div class="pt-4 border-t border-[#8c673d]/30 flex items-center justify-between text-[10px] text-[#704a20] font-cinzel">
       <span>Authentic Quranic Chronology</span>
-      <span>Al-Noor Archives</span>
+      <span>Al-Noor Sanctuary</span>
     </div>
   </div>
 </div>
@@ -493,12 +501,10 @@ body {
     </form>
   </div>
 </div>
+
 <script>
 "use strict";
 
-/* =====================================================
-   GLOBAL APP STATE & UI STRINGS
-===================================================== */
 let currentAppLang = "en";
 
 const UI_STRINGS = {
@@ -508,7 +514,7 @@ const UI_STRINGS = {
     secSacred: "Core Essentials",
     secDaily: "Daily Worship & Tools",
     lbl99: "99 Names of Allah",
-    sub99: "Asma-ul-Husna with Meanings & Transliteration",
+    sub99: "Complete Asma-ul-Husna with Meanings & Transliteration",
     lblProphets: "15 Prominent Prophets (Qasas-ul-Anbiya)",
     subProphets: "Origins, Parents, Miracles & Full Manuscripts",
     lblAi: "Noor-AI Knowledge Engine",
@@ -529,7 +535,7 @@ const UI_STRINGS = {
     secSacred: "بنیادی اسلامی خزانے",
     secDaily: "روزمرہ عبادات و اعمال",
     lbl99: "اللہ تعالیٰ کے ۹۹ مبارک نام",
-    sub99: "اسمائے حسنیٰ مع اردو معانی و فضائل",
+    sub99: "اسمائے حسنیٰ مع مکمل اردو معانی و فضائل",
     lblProphets: "۱۵ جلیل القدر انبیاء (قصص الانبیاء)",
     subProphets: "والدین، مقامِ پیدائش، معجزات و تاریخ",
     lblAi: "نور-اے آئی اسلامی سرچ",
@@ -550,7 +556,7 @@ const UI_STRINGS = {
     secSacred: "प्रमुख साधन",
     secDaily: "दैनिक इबादत व ज़िक्र",
     lbl99: "अल्लाह तआला के 99 पवित्र नाम",
-    sub99: "अस्मा-उल-हुस्ना अर्थ व व्याख्या सहित",
+    sub99: "अस्मा-उल-हुस्ना पूर्ण अर्थ व व्याख्या सहित",
     lblProphets: "15 प्रमुख पैगंबर (क़सस-उल-अंबिया)",
     subProphets: "माता-पिता, जन्मस्थान, चमत्कार व संपूर्ण इतिहास",
     lblAi: "नूर-एआई ज्ञान इंजन",
@@ -571,7 +577,7 @@ const UI_STRINGS = {
     secSacred: "الأركان الأساسية",
     secDaily: "العبادات والأذكار اليومية",
     lbl99: "أسماء الله الحسنى",
-    sub99: "الأسماء والصفات ومعانيها الجليلة",
+    sub99: "الأسماء والصفات التسعة وتسعين ومعانيها",
     lblProphets: "١٥ من الأنبياء والمرسلين (قصص الأنبياء)",
     subProphets: "الأنساب، الموطن، المعجزات والسيرة المباركة",
     lblAi: "محرك نور الذكي للعلوم الشرعية",
@@ -635,13 +641,12 @@ function setAppLanguage(lang) {
 
   renderAll99Names();
   renderProphetsList();
-  renderDuaList();
   renderAIAutocompleteSuggestions();
   if(window.lucide) lucide.createIcons();
 }
 
 /* =====================================================
-   DATABASE: 99 NAMES OF ALLAH (ASMA-UL-HUSNA)
+   COMPLETE 99 NAMES OF ALLAH (ASMA-UL-HUSNA)
 ===================================================== */
 const ALLAH_99_NAMES = [
   { id: 1, ar: "الرَّحْمَنُ", en: "Ar-Rahman", meaning: { en: "The Exceedingly Merciful", ur: "بے حد مہربان", hi: "असीम दयालु", ar: "الواسع الرحمة لجميع الخلق" } },
@@ -663,7 +668,86 @@ const ALLAH_99_NAMES = [
   { id: 17, ar: "الرَّزَّاقُ", en: "Ar-Razzaq", meaning: { en: "The Provider of All Sustenance", ur: "تمام مخلوق کو روزی دینے والا", hi: "रोज़ी देने वाला", ar: "المتكفل بأرزاق العباد" } },
   { id: 18, ar: "الْفَتَّاحُ", en: "Al-Fattah", meaning: { en: "The Opener of Victory & Mercy", ur: "رحمت و فتح کے دروازے کھولنے والا", hi: "कल्याण के द्वार खोलने वाला", ar: "الحاكم الفاتح للخيرات" } },
   { id: 19, ar: "الْعَلِيمُ", en: "Al-Alim", meaning: { en: "The All-Knowing", ur: "سب کچھ جاننے والا", hi: "सर्वज्ञानी", ar: "المحيط علمه بكل شيء" } },
-  { id: 20, ar: "الْقَابِضُ", en: "Al-Qabid", meaning: { en: "The Restrainer & Constrictor", ur: "روزی تنگ کرنے والا", hi: "रोकने व संकीर्ण करने वाला", ar: "المضيق بحكمته" } }
+  { id: 20, ar: "الْقَابِضُ", en: "Al-Qabid", meaning: { en: "The Restrainer & Constrictor", ur: "روزی تنگ کرنے والا", hi: "रोकने व संकीर्ण करने वाला", ar: "المضيق بحكمته" } },
+  { id: 21, ar: "الْبَاسِطُ", en: "Al-Basit", meaning: { en: "The Expander & Provider", ur: "روزی کشادہ کرنے والا", hi: "विस्तार करने वाला", ar: "الموسع الرزق لمن يشاء" } },
+  { id: 22, ar: "الْخَافِضُ", en: "Al-Khafid", meaning: { en: "The Abasener of False Pride", ur: "باطل کو پست کرنے والا", hi: "गर्व को नीचा करने वाला", ar: "الخافض للظالمين والمتكبرين" } },
+  { id: 23, ar: "الرَّافِعُ", en: "Ar-Rafi", meaning: { en: "The Exalter of the Righteous", ur: "بلند کرنے والا", hi: "ऊँचा उठाने वाला", ar: "الرافع لأوليائه بالهداية" } },
+  { id: 24, ar: "الْمُعِزُّ", en: "Al-Mu'izz", meaning: { en: "The Giver of Honour", ur: "عزت بخشنے والا", hi: "सम्मान देने वाला", ar: "المعز لمن أطاعه" } },
+  { id: 25, ar: "الْمُذِلُّ", en: "Al-Mudhill", meaning: { en: "The Giver of Dishonour", ur: "ذلیل کرنے والا (کافروں کو)", hi: "अपमानित करने वाला", ar: "المذل لكل من عاده" } },
+  { id: 26, ar: "السَّمِيعُ", en: "As-Sami", meaning: { en: "The All-Hearing", ur: "سب کی سننے والا", hi: "सबकुछ सुनने वाला", ar: "السميع لجميع الأصوات" } },
+  { id: 27, ar: "الْبَصِيرُ", en: "Al-Basir", meaning: { en: "The All-Seeing", ur: "سب کچھ دیکھنے والا", hi: "सबकुछ देखने वाला", ar: "المبصر لدقائق الأمور" } },
+  { id: 28, ar: "الْحَكَمُ", en: "Al-Hakam", meaning: { en: "The Judge, The Arbitrator", ur: "حتمی فیصلہ کرنے والا", hi: "अन्तिम न्यायकर्ता", ar: "الحاكم بين عباده بالعدل" } },
+  { id: 29, ar: "الْعَدْلُ", en: "Al-Adl", meaning: { en: "The Utterly Just", ur: "سرتاپا عدل کرنے والا", hi: "परम न्यायप्रिय", ar: "المنزه عن الظلم في أقواله وأفعاله" } },
+  { id: 30, ar: "اللَّطِيفُ", en: "Al-Latif", meaning: { en: "The Subtle & Kind", ur: "لطف و کرم کرنے والا", hi: "सूक्ष्मदर्शी व दयालु", ar: "الرفيق بعباده العليم بخفايا الأمور" } },
+  { id: 31, ar: "الْخَبِيرُ", en: "Al-Khabir", meaning: { en: "The All-Aware", ur: "ہر چیز کی خبر رکھنے والا", hi: "अंतरर्यामी", ar: "العليم ببواطن الأمور وخقائقها" } },
+  { id: 32, ar: "الْحَلِيمُ", en: "Al-Halim", meaning: { en: "The Forbearing & Patient", ur: "بردبار اور تحمل والا", hi: "धैर्यवान", ar: "المنعم على عصاته بالستر والإمهال" } },
+  { id: 33, ar: "الْعَظِيمُ", en: "Al-Azim", meaning: { en: "The Magnificent & Supreme", ur: "عظمت والا", hi: "महान", ar: "ذو العظمة والكبرياء المطلق" } },
+  { id: 34, ar: "الْغَفُورُ", en: "Al-Ghafur", meaning: { en: "The Much-Forgiving", ur: "بہت بخشنے والا", hi: "अत्यंत क्षमाशील", ar: "الواسع المغفرة لذنوب التائبين" } },
+  { id: 35, ar: "الشَّكُورُ", en: "Ash-Shakur", meaning: { en: "The Most Appreciative", ur: "قدردان اور نیکیوں کا بدلہ دینے والا", hi: "कृतज्ञता स्वीकारने वाला", ar: "المجازي على القليل بالكثير" } },
+  { id: 36, ar: "الْعَلِيُّ", en: "Al-Ali", meaning: { en: "The Most High", ur: "سب سے بلند", hi: "सर्वोच्च", ar: "المتعالي في ذاته وصفاته عن كل نقص" } },
+  { id: 37, ar: "الْكَبِيرُ", en: "Al-Kabir", meaning: { en: "The Most Great", ur: "سب سے بڑا", hi: "सबसे महान", ar: "الذي كل شيء دونه في العظمة" } },
+  { id: 38, ar: "الْحَفِيظُ", en: "Al-Hafiz", meaning: { en: "The Preserver & Protector", ur: "حفاظت کرنے والا", hi: "रक्षक", ar: "الحافظ لكل ما خلق وأوجد" } },
+  { id: 39, ar: "المُقِيتُ", en: "Al-Muqit", meaning: { en: "The Sustainer & Maintainer", ur: "طاقت اور خوراک دینے والا", hi: "पोषणकर्ता", ar: "المقدر للأقوات وموصلها للأبدان" } },
+  { id: 40, ar: "الْحَسِيبُ", en: "Al-Hasib", meaning: { en: "The Reckoner & Sufficient", ur: "حساب لینے والا", hi: "पर्याप्त व हिसाब लेने वाला", ar: "الكافي عباده والمحاسب لهم" } },
+  { id: 41, ar: "الْجَلِيلُ", en: "Al-Jalil", meaning: { en: "The Majestic & Sublime", ur: "جلال و عظمت والا", hi: "प्रतापी", ar: "المتصف بصفات الجلال والعظمة" } },
+  { id: 42, ar: "الْكَرِيمُ", en: "Al-Karim", meaning: { en: "The Most Generous", ur: "بڑا سخی اور کریم", hi: "उदार", ar: "الواسع العطاء الكثير الخير" } },
+  { id: 43, ar: "الرَّقِيبُ", en: "Ar-Raqib", meaning: { en: "The Watchful Observer", ur: "نگران و نگران", hi: "सतर्क पहरेदार", ar: "الرقيب على أفعال خلقه" } },
+  { id: 44, ar: "الْمُجِيبُ", en: "Al-Mujib", meaning: { en: "The Responder to Prayers", ur: "دعا قبول کرنے والا", hi: "दुआ स्वीकार करने वाला", ar: "المجيب لدعاء السائلين" } },
+  { id: 45, ar: "الْوَاسِعُ", en: "Al-Wasi", meaning: { en: "The All-Embracing & Vast", ur: "وسعت دینے والا", hi: "व्यापक", ar: "الواسع علمه ورحمته لكل شيء" } },
+  { id: 46, ar: "الْحَكِيمُ", en: "Al-Hakim", meaning: { en: "The Perfectly Wise", ur: "حکمت والا", hi: "परम ज्ञानी व विवेकशील", ar: "الذي يوضع كل شيء في موضعه الصحيح" } },
+  { id: 47, ar: "الْوَدُودُ", en: "Al-Wadud", meaning: { en: "The Loving & Affectionate", ur: "محبوب اور پیار کرنے والا", hi: "प्रेमी व स्नेही", ar: "المحب لعباده الصالحين" } },
+  { id: 48, ar: "الْمَجِيدُ", en: "Al-Majid", meaning: { en: "The Glorious & Honorable", ur: "بزرگی اور شان والا", hi: "गौरवशाली", ar: "الكريم الشأن العظيم المجد" } },
+  { id: 49, ar: "الْبَاعِثُ", en: "Al-Ba'ith", meaning: { en: "The Resurrector of the Dead", ur: "مردوں کو زندہ کرنے والا", hi: "पुनर्जीवित करने वाला", ar: "المحيي للموتى يوم القيامة" } },
+  { id: 50, ar: "الشَّهِيدُ", en: "Ash-Shahid", meaning: { en: "The All-Witnessing", ur: "ہر چیز پر گواہ", hi: "गवाह", ar: "الحاضر الذي لا يغيب عنه شيء" } },
+  { id: 51, ar: "الْحَقُّ", en: "Al-Haqq", meaning: { en: "The Absolute Truth", ur: "حقیقت اور سچائی", hi: "सत्य", ar: "الموجود حقيقة الثابت أمره" } },
+  { id: 52, ar: "الْوَكِيلُ", en: "Al-Wakil", meaning: { en: "The Trustee & Disposer of Affairs", ur: "کارساز و وکیل", hi: "संरक्षक", ar: "المتوكل عليه والكفيل بأرزاق خلقه" } },
+  { id: 53, ar: "الْقَوِيُّ", en: "Al-Qawiy", meaning: { en: "The Possessor of All Strength", ur: "سب سے زیادہ طاقتور", hi: "सर्वशक्तिमान", ar: "ذو القدرة والبطش الشديد" } },
+  { id: 54, ar: "الْمَتِينُ", en: "Al-Matin", meaning: { en: "The Firm & Steadfast", ur: "مضبوط طاقت والا", hi: "अटल", ar: "الشديد القوي الذي لا ينفد صنعه" } },
+  { id: 55, ar: "الْوَلِيُّ", en: "Al-Wali", meaning: { en: "The Protecting Associate", ur: "دوست و کارساز", hi: "सहायक व मित्र", ar: "الناصر والمحب لأوليائه المؤمنين" } },
+  { id: 56, ar: "الْحَمِيدُ", en: "Al-Hamid", meaning: { en: "The Praiseworthy", ur: "لائقِ حمد و ثناء", hi: "प्रशंसनीय", ar: "المستحق للحمد والثناء وحده" } },
+  { id: 57, ar: "الْمُحْصِي", en: "Al-Muhsi", meaning: { en: "The Accounter of All Things", ur: "ہر چیز کا شمار کرنے والا", hi: "हिसाब रखने वाला", ar: "المحيط عدداً بكل شيء" } },
+  { id: 58, ar: "الْمُبْدِئُ", en: "Al-Mubdi", meaning: { en: "The Originator of Creation", ur: "پہلی بار پیدا کرنے والا", hi: "प्रथम रचयिता", ar: "المنشئ للخلق ابتداءً" } },
+  { id: 59, ar: "الْمُعِيدُ", en: "Al-Mu'id", meaning: { en: "The Restorer of Life", ur: "دوبارہ پیدا کرنے والا", hi: "पुनः सृजनकर्ता", ar: "المعيد للخلق بعد فنائهم" } },
+  { id: 60, ar: "الْمُحْيِي", en: "Al-Muhyi", meaning: { en: "The Giver of Life", ur: "زندگی بخشنے والا", hi: "जीवनदाता", ar: "الخالق للحياة في الأجساد" } },
+  { id: 61, ar: "الْمُمِيتُ", en: "Al-Mumit", meaning: { en: "The Bringer of Death", ur: "موت دینے والا", hi: "मृत्यु देने वाला", ar: "المقدر للموت على كائن" } },
+  { id: 62, ar: "الْحَيُّ", en: "Al-Hayy", meaning: { en: "The Ever-Living", ur: "ہمیشہ زندہ رہنے والا", hi: "अमर", ar: "الباقي الحي الدائم بلا زوال" } },
+  { id: 63, ar: "الْقَيُّومُ", en: "Al-Qayyum", meaning: { en: "The Self-Subsisting Sustainer", ur: "کائنات کو سنبھالنے والا", hi: "स्वयंशासित", ar: "القائم بنفسه المقيم لغيره" } },
+  { id: 64, ar: "الْوَاجِدُ", en: "Al-Wajid", meaning: { en: "The Finder & Perceiver", ur: "سب کچھ پانے والا", hi: "पाने वाला", ar: "الذي لا يعجزه شيء في ملكه" } },
+  { id: 65, ar: "الْمَاجِدُ", en: "Al-Majid", meaning: { en: "The Noble & Illustrious", ur: "بزرگی و شرف والا", hi: "महिमामवान", ar: "العظيم الشأن الواسع الكريم" } },
+  { id: 66, ar: "الْوَاحِدُ", en: "Al-Wahid", meaning: { en: "The One & Only", ur: "اکیلا اور یکتا", hi: "अद्वितीय", ar: "المتفرد في ذاته وصفاته" } },
+  { id: 67, ar: "الأَحَدُ", en: "Al-Ahad", meaning: { en: "The Absolute Unique One", ur: "یکتا اور بے مثال", hi: "एकल", ar: "الواحد الذي لا شريك له" } },
+  { id: 68, ar: "الصَّمَدُ", en: "As-Samad", meaning: { en: "The Eternal Refuge", ur: "بے نیاز (جس کی سب پناہ لیں)", hi: "निरापद आश्रय", ar: "المصمود إليه في الحوائج الدائم" } },
+  { id: 69, ar: "الْقَادِرُ", en: "Al-Qadir", meaning: { en: "The All-Powerful", ur: "ہر چیز پر قادر", hi: "समर्थ", ar: "المقتدر على كل شيء لا يعجزه شيء" } },
+  { id: 70, ar: "الْمُقْتَدِرُ", en: "Al-Muqtadir", meaning: { en: "The Creator of All Power", ur: "مکمل اقتدار والا", hi: "सर्वशक्तिमान", ar: "المسيطر المتصرف بقدرته التامة" } },
+  { id: 71, ar: "الْمُقَدِّمُ", en: "Al-Muqaddim", meaning: { en: "The Expediter & Promoter", ur: "آگے کرنے والا", hi: "आगे करने वाला", ar: "المرتب للأشياء والمقدم لمن يشاء" } },
+  { id: 72, ar: "الْمُؤَخِّرُ", en: "Al-Mu'akhkhir", meaning: { en: "The Delayer & Postponer", ur: "پیچھے کرنے والا", hi: "पीछे करने वाला", ar: "المؤخر لمن يشاء بحكمته" } },
+  { id: 73, ar: "الأَوَّلُ", en: "Al-Awwal", meaning: { en: "The First (Without Beginning)", ur: "سب سے پہلا", hi: "प्रथम", ar: "الذي ليس قبله شيء" } },
+  { id: 74, ar: "الآخِرُ", en: "Al-Akhir", meaning: { en: "The Last (Without End)", ur: "سب سے آخری", hi: "अंतिम", ar: "الذي ليس بعده شيء" } },
+  { id: 75, ar: "الظَّاهِرُ", en: "Az-Zahir", meaning: { en: "The Manifest & Apparent", ur: "ظاہر اور آشکار", hi: "प्रत्यक्ष", ar: "العالي على كل شيء بدلالته" } },
+  { id: 76, ar: "الْبَاطِنُ", en: "Al-Batin", meaning: { en: "The Hidden & Internal", ur: "پوشیدہ اور باطن", hi: "अगोचर", ar: "العالم ببواطن الأمور وخفاياها" } },
+  { id: 77, ar: "الْوَالِي", en: "Al-Wali", meaning: { en: "The Governing Master", ur: "کائنات کا والی و مالک", hi: "शासक", ar: "المالك المتصرف في الأمور كلها" } },
+  { id: 78, ar: "الْمُتَعَالِي", en: "Al-Muta'ali", meaning: { en: "The Most Exalted", ur: "حد سے زیادہ بلند شان والا", hi: "परम उच्च", ar: "المتعالي عن صفات الخلق أجمعين" } },
+  { id: 79, ar: "الْبَرُّ", en: "Al-Barr", meaning: { en: "The Source of All Goodness", ur: "نیکی اور بھلا کرنے والا", hi: "परोपकारी", ar: "المحسن البار بعباده أجمعين" } },
+  { id: 80, ar: "التَّوَابُ", en: "At-Tawwab", meaning: { en: "The Acceptor of Repentance", ur: "توبہ قبول کرنے والا", hi: "तौबा स्वीकारने वाला", ar: "القابل لتوبة عباده التائبين" } },
+  { id: 81, ar: "الْمُنْتَقِمُ", en: "Al-Muntaqim", meaning: { en: "The Retributor of Justice", ur: "بدلہ لینے والا (ظالموں سے)", hi: "दंड देने वाला", ar: "المنتقم من الظالمين المجرمين" } },
+  { id: 82, ar: "العَفُوُّ", en: "Al-Afuww", meaning: { en: "The Pardoner & Effacer of Sins", ur: "معاف کرنے والا", hi: "माफ करने वाला", ar: "التاجي والمحسد لذنوب خلقه" } },
+  { id: 83, ar: "الرَّؤُوفُ", en: "Ar-Ra'uf", meaning: { en: "The Most Kind & Pitying", ur: "نہایت شفیق و مہربان", hi: "अत्यंत दयालु", ar: "الرحيم الشديد الرأفة بخلقه" } },
+  { id: 84, ar: "مَالِكُ الْمُلْكِ", en: "Malik-ul-Mulk", meaning: { en: "Owner of All Sovereignty", ur: "سلطنت اور ملک کا مالک", hi: "समस्त ब्रह्मांड का स्वामी", ar: "المتصرّف في ملكه كيف يشاء" } },
+  { id: 85, ar: "ذُوالْجَلَالِ وَالإِكْرَامِ", en: "Dhul-Jalali wal-Ikram", meaning: { en: "Lord of Majesty & Generosity", ur: "عظمت اور بزرگی والا", hi: "गौरव और सम्मान के स्वामी", ar: "ذو العظمة والكبرياء والجود الإلهي" } },
+  { id: 86, ar: "الْمُقْسِطُ", en: "Al-Muqsit", meaning: { en: "The Equitable & Just", ur: "انصاف کرنے والا", hi: "न्यायकर्ता", ar: "العادل المنصف للمظلومين" } },
+  { id: 87, ar: "الْجَامِعُ", en: "Al-Jami", meaning: { en: "The Gatherer of Mankind", ur: "سب کو جمع کرنے والا", hi: "एकत्र करने वाला", ar: "الجامع للخلائق يوم القيامة" } },
+  { id: 88, ar: "الْغَنِيُّ", en: "Al-Ghani", meaning: { en: "The Self-Sufficient & Rich", ur: "بے نیاز اور غنی", hi: "धनी व आत्मनिर्भर", ar: "المستغن عن كل ما سوى ذاته" } },
+  { id: 89, ar: "الْمُغْنِي", en: "Al-Mughni", meaning: { en: "The Enricher & Bestower", ur: "غنی کرنے والا", hi: "समृद्ध बनाने वाला", ar: "المعطي للرزق لمن يشاء ليغنيه" } },
+  { id: 90, ar: "الْمَانِعُ", en: "Al-Mani", meaning: { en: "The Withholder", ur: "روکنے والا (حکمت کے تحت)", hi: "निवारक", ar: "المانع لما يشاء بحكمته" } },
+  { id: 91, ar: "الضَّارُ", en: "Ad-Darr", meaning: { en: "The Creator of Adversity", ur: "نقصان دینے والا (اپنی حکمت سے)", hi: "हानि पहुँचाने वाला", ar: "المقدر للامتحانات والابتلاءات" } },
+  { id: 92, ar: "النَّافِعُ", en: "An-Nafi", meaning: { en: "The Source of All Good & Benefit", ur: "فائدہ پہنچانے والا", hi: "लाभ देने वाला", ar: "المقدر للنفع والخير للعباد" } },
+  { id: 93, ar: "النُّورُ", en: "An-Nur", meaning: { en: "The Divine Light", ur: "کائنات کا نور", hi: "दिव्य प्रकाश", ar: "المنور للسموات والأرض وهاديها" } },
+  { id: 94, ar: "الْهَادِي", en: "Al-Hadi", meaning: { en: "The Guide", ur: "راہ دکھانے والا", hi: "मार्गदर्शक", ar: "الهادي لقلوب عباده إلى الحق" } },
+  { id: 95, ar: "الْبَدِيعُ", en: "Al-Badi", meaning: { en: "The Incomparable Originator", ur: "بے مثال تخلیق کرنے والا", hi: "अद्वितीय रचयिता", ar: "المبدع لخلقه على غير مثال سابق" } },
+  { id: 96, ar: "الْبَاقِي", en: "Al-Baqi", meaning: { en: "The Everlasting & Immutable", ur: "ہمیشہ باقی رہنے والا", hi: "शाश्वत", ar: "الدائم الوجود الباقي بلا فناء" } },
+  { id: 97, ar: "الْوَارِثُ", en: "Al-Warith", meaning: { en: "The Ultimate Heir", ur: "سب کے ختم ہونے پر وارث", hi: "अंतिम उत्तराधिकारी", ar: "الباقي بعد فناء المخلوقات" } },
+  { id: 98, ar: "الرَّشِيدُ", en: "Ar-Rashid", meaning: { en: "The Guide to the Right Path", ur: "صحیح راستہ دکھانے والا", hi: "सत्य मार्ग दिखाने वाला", ar: "المرشد لخلقه إلى سبل الرشاد" } },
+  { id: 99, ar: "الصَّبُورُ", en: "As-Sabur", meaning: { en: "The Patient & Forbearing", ur: "صبر کرنے والا (بغیر جلد بازی کے)", hi: "परम धैर्यवान", ar: "الصبور الذي لا يعجل بالعقوبة" } }
 ];
 
 function renderAll99Names(filterText = "") {
@@ -705,15 +789,15 @@ function filterNames() {
 }
 
 /* =====================================================
-   DATABASE: 15 PROPHETS (LINEAGE, ORIGIN & MIRACLES)
+   AUTHENTIC 15 PROPHETS DATABASE (QASAS-UL-ANBIYA)
 ===================================================== */
 const PROPHETS_DATA = [
   {
     id: 1,
     name: { en: "1. Prophet Adam (PBUH)", ur: "۱. حضرت آدم (عَلَيْهِ ٱلسَّلَامُ)", hi: "1. हज़रत आदम (अलैहिस्सलाम)", ar: "١. نبي الله آدم (عَلَيْهِ ٱلسَّلَامُ)" },
     title: { en: "Father of Humanity • Abul Bashar", ur: "ابو البشر • خلیفۃ اللہ فی الارض", hi: "मानवता के पिता • प्रथम पैगंबर", ar: "أبو البشر وأول خليفة في الأرض" },
-    parents: { en: "Created directly by Allah without father or mother from Earth's clays", ur: "بغیر والدین مٹی سے براہِ راست اللہ نے پیدا فرمایا", hi: "बिना माता-पिता मिट्टी से सीधे अल्लाह द्वारा निर्मित", ar: "خلقه الله بيده من طين الأرض بلا أب ولا أم" },
-    origin: { en: "Descended onto Earth (Historical tradition: Sarandib/Mecca)", ur: "سراندیب (ہند/لنکا) و مکہ مکرمہ", hi: "धरती पर आगमन (सरनदीप/मक्का)", ar: "الأرض، مكة المكرمة وسرنديب" },
+    parents: { en: "Created directly by Allah without biological parents from Earth's clays", ur: "بغیر والدین مٹی سے براہِ راست اللہ نے پیدا فرمایا", hi: "बिना माता-पिता मिट्टी से सीधे अल्लाह द्वारा निर्मित", ar: "خلقه الله بيده من طين الأرض بلا أب ولا أم" },
+    origin: { en: "Descent onto Earth (Historical tradition: Sarandib/Mecca)", ur: "سراندیب (ہند/لنکا) و مکہ مکرمہ", hi: "धरती पर आगमन (सरनदीप/मक्का)", ar: "الأرض، مكة المكرمة وسرنديب" },
     seerat: {
       en: "The first human and first prophet of Allah. Endowed with the names and divine sciences of all creation. Taught humanity the eternal beauty of sincere repentance (Tawbah).",
       ur: "پہلے انسان اور پہلے نبی۔ اللہ نے تمام اشیاء کے نام سکھائے۔ توبہ اور انابت کا درس نسلِ انسانی کو ان سے حاصل ہوا۔",
@@ -785,9 +869,59 @@ const PROPHETS_DATA = [
   },
   {
     id: 4,
-    name: { en: "4. Prophet Ibrahim / Abraham (PBUH)", ur: "۴. حضرت ابراہیم (عَلَيْهِ ٱلسَّلَامُ)", hi: "4. हज़रत इब्राहीम (अलैहिस्सलाम)", ar: "٤. نبي الله إبراهيم (عَلَيْهِ ٱلسَّلَامُ)" },
+    name: { en: "4. Prophet Hud (PBUH)", ur: "۴. حضرت ہود (عَلَيْهِ ٱلسَّلَامُ)", hi: "4. हज़रत हूद (अलैहिस्सलाम)", ar: "٤. نبي الله هود (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Preacher to the Tribe of Aad • Ameen", ur: "قومِ عاد کے مصلح • امین", hi: "क़ौम-ए-आद के पैगंबर", ar: "نبي الله المرسل إلى عاد الأولى" },
+    parents: { en: "Father: Abdullah ibn Ribah (Descendant of Noah)", ur: "والد: عبداللہ بن رباح (نسلِ نوح سے)", hi: "पिता: अब्दुल्लाह बिन रिबाह", ar: "الأب: عبد الله بن رباح من نسل نوح" },
+    origin: { en: "Al-Ahqaf (Southern Arabia / Yemen region)", ur: "احقاف (جنوبی عرب / یمن)", hi: "अल-अहक़ाफ (दक्षिण अरब)", ar: "الأحقاف (جنوب الجزيرة العربية وعمان)" },
+    seerat: {
+      en: "Sent to the arrogant and mighty civilization of Aad known for their towering stone pillars. Warned them against arrogance and idol worship until a fierce, freezing gale destroyed the oppressors.",
+      ur: "قومِ عاد کی طرف مبعوث ہوئے جو اپنی طاقت پر غرور کرتے تھے۔ سرکش قوم پر عذابِ الٰہی تیز آندھی کی صورت میں نازل ہوا۔",
+      hi: "अहमद और शक्तिशाली आद जाति की ओर भेजे गए। उनकी अहंकार भरी मूर्तिक पूजा के विरुद्ध चेतावनी दी।",
+      ar: "أُرسل إلى عاد الذين استكبروا في الأرض، فدعاهم للتوحيد فأهلكتهم ريح صرصر عاتية."
+    },
+    miracles: {
+      en: "Miraculous survival of believers inside a sheltered enclosure during the 7-day freezing gale.",
+      ur: "سات دن تک چلنے والی ہلاک کن آندھی میں مومنین کا مکمل محفوظ رہنا۔",
+      hi: "भीषण प्रलयकारी आंधी में आस्तिकों की सुरक्षित रक्षा।",
+      ar: "نجاة المؤمنين في حظيرة لا تسري عليهم الريح المدمرة."
+    },
+    lesson: {
+      en: "Physical might, wealth, and technological supremacy cannot protect anyone from divine justice.",
+      ur: "مادی طاقت اور دنیاوی دولت عذابِ الٰہی سے نہیں بچا سکتی۔",
+      hi: "भौतिक शक्ति और धन-संपत्ति ईश्वर के न्याय से नहीं बचा सकती।",
+      ar: "القوة والمال لا تغنيان شيئاً عند حلول بأس الله."
+    }
+  },
+  {
+    id: 5,
+    name: { en: "5. Prophet Salih (PBUH)", ur: "۵. حضرت صالح (عَلَيْهِ ٱلسَّلَامُ)", hi: "5. हज़रत सालेह (अलैहिस्सलाम)", ar: "٥. نبي الله صالح (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Preacher to Thamud • Pride of Arabia", ur: "قومِ ثمود کے پیغمبر • فخرِ عرب", hi: "क़ौम-ए-समूद के पैगंबर", ar: "نبي الله المرسل إلى ثمود" },
+    parents: { en: "Father: Ubayd ibn Asif (Descendant of Shem)", ur: "والد: عبید بن آصف", hi: "पिता: उबैद बिन आसिफ", ar: "الأب: عبيد بن آصف من سلالة سام" },
+    origin: { en: "Al-Hijr / Mada'in Salih (North-Western Arabia)", ur: "الحجر / مدائن صالح (شمال مغربی عرب)", hi: "अल-हिज्र / मदाऐन सालेह", ar: "الحجر ومدائن صالح (شمال المملكة العربية السعودية)" },
+    seerat: {
+      en: "Preached to the Thamud civilization famous for carving magnificent palaces into mountain rocks. Presented a miraculous she-camel as a divine sign, which the wicked hamstringed.",
+      ur: "قومِ ثمود کی طرف بھیجے گئے جو پہاڑوں کو تراش کر گھر بناتے تھے۔ انہوں نے معجزاتی اونٹنی کو قتل کیا تو ہولناک زلزلے نے انہیں آ لیا۔",
+      hi: "समूद जाति की ओर भेजे गए जो चट्टानों को काटकर महल बनाते थे। उनके द्वारा हलाल की गई ऊंटनी को काटने पर विनाश आया।",
+      ar: "دعا ثمود الذين كانوا ينحتون من الجبال بيوتاً، فأنزل الله عليهم الصيحة والزلزلة لاكتسابهم الإثم."
+    },
+    miracles: {
+      en: "The divine She-Camel emerging directly from solid mountain rock with flowing milk.",
+      ur: "پہاڑ سے معجزاتی طور پر حاملہ اونٹنی کا برآمد ہونا اور دودھ کا چشمہ جاری ہونا۔",
+      hi: "पहाड़ से प्रकट हुई चमत्कारिक ऊँटनी।",
+      ar: "خروج الناقة العشار من صخرة الصفا مع لبن سائغ للشاربين."
+    },
+    lesson: {
+      en: "Respecting sacred trusts and divine boundaries without harming vulnerable creatures.",
+      ur: "اللہ کی نشانیوں کا احترام کرنا اور سرکشی سے گریز کرنا۔",
+      hi: "ईश्वरीय संकेतों और जीवों का आदर करना।",
+      ar: "عدم التجرؤ على انتهاك حرمات الله وآياته."
+    }
+  },
+  {
+    id: 6,
+    name: { en: "6. Prophet Ibrahim / Abraham (PBUH)", ur: "۶. حضرت ابراہیم (عَلَيْهِ ٱلسَّلَامُ)", hi: "6. हज़रत इब्राहीम (अलैहिस्सलाम)", ar: "٦. نبي الله إبراهيم (عَلَيْهِ ٱلسَّلَامُ)" },
     title: { en: "Khalilullah (Intimate Friend of Allah)", ur: "خلیل اللہ • امام الناس • معمارِ کعبہ", hi: "ख़लीलुल्लाह • एकेश्वरवाद के पिता", ar: "خليل الرحمن وأبو الأنبياء وإمام الموحدين" },
-    parents: { en: "Father: Terah (Azar / Tarikh) | Mother: Amathlaah", ur: "والد: تارخ (آزر) | والدہ: امیلہ / نونا", hi: "पिता: आज़र (तारिख़) | माता: अमथला", ar: "الأب: تارح (آزر) | الأم: أميلة (أم ثلثة)" },
+    parents: { en: "Father: Terah (Azar / Tarikh) | Mother: Amathlaah", ur: "والد: تارخ (آزر) | والدہ: امیلہ", hi: "पिता: आज़र (तारिख़) | माता: अमथला", ar: "الأب: تارح (آزر) | الأم: أميلة" },
     origin: { en: "Ur of the Chaldeans (Iraq), migrated to Harran, Egypt, Palestine & Mecca", ur: "اور (عراق)، شام، فلسطین، مصر اور مکہ مکرمہ", hi: "ऊर (इराक़), शाम, फ़िलिस्तीन और मक्का", ar: "أور الكلدانيين (العراق)، وهاجر إلى الشام ومصر ومكة" },
     seerat: {
       en: "Father of all major prophetic lines. Broke the idols of Babylon, miraculously survived Nimrod's blazing fire, built the Holy Kaaba in Mecca with his son Ismail.",
@@ -796,7 +930,7 @@ const PROPHETS_DATA = [
       ar: "حطم الأصنام وجعل الله النار عليه برداً وسلاماً، وبنى البيت الحرام بمكة مع ابنه إسماعيل."
     },
     miracles: {
-      en: "Blazing furnace turned into a cool garden; revival of four sacrificed birds from separate hills.",
+      en: "Blazing furnace turned into a cool garden; revival of four sacrificed birds.",
       ur: "آگ کا گلزار بننا؛ چار پرندوں کا پکارنے پر زندہ ہو کر واپس آنا۔",
       hi: "आग का ठंडा व सुरक्षित होना; परिंदों का पुनर्जीवन।",
       ar: "إخماد حر النار وإحياء الطير الممزقة بإذن الله."
@@ -809,28 +943,228 @@ const PROPHETS_DATA = [
     }
   },
   {
-    id: 5,
-    name: { en: "5. Prophet Muhammad (Peace Be Upon Him)", ur: "۵. حضرت محمد مصطفیٰ (ﷺ)", hi: "5. हज़रत मुहम्मद मुस्तफ़ा (सल्लल्लाहु अलैहि वसल्लम)", ar: "٥. نبي الهدى وخاتم الأنبياء محمد (ﷺ)" },
-    title: { en: "Khatam-un-Nabiyyin • Rahmatan lil-Alameen", ur: "خاتم النبیین • رحمۃ للعالمین • سید الاولین والآخرین", hi: "ख़ातमुन नबिय्यीन • रहमतुल लिल आलमीन", ar: "خاتم الأنبياء والمرسلين وحبيب رب العالمين ورحمة الله للعالمين" },
-    parents: { en: "Father: Abdullah ibn Abd al-Muttalib | Mother: Sayyidah Aminah bint Wahb", ur: "والد: حضرت عبداللہ بن عبدالمطلب | والدہ: سیدہ آمنہ بنت وہب", hi: "पिता: अब्दुल्लाह बिन अब्दुल मुत्तलिब | माता: सय्यिदा आमिना", ar: "الأب: عبد الله بن عبد المطلب | الأم: السيدة آمنة بنت وهب" },
-    origin: { en: "Born in Mecca al-Mukarramah, migrated to Medina al-Munawwarah", ur: "مکہ مکرمہ (پیدائش) و مدینہ منورہ (ہجرت و مدفن)", hi: "मक्का मुकर्रमा (जन्म) व मदीना मुनव्वरा (हिजरत)", ar: "مكة المكرمة (المولد) والمدينة المنورة (المهاجر والمدفن)" },
+    id: 7,
+    name: { en: "7. Prophet Lut / Lot (PBUH)", ur: "۷. حضرت لوط (عَلَيْهِ ٱلسَّلَامُ)", hi: "7. हज़रत लूत (अलैहिस्सलाम)", ar: "٧. نبي الله لوط (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Preacher of Sodom • Righteous Nephew of Ibrahim", ur: "سردم کے مصلح • بھتیجے حضرت ابراہیم", hi: "सदोम के पैगंबर", ar: "نبي الله المبعوث إلى أهل سدوم وعمورة" },
+    parents: { en: "Father: Haran (Brother of Prophet Ibrahim)", ur: "والد: ھاران بن تارخ (حضرت ابراہیم کے بھائی)", hi: "पिता: हारान (इब्राहीम के भाई)", ar: "الأب: هاران بن تارح (أبو إبراهيم أخوه غير الشقيق)" },
+    origin: { en: "Ur (Iraq), migrated to Sodom & Gomorrah (Dead Sea valley)", ur: "اور (عراق)، وادیِ اردن و سدوم (بحیرہ مردار)", hi: "ऊर से सदोम (मृत सागर घाटी)", ar: "أور وهاجر إلى سدوم وعمورة قرب البحر الميت" },
     seerat: {
-      en: "The final Messenger of Allah for all mankind. Received the miraculous Holy Quran, undertook Isra & Mi'raj, and established universal ethics of justice, compassion, and human rights.",
-      ur: "تمام انسانیت کے آخری نبی جن پر ابدی معجزہ قرآن مجید نازل ہوا۔ معراجِ آسمانی پر تشریف لے گئے اور دنیا میں عدل و اخلاق قائم فرمایا۔",
-      hi: "समस्त मानवजाति के अंतिम संदेशवाहक जिन पर पवित्र क़ुरआन नाज़िल हुआ। मेराज पर गए और विश्व में न्याय, नैतिकता की स्थापना की।",
-      ar: "خاتم الرسل والرحمة المهداة، أُنزل عليه القرآن الكريم، وأسرى به ربه إلى سدرة المنتهى، وتمم مكارم الأخلاق."
+      en: "Nephew of Prophet Ibrahim. Sent to the corrupt city of Sodom to reform societal immorality and unnatural crimes. Saved by angels before the city was completely overturned and pelted with brimstone.",
+      ur: "حضرت ابراہیم کے بھتیجے جو سدوم کی بستی میں اخلاقی برائیوں کی اصلاح کے لیے بھیجے گئے۔ فرشتوں نے انہیں اور ان کی صالح بیٹیوں کو بچایا۔",
+      hi: "इब्राहीम के भतीजे। सदोम नगर की अनैतिकता के विरुद्ध प्रचार किया। देवताओं ने इन्हें सुरक्षित निकाला।",
+      ar: "ابن أخي إبراهيم، أُرسل إلى سدوم لتحذيرهم من الفاحشة، فنجاه الله وأهله قبل قلب المدينة."
     },
     miracles: {
-      en: "The eternal Holy Quran; Splitting of the Moon; Isra & Mi'raj ascension.",
-      ur: "قرآن مجید کا ابدی معجزہ؛ شق القمر؛ معراج شریف؛ انگلیوں سے پانی کے چشمے جاری ہونا۔",
-      hi: "पवित्र क़ुरआन; चंद्रमा का विभाजन; मेराज यात्रा।",
-      ar: "القرآن الكريم الخالد، وانشقاق القمر، والإسراء والمعراج."
+      en: "Angelic intervention; complete inversion of the wicked cities by divine earthquake.",
+      ur: "فرشتوں کا نزول؛ بستی کا الٹ جانا اور پتھروں کی بارش۔",
+      hi: "فرश्तों की सहायता; पापी नगर का पलटना।",
+      ar: "إهلاك القرى الظالمة بقلبها سافلها عاليها وإمطارها بحجارة من سجيل."
     },
     lesson: {
-      en: "The supreme universal role model (Uswah Hasanah) for honesty, mercy, leadership, and forgiveness.",
-      ur: "زندگی کے تمام شعبوں میں اخلاقِ حسنہ، عفو و درگزر اور بندگی کا کامل ترین نمونہ۔",
-      hi: "जीवन के प्रत्येक क्षेत्र में सर्वोच्च चरित्र, दया, न्याय और क्षमा का आदर्श।",
-      ar: "الأسوة الحسنة في مكارم الأخلاق، والرحمة الشاملة، والعدل، والوفاء."
+      en: "Standing firmly against widespread public immorality even when completely isolated.",
+      ur: "معاشرتی برائیوں کے خلاف اکیلے کھڑے ہو کر حق پر ثابت قدم رہنا۔",
+      hi: "समाज की गंभीर बुराइयों के खिलाफ अकेले खड़े रहने का साहस।",
+      ar: "الوقوف في وجه الفاحشة والتمسك بالفضيلة رغم وحدة الموقف."
+    }
+  },
+  {
+    id: 8,
+    name: { en: "8. Prophet Ismail / Ishmael (PBUH)", ur: "۸. حضرت اسماعیل (عَلَيْهِ ٱلسَّلَامُ)", hi: "8. हज़रत इस्माईल (अलैहिस्सलाम)", ar: "٨. نبي الله إسماعيل (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Dhabihullah (The Sacrificed of Allah) • Ancestor of Arabs", ur: "ذبیح اللہ • جدّ الامۃ العربیہ", hi: "ज़बीहुल्लाह • अरबों के पूर्वज", ar: "ذبيح الله وجد العرب المستعربة" },
+    parents: { en: "Father: Prophet Ibrahim | Mother: Sayyidah Hajar (Hagar)", ur: "والد: حضرت ابراہیم | والدہ: سیدہ ہاجرہ", hi: "पिता: इब्राहीम | माता: हाजरा", ar: "الأب: إبراهيم الخليل | الأم: السيدة هاجر" },
+    origin: { en: "Born in Canaan (Palestine), raised in the sacred valley of Mecca", ur: "فلسطین (پیدائش)، وادیِ مکہ مکرمہ", hi: "कनान (जन्म), मक्का की पवित्र घाटी", ar: "فلسطين وولادة ونشأة في مكة المكرمة" },
+    seerat: {
+      en: "Exemplified supreme patience when his father attempted to sacrifice him in obedience to a divine vision. Helped build the Kaaba and became the patriarch of the Arab tribes.",
+      ur: "خواب کی تعمیل میں والد کے سامنے تسلیمِ رضا کی لازوال مثال پیش کی۔ خانہ کعبہ کی تعمیر میں والد کا ہاتھ بٹایا۔",
+      hi: "पिता इब्राहीम द्वारा ईश्वर के आदेश पर कुर्बानी के समय पूर्ण समर्पण दिखाया। काबा के पुनर्निर्माण में सहयोग दिया।",
+      ar: "ضرب أعظم مثال في البر والتسليم بذبح نفسه فداء لأمر الله، وبنى الكعبة مع أبيه إبراهيم."
+    },
+    miracles: {
+      en: "The miraculous bubbling spring of Zamzam gushing forth beneath infant Ismail's heels in the desert.",
+      ur: "ننھے اسماعیل کی ایڑیوں کے نیچے سے چشمہ زمزم کا جاری ہونا۔",
+      hi: "मरुस्थल में शिशु इस्माईल की एड़ियों से زمزم के पानी का प्रकट होना।",
+      ar: "تفجر ماء زمزم المبارك تحت قدميه الطاهرتين في الصحراء القاحلة."
+    },
+    lesson: {
+      en: "Unmatched obedience to parents and tranquil submission to trials.",
+      ur: "والدین کی فرمانبرداری اور آزمائشوں میں صبرِ جمیل۔",
+      hi: "माता-पिता की आज्ञा का पूर्ण पालन और कठिन परीक्षाओं में संतोष।",
+      ar: "الطاعة العمياء للوالدين والرضا التام بقضاء الله."
+    }
+  },
+  {
+    id: 9,
+    name: { en: "9. Prophet Ishaq / Isaac (PBUH)", ur: "۹. حضرت اسحاق (عَلَيْهِ ٱلسَّلَامُ)", hi: "9. हज़रत इसहाक़ (अलैहिस्सलाम)", ar: "٩. نبي الله إسحاق (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Blessed Leader • Patriarch of Levant", ur: "بابِ برکت • انبیاءِ بنی اسرائیل کے جد", hi: "धन्य पैगंबर • सीरिया के पितृपुरुष", ar: "الشيخ المبارك وأبو الأنبياء في أرض الشام" },
+    parents: { en: "Father: Prophet Ibrahim | Mother: Sayyidah Sarah", ur: "والد: حضرت ابراہیم | والدہ: سیدہ سارہ", hi: "पिता: इब्राहीम | माता: सारा", ar: "الأب: إبراهيم الخليل | الأم: السيدة سارة" },
+    origin: { en: "Canaan (Palestine and the Levant)", ur: "ارضِ کنعان (فلسطین و شام)", hi: "कनान (फ़िलिस्तीन व शाम)", ar: "أرض الكنعانيين وفلسطين (الشام)" },
+    seerat: {
+      en: "Miraculously born to elderly parents, Sarah and Ibrahim, as foretold by visiting angels. Father of Prophet Yaqub (Jacob) and grandfather of Yusuf (Joseph), anchoring the prophetic lineage in the Levant.",
+      ur: "بڑھاپے میں فرشتوں کی بشارت پر معجزاتی طور پر پیدا ہوئے۔ حضرت ییعقوب کے والد اور بنی اسرائیل کے بزرگ سلسلوں کے جد ہیں۔",
+      hi: "वृद्धावस्था में فرश्तों की भविष्यवाणी पर चमत्कारिक जन्म। याक़ूब के पिता और इस्राइल वंश के पूर्वज।",
+      ar: "بشّرت به الملائكة أمه سارة وهي عجوز عقيم، وهو أبو يعقوب وجد الأنبياء في بني إسرائيل."
+    },
+    miracles: {
+      en: "Miraculous birth from aged and sterile parents through angelic glad tidings.",
+      ur: "بڑھاپے میں فرشتوں کے ذریعے ولادت کی بشارت۔",
+      hi: "अधेड़ अवस्था में फरिश्तों द्वारा जन्म की शुभसूचना।",
+      ar: "البشارة الإلهية بولادته على كبر سن أبويه."
+    },
+    lesson: {
+      en: "Gratitude for divine blessings and steadfast guidance of future generations.",
+      ur: "اللہ کی نعمتوں کا شکر ادا کرنا اور نسلوں کی درست تربیت کرنا۔",
+      hi: "ईश्वरीय आशीष के प्रति कृतज्ञता।",
+      ar: "الشكر الدائم لآلاء الله والتمسك بالمنهج القويم."
+    }
+  },
+  {
+    id: 10,
+    name: { en: "10. Prophet Yaqub / Jacob (PBUH)", ur: "۱۰. حضرت یعقوب (عَلَيْهِ ٱلسَّلَامُ)", hi: "10. हज़रत याक़ूब (अलैहिस्सलाम)", ar: "١٠. نبي الله يعقوب (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Israel (The Servant of God) • Father of 12 Tribes", ur: "اسرائیل (اللہ کا بندہ) • بارہ قبیلوں کے والد", hi: "इस्राइल • 12 कबीलों के पिता", ar: "إسرائيل الله وأبو الأسباط الاثني عشر" },
+    parents: { en: "Father: Prophet Ishaq | Mother: Rifqa (Rebekah)", ur: "والد: حضرت اسحاق | والدہ: رفقة", hi: "पिता: इसहाक़ | माता: रिफक़ा", ar: "الأب: إسحاق بن إبراهيم | الأم: رفقة" },
+    origin: { en: "Palestine, migrated temporarily to Paddan-Aram (Iraq), returned to Canaan", ur: "فلسطین، عراق (پدان آرام)، اور واپسی فلسطین", hi: "फ़िलिस्तीन और इराक", ar: "فلسطين ورافدين وreturned إلى كنعان" },
+    seerat: {
+      en: "Also known as Israel. Father of twelve sons who formed the twelve tribes of Israel. Endured immense heartbreak over the loss of his beloved son Yusuf (Joseph) while keeping unwavering trust in Allah.",
+      ur: "آپ کا لقب اسرائیل ہے۔ بارہ بیٹوں کے والد جن سے بنی اسرائیل کے قبائل چلے۔ بیٹے یوسف کی جدائی میں برسوں آنسو بہائے مگر صبر کا دامن نہ چھوڑا۔",
+      hi: "इस्राइल के रूप में प्रसिद्ध। 12 पुत्रों के पिता। पुत्र यूसुफ की जुदाई में भारी दुःख झेला परंतु अटूट सब्र रखा।",
+      ar: "هو إسرائيل الله، أبو الأسباط الاثني عشر، ابتلي بفقد يوسف فصبر صبراً جميلاً حتى التقى به."
+    },
+    miracles: {
+      en: "Restoration of physical eyesight upon placing Prophet Yusuf's scented shirt over his face.",
+      ur: "حضرت یوسف کا کرتا چہرہِ مبارک پر ڈالنے سے بینائی کا واپس لوٹنا۔",
+      hi: "पुत्र यूसुफ की कमीज आंख पर रखने से दृष्टि का वापस आना।",
+      ar: "رتد بصره بقميص يوسف وأذن الله بلقائه بعد طول فراق."
+    },
+    lesson: {
+      en: "Sabr Jameel (Patience without complaint) and unshakeable hope in the mercy of Allah.",
+      ur: "شکایت کے بغیر صبرِ جمیل کرنا اور اللہ کی رحمت سے کبھی ناامید نہ ہونا۔",
+      hi: "बिना किसी शिकायत के धैर्य रखना और ईश्वर की दया पर पूर्ण विश्वास।",
+      ar: "الصبر الج جميل وعدم اليأس من روح الله مهما طال الزمن."
+    }
+  },
+  {
+    id: 11,
+    name: { en: "11. Prophet Yusuf / Joseph (PBUH)", ur: "۱۱. حضرت یوسف (عَلَيْهِ ٱلسَّلَامُ)", hi: "11. हज़रत यूसुफ (अलैहिस्सलाम)", ar: "١١. نبي الله يوسف الصديق (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Al-Siddiq • The Epitome of Beauty & Integrity", ur: "الصدیق • حسنِ یوسفی اور عفت کا پیکر", hi: "अस्-सिद्दीक़ • सुंदरता व पवित्रता के प्रतीक", ar: "الصديق الجميل وأمين خزائن مصر" },
+    parents: { en: "Father: Prophet Yaqub | Mother: Rachel (Rahil)", ur: "والد: حضرت یعقوب | والدہ: راحیل", hi: "पिता: याक़ूब | माता: राहिद", ar: "الأب: يعقوب بن إسحاق | الأم: راحيل" },
+    origin: { en: "Palestine (birth), sold into slavery in Egypt, rose to Aziz of Egypt", ur: "فلسطین (پیدائش)، مصر (قید، وزارت اور اقتدار)", hi: "फ़िलिस्तीन से मिस्र (मंत्री और शासक)", ar: "فلسطين ومصر (العزيز ووزير الخزائن)" },
+    seerat: {
+      en: "Blessed with peerless physical beauty and the interpretation of dreams. Overcame betrayal by his brothers, false imprisonment, and temptation with absolute moral purity, eventually governing Egypt's granaries.",
+      ur: "حسنِ جمیل اور خوابوں کی تعبیر کا معجزہ ملا۔ بھائیوں کی زیادتیوں اور قید کی صعوبتوں کے بعد مصر کے خزانہ جات کے وزیر بنے۔",
+      hi: "अद्भुत सुंदरता और सपनों की व्याख्या का ज्ञान। भाइयों के धोखे और जेल के बाद मिस्र के कोषाध्यक्ष बने।",
+      ar: "أوتي شطر الحسن وعلم تأويل الأحداث، تجازى على صبره حتى أصبح عزيز مصر وحاكم خزائنها."
+    },
+    miracles: {
+      en: "Precise interpretation of complex prophetic and royal dreams; preservation of Egypt through famine.",
+      ur: "خوابوں کی سچی تعبیر؛ قحط سالی سے ملک کو بچانا۔",
+      hi: "सपनों की सटीक व्याख्या और अकाल से देश की रक्षा।",
+      ar: "تأويل الرؤى الملكية بدقة وإنقاذ مصر من سنين القحط."
+    },
+    lesson: {
+      en: "Purity under extreme temptation, forgiveness towards enemies, and piety in power.",
+      ur: "فتنے کے وقت پاکدامن رہنا، دشمنوں کو معاف کرنا اور اقتدار میں تقویٰ اختیار کرنا۔",
+      hi: "अनैतिक प्रलोभनों में पवित्र रहना और क्षमा का गुण अपनाना।",
+      ar: "العفة عند المعصية، والعفو عند المقدرة، والتقوى في السلطة."
+    }
+  },
+  {
+    id: 12,
+    name: { en: "12. Prophet Musa / Moses (PBUH)", ur: "۱۲. حضرت موسیٰ کلیم اللہ (عَلَيْهِ ٱلسَّلَامُ)", hi: "12. हज़रत मूसा कलीमउल्लाह (अलैहिस्सलाम)", ar: "١٢. نبي الله الكليم موسى (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Kalimullah (The One Who Spoke with Allah)", ur: "کلیم اللہ • صاحبِ تورات", hi: "कलीमउल्लाह • तौरात के पैगंबर", ar: "كليم الله ورسوله إلى فرعون وملئه" },
+    parents: { en: "Father: Amran (Imran) | Mother: Yukhabid (Jochebed)", ur: "والد: عمران | والدہ: یوخابد", hi: "पिता: इमरान | माता: यूखाबिद", ar: "الأب: عمران بن قاهث | الأم: يوكابد" },
+    origin: { en: "Egypt (birth), Median (exile), Sinai & Promised Land borders", ur: "مصر (پیدائش)، مدین، طورِ سینا اور صحراءِ سینا", hi: "मिस्र (जन्म), मद्यन व सीनाई", ar: "مصر ومدين وسيناء والأرض المقدسة" },
+    seerat: {
+      en: "The prophet who conversed directly with Allah on Mount Sinai. Defied the tyranny of Pharaoh, split the Red Sea with his staff, and received the divine tablets of the Torah.",
+      ur: "جنہوں نے طورِ سینا پر اللہ تعالیٰ سے بلاواسطہ کلام کیا۔ فرعون کے ظلم کے خلاف کھڑے ہوئے اور بحرِ قلزم کو عصا کے معجزے سے دو ٹکڑے کیا۔",
+      hi: "जिन्होंने तूर पर्वत पर अल्लाह से सीधे बात की। फिरौन के जुल्म के खिलाफ लड़े और लाल सागर को दो हिस्सों में काटा।",
+      ar: "كلمه الله تكليماً على طور سيناء، أُرسل ليهدي فرعون وقومه، وشق البحر بعصاه."
+    },
+    miracles: {
+      en: "Glowing Staff turning into a serpent; Shining hand; Splitting of the Red Sea; Water from rock.",
+      ur: "عصا کا اژھا بننا؛ یدِ بیضا کا چمکنا؛ سمندر کا پھٹنا؛ پتھر سے بارہ چشمے جاری ہونا۔",
+      hi: "लाठी का सांप बनना; चमकता हाथ; लाल सागर का विभाजन।",
+      ar: "عصاه التي تصبح حية تسعى، واليد البيضاء، وشق البحر، وتفجر الماء من الحجر."
+    },
+    lesson: {
+      en: "Courage against tyranny, reliance on Allah's strength, and leadership under pressure.",
+      ur: "ظالم حکمران کے سامنے کلمۂ حق کہنا اور اللہ کی مدد پر کامل بھروسہ۔",
+      hi: "अन्याय के विरुद्ध साहस और ईश्वर पर पूर्ण विश्वास।",
+      ar: "الشجاعة في مواجهة الطغاة والثقة المطلقة بنصر الله."
+    }
+  },
+  {
+    id: 13,
+    name: { en: "13. Prophet Dawud / David (PBUH)", ur: "۱۳. حضرت داود (عَلَيْهِ ٱلسَّلَامُ)", hi: "13. हज़रत दाऊद (अलैहिस्सलाम)", ar: "١٣. نبي الله داود (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "King and Prophet • Master of Zabur", ur: "بادشاہ و پیغمبر • صاحبِ زبور و لحن", hi: "राजा और पैगंबर • ज़बूर के मालिक", ar: "الملك النبي صاحب الزبور وصوت تسبيح الجبال" },
+    parents: { en: "Father: Jesse (Yisha) | Descendant of Judah ibn Yaqub", ur: "والد: یشی (نسلِ یہوداہ بن یعقوب سے)", hi: "पिता: यिशै", ar: "الأب: إيشا من نسل يهوذا بن يعقوب" },
+    origin: { en: "Palestine (Jerusalem / Baitul Maqdis region)", ur: "بیت المقدس (فلسطین)", hi: "जेरूसलम (फ़िलिस्तीन)", ar: "بيت المقدس وفلسطين" },
+    seerat: {
+      en: "Granted both royal sovereignty and supreme prophethood. Defeated the giant Goliath in his youth. Blessed with a melodious voice that made mountains and birds join him in praising Allah, and mastered iron armor-making.",
+      ur: "اللہ نے بادشاہی اور نبوت دونوں عطا فرمائیں۔ جوانی میں جالوت کو شکست دی۔ آپ کی خوبصورت آواز پر پہاڑ اور پرندے تسبیح پڑھتے تھے۔",
+      hi: "बादशाहत और नबूवत दोनों से सम्मानित। युवावस्था में गॉलियथ (जालुत) को हराया। सुंदर आवाज पर पहाड़ भी जिक्र करते थे।",
+      ar: "جمع الله له الملك والنبوة، قتل جالوت صغيراً، وأوتي صوتاً عذباً تسبح معه الجبال والطير، وعلمه صنعة الدروع."
+    },
+    miracles: {
+      en: "Softening of hard iron in his bare hands like wax; melodious Psalms (Zabur) echoing across nature.",
+      ur: "لوہے کا ہاتھوں میں موم کی طرح نرم ہو جانا؛ زبور کی تلاوت پر پرندوں اور پہاڑوں کا رک جانا۔",
+      hi: "लोहे का हाथों में मोम की तरह पिघलना; प्रकृति द्वारा स्तुति।",
+      ar: "ليْن الحديد بيديه كالربح، وتسخير الجبال والطير تسبح معه."
+    },
+    lesson: {
+      en: "Balancing immense political power with profound personal humility and remembrance of Allah.",
+      ur: "حکومت کے ساتھ ساتھ عاجزی اور کثرت سے تسبیح و عبادت کرنا۔",
+      hi: "उच्च सत्ता के बावजूद विनम्रता और ईश्वर का स्मरण।",
+      ar: "الجمع بين الملك العظيم والخشوع التام لله وكثرة الصيام والقيام."
+    }
+  },
+  {
+    id: 14,
+    name: { en: "14. Prophet Sulayman / Solomon (PBUH)", ur: "۱۴. حضرت سلیمان (عَلَيْهِ ٱلسَّلَامُ)", hi: "14. हज़रत सुलेमान (अलैहिस्सलाम)", ar: "١٤. نبي الله سليمان (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Wise Sovereign • Master of Winds & Jinn", ur: "صاحبِ حکمت بادشاہ • جن و ہوا کے فرمانروا", hi: "बुद्धिमान शासक • हवा और जिन्नात के मालिक", ar: "الملك الحكيم مسخر الريح والجن والطير" },
+    parents: { en: "Father: Prophet Dawud | Mother: Bathsheba", ur: "والد: حضرت داود", hi: "पिता: दाऊद", ar: "الأب: النبي داود عليه السلام" },
+    origin: { en: "Jerusalem (Palestine and surrounding kingdoms)", ur: "بیت المقدس (فلسطین)", hi: "जेरूसलम (फ़िलिस्तीन)", ar: "بيت المقدس (المملكة الموحدة)" },
+    seerat: {
+      en: "Inherited Prophet Dawud's kingdom and was granted an unprecedented empire over winds, birds, animals, and jinn. Understood the language of ants and established legendary justice.",
+      ur: "حضرت داود کے جانشین بنے۔ اللہ نے ہوا، جنات اور پرندوں کی حکومت عطا کی۔ چیونٹیوں اور پرندوں کی بولیاں سمجھتے تھے۔",
+      hi: "दाऊद के उत्तराधिकारी। हवा, जिन्नात और पक्षियों पर अद्वितीय साम्राज्य दिया गया। चींटियों की भाषा समझते थे।",
+      ar: "ورث داود ملكاً لا ينبغي لأحد من بعده، سخر الله له الريح تجري بأمره، وعلمه منطق الطير والنمل."
+    },
+    miracles: {
+      en: "Controlling the blowing winds; commanding jinn laborers; understanding animal speech; copper springs.",
+      ur: "ہواؤں پر قابو؛ جنات سے محنت لینا؛ جانوروں کی زبان سمجھنا؛ تانبے کے چشمے جاری ہونا۔",
+      hi: "हवा पर नियंत्रण; जिन्नात का वश में होना; जानवरों की भाषा समझना।",
+      ar: "تسخير الريح والجن، وعلم منطق الطير، وعين القطر (النحاس المذاب)."
+    },
+    lesson: {
+      en: "Expressing supreme gratitude (Shukr) to Allah during absolute authority and wealth.",
+      ur: "بے پناہ طاقت اور دولت کے باوجود ہر لمحہ اللہ کا شکر ادا کرنا۔",
+      hi: "अपार धन और सत्ता मिलने पर भी ईश्वर का कृतज्ञ रहना।",
+      ar: "الشكر الدائم لله على النعم والاعتراف بأن الملك لله وحده."
+    }
+  },
+  {
+    id: 15,
+    name: { en: "15. Prophet Isa / Jesus (PBUH)", ur: "۱۵. حضرت عیسیٰ مسیح (عَلَيْهِ ٱلسَّلَامُ)", hi: "15. हज़रत ईसा मसीह (अलैहिस्सलाम)", ar: "١٥. نبي الله المسيح عيسى بن مريم (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Al-Masih • Ruhullah (Spirit from Allah)", ur: "المسیح • روح اللہ • کلمۃ اللہ", hi: "मसीह • रूहूल्लाह • कलमतुल्लाह", ar: "المسيح عيسى ابن مريم وجيه في الدنيا والآخرة" },
+    parents: { en: "Mother: Sayyidah Maryam (Virgin Mary, daughter of Imran)", ur: "والدہ: سیدہ مریم بنت عمران (بغیر باپ کے تخلیق)", hi: "माता: सय्यिदा मरियम (बिना पिता के जन्म)", ar: "الأم: الصديقة البتول مريم بنت عمران بلا أب" },
+    origin: { en: "Bethlehem / Nazareth (Palestine), ascended to heavens, will return before end times", ur: "بیت لحم و ناصرہ (فلسطین)، آسمان پر اٹھائے گئے", hi: "बेथलेहम व नाजरेथ (फ़िलिस्तीन)", ar: "الناصرة وبيت لحم (فلسطين) ورفع إلى السماء" },
+    seerat: {
+      en: "The penultimate messenger of Allah. Born miraculously to the pure Virgin Maryam without a biological father. Brought the Injeel (Gospel), healed the blind and lepers by God's leave, and was raised physically to the heavens.",
+      ur: "اللہ کے جلیل القدر پیغمبر جو بغیر باپ کے پاکدامن بی بی مریم کے بطن سے پیدا ہوئے۔ تورات کی تصدیق کی اور انجیل لے کر آئے۔ آسمان پر اٹھائے گئے اور قربِ قیامت دوبارہ تشریف لائیں گے۔",
+      hi: "अल्लाह के महान पैगंबर जो बिना पिता के मरियम से पैदा हुए। कोढ़ियों और अंधों को ठीक किया। आसमान पर उठाए गए और अंतकाल में पुनः आएंगे।",
+      ar: "كلمة الله وروحه، وُلد من بتول بغير أب، أُيد بالإنجيل ومعجزات إبراء الأكمه والأبرص، ورفعه الله إليه."
+    },
+    miracles: {
+      en: "Virgin birth; speaking in infancy from the cradle; healing blind and lepers; raising the dead by Allah's leave.",
+      ur: "بغیر باپ پیدائش؛ گہوارے میں کلام کرنا؛ مادرِ مادر اندھے کو شفا دینا؛ مردوں کو زندہ کرنا۔",
+      hi: "बिन पिता जन्म; पालने में बोलना; अंधों को रोशनी देना; मुर्दों को जिंदा करना।",
+      ar: "الولادة البتولية، الكلام في المهد، إبراء الأكمه والأبرص، وإحياء الموتى بإذن الله."
+    },
+    lesson: {
+      en: "Absolute devotion, humility, spiritual purity, and reliance on Allah's miraculous power.",
+      ur: "عاجزی، روحانی پاکیزگی، اور دنیا کی محبت سے بے نیازی۔",
+      hi: "अध्यात्म, विनम्रता और ईश्वर की शक्ति पर पूर्ण भरोसा।",
+      ar: "الزهد في الدنيا، والتواضع الشديد، والإخلاص الكامل لله."
     }
   }
 ];
@@ -1018,7 +1352,7 @@ function executeAIQuery() {
 }
 
 /* =====================================================
-   EXPANDED AUTHENTIC DUA DATABASE
+   AUTHENTIC DUA DATABASE
 ===================================================== */
 const DUA_DATABASE = [
   {
