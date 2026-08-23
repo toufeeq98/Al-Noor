@@ -3,5 +3,5 @@ self.addEventListener('install', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-  // empty fetch for PWA criteria
+  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
 });
