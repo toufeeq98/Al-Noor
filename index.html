@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<button id="install-btn" class="hidden items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-600 text-white text-xs font-bold">
+  <span>Install App</span>
+</button>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#000000">
 <meta charset="UTF-8">
@@ -1551,6 +1554,22 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAudioTracks();
   renderAIAutocompleteSuggestions();
   if (window.lucide) lucide.createIcons();
+});
+  let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const installBtn = document.getElementById('install-btn');
+  if(installBtn) {
+    installBtn.classList.remove('hidden');
+    installBtn.classList.add('flex');
+    installBtn.addEventListener('click', async () => {
+      installBtn.classList.add('hidden');
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    });
+  }
 });
 </script>
 <script>
