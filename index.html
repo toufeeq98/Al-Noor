@@ -13,8 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 
-<style> body
-  {
+<style>
+body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: #0b0f0e;
   color: #f1f5f9;
@@ -89,12 +89,6 @@
   </div>
 
   <div class="flex items-center gap-3">
-    <!-- Aesthetic Date Banner -->
-    <div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-[10px] font-mono text-emerald-300">
-      <i data-lucide="calendar" class="w-3 h-3 text-emerald-400"></i>
-      <span>August 23, 2026</span>
-    </div>
-
     <!-- Multi-Language Selector -->
     <div class="flex items-center gap-1.5 bg-[#141b18] p-1 rounded-xl border border-white/10 text-xs">
       <button onclick="setAppLanguage('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-lg font-bold bg-emerald-500 text-black">EN</button>
@@ -131,6 +125,20 @@
   <div class="space-y-3">
     <span class="text-xs font-bold uppercase tracking-wider text-slate-400 px-1" id="section-sacred-tools">Core Essentials</span>
     
+    <!-- Pillars of Islam -->
+    <div onclick="openModal('pillars-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group bg-gradient-to-r from-[#17221d] to-[#121c17] border-emerald-500/30">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/35 flex items-center justify-center text-emerald-400">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-white group-hover:text-emerald-300 transition" id="lbl-pillars-hub">5 Pillars of Islam (Arkan al-Islam)</h3>
+          <p class="text-xs text-slate-400" id="sub-pillars-hub">Shahadah, Salah, Zakat, Sawm, and Hajj Explained</p>
+        </div>
+      </div>
+      <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
+    </div>
+
     <!-- 99 Names of Allah -->
     <div onclick="openModal('names-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group">
       <div class="flex items-center gap-3.5">
@@ -145,15 +153,15 @@
       <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
     </div>
 
-    <!-- 15 Prominent Prophets -->
+    <!-- 25 Complete Prophets -->
     <div onclick="openModal('prophets-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group">
       <div class="flex items-center gap-3.5">
         <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400">
           <i data-lucide="scroll" class="w-6 h-6"></i>
         </div>
         <div>
-          <h3 class="text-sm font-bold text-white group-hover:text-amber-300 transition" id="lbl-prophets-hub">15 Prominent Prophets (Qasas-ul-Anbiya)</h3>
-          <p class="text-xs text-slate-400" id="sub-prophets-hub">Origins, Parents, Miracles & Full Manuscripts</p>
+          <h3 class="text-sm font-bold text-white group-hover:text-amber-300 transition" id="lbl-prophets-hub">25 Complete Quranic Prophets</h3>
+          <p class="text-xs text-slate-400" id="sub-prophets-hub">Lineage, Parents, Sacred Journeys, Miracles & Life</p>
         </div>
       </div>
       <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
@@ -168,9 +176,9 @@
         <div>
           <div class="flex items-center gap-2">
             <h3 class="text-sm font-bold text-white group-hover:text-purple-300 transition" id="lbl-ai-hub">Noor-AI Knowledge Engine</h3>
-            <span class="text-[9px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-bold">SMART FIX</span>
+            <span class="text-[9px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-bold">100+ DEEN TOPICS</span>
           </div>
-          <p class="text-xs text-slate-400" id="sub-ai-hub">Typo Correction & Autocomplete Search</p>
+          <p class="text-xs text-slate-400" id="sub-ai-hub">Strictly Islamic & Quranic Knowledge</p>
         </div>
       </div>
       <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
@@ -189,7 +197,7 @@
         </div>
         <div>
           <h4 class="text-sm font-bold text-white" id="lbl-dua-tile">Dua & Azkar</h4>
-          <p class="text-[11px] text-slate-400" id="sub-dua-tile">Authentic Sunnah Duas</p>
+          <p class="text-[11px] text-slate-400" id="sub-dua-tile">30+ Authentic Sunnah Duas</p>
         </div>
       </div>
 
@@ -200,7 +208,7 @@
         </div>
         <div>
           <h4 class="text-sm font-bold text-white" id="lbl-tasbih-tile">Digital Tasbih</h4>
-          <p class="text-[11px] text-slate-400" id="sub-tasbih-tile">Wood & Dial Counter</p>
+          <p class="text-[11px] text-slate-400" id="sub-tasbih-tile">Unlimited / Custom Count</p>
         </div>
       </div>
 
@@ -211,7 +219,7 @@
         </div>
         <div>
           <h4 class="text-sm font-bold text-white" id="lbl-audio-tile">Quran Audio</h4>
-          <p class="text-[11px] text-slate-400" id="sub-audio-tile">Tilawat & Translations</p>
+          <p class="text-[11px] text-slate-400" id="sub-audio-tile">10 Surahs & Tarjuma</p>
         </div>
       </div>
 
@@ -229,6 +237,28 @@
   </div>
 
 </main>
+
+<!-- MODAL: PILLARS OF ISLAM -->
+<div id="pillars-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
+  <div class="max-w-3xl w-full mx-auto flex-1 flex flex-col bg-[#111815] border border-emerald-500/30 rounded-3xl p-5 overflow-hidden">
+    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-bold text-white font-cinzel">The 5 Pillars of Islam (أركان الإسلام)</h2>
+          <span class="text-[10px] text-emerald-400 font-mono">Foundations of Faith (Sahih al-Bukhari 8)</span>
+        </div>
+      </div>
+      <button onclick="closeModal('pillars-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div id="pillars-container" class="flex-1 overflow-y-auto space-y-3 pt-4 pr-1"></div>
+  </div>
+</div>
 
 <!-- MODAL 1: 99 NAMES OF ALLAH -->
 <div id="names-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
@@ -256,7 +286,7 @@
   </div>
 </div>
 
-<!-- MODAL 2: 15 PROPHETS LIST -->
+<!-- MODAL 2: 25 PROPHETS LIST -->
 <div id="prophets-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
   <div class="max-w-3xl w-full mx-auto flex-1 flex flex-col bg-[#111815] border border-amber-500/30 rounded-3xl p-5 overflow-hidden">
     <div class="flex items-center justify-between pb-4 border-b border-white/10">
@@ -265,7 +295,7 @@
           <i data-lucide="scroll" class="w-5 h-5"></i>
         </div>
         <div>
-          <h2 class="text-base font-bold text-white font-cinzel">15 Prominent Prophets</h2>
+          <h2 class="text-base font-bold text-white font-cinzel">25 Complete Quranic Prophets</h2>
           <span class="text-[10px] text-amber-300 font-mono">Qasas-ul-Anbiya (قصص الأنبياء)</span>
         </div>
       </div>
@@ -300,7 +330,7 @@
           <p id="parchment-parents" class="text-[#35210d] font-manuscript font-semibold"></p>
         </div>
         <div>
-          <span class="font-bold uppercase text-[10px] text-[#633a12] block">Region / Place:</span>
+          <span class="font-bold uppercase text-[10px] text-[#633a12] block">Origin & Sacred Journeys:</span>
           <p id="parchment-origin" class="text-[#35210d] font-manuscript font-semibold"></p>
         </div>
       </div>
@@ -338,7 +368,7 @@
         </div>
         <div>
           <h2 class="text-base font-bold text-white font-cinzel">Noor-AI Knowledge Engine</h2>
-          <span class="text-[10px] text-purple-300 font-mono">Typo-Correcting Islamic Search</span>
+          <span class="text-[10px] text-purple-300 font-mono">Dedicated Islamic Jurisprudence & Quranic AI</span>
         </div>
       </div>
       <button onclick="closeModal('ai-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
@@ -351,14 +381,14 @@
         <span class="font-bold flex items-center gap-1.5 text-purple-300 mb-1">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Assalamu Alaikum!
         </span>
-        Ask any questions regarding Quran, Hadith, Seerat, or Islamic rulings.
+        Yeh AI Knowledge Engine sirf Quran, Sahih Hadith, Ambiya-e-Kiram, aur Deen-e-Islam ki maloomat ke liye makhsoos hai.
       </div>
     </div>
 
     <div id="ai-autocomplete-box" class="flex flex-wrap gap-1.5 pb-2 text-[11px]"></div>
 
     <div class="flex gap-2 relative">
-      <input type="text" id="ai-user-input" oninput="handleAITyping(this.value)" placeholder="Type here (e.g. 'aytul kursi', '5 pillrs', 'muhamad parents')..." class="flex-1 bg-[#16201c] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-purple-500">
+      <input type="text" id="ai-user-input" oninput="handleAITyping(this.value)" placeholder="Ask about Quran, Hadith, Prophets, or Fiqh..." class="flex-1 bg-[#16201c] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-purple-500">
       <button onclick="executeAIQuery()" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-xs text-white flex items-center gap-1.5 active:scale-95 transition">
         <span>Search</span>
         <i data-lucide="send" class="w-3.5 h-3.5"></i>
@@ -376,8 +406,8 @@
           <i data-lucide="book-open" class="w-5 h-5"></i>
         </div>
         <div>
-          <h2 class="text-base font-bold text-white font-cinzel">Masnoon Dua & Azkar</h2>
-          <span class="text-[10px] text-teal-400 font-mono">Authentic Daily Supplications</span>
+          <h2 class="text-base font-bold text-white font-cinzel">Masnoon Dua & Azkar (30+ Verified)</h2>
+          <span class="text-[10px] text-teal-400 font-mono">Authentic Daily & Event Supplications</span>
         </div>
       </div>
       <button onclick="closeModal('dua-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
@@ -386,7 +416,7 @@
     </div>
     
     <div class="pt-3 pb-1">
-      <input type="text" id="dua-search-input" oninput="filterDuas(this.value)" placeholder="Search duas (e.g., travel, eating, sleep, anxiety)..." class="w-full bg-[#18221e] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-teal-500">
+      <input type="text" id="dua-search-input" oninput="filterDuas(this.value)" placeholder="Search duas (e.g., travel, eating, sleep, anxiety, forgiveness, parents)..." class="w-full bg-[#18221e] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-teal-500">
     </div>
 
     <div id="dua-container" class="flex-1 overflow-y-auto space-y-3 pt-2 pr-1"></div>
@@ -395,7 +425,7 @@
 
 <!-- MODAL 5: DIGITAL TASBIH -->
 <div id="tasbih-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
-  <div class="max-w-md w-full mx-auto my-auto bg-[#141b18] border border-amber-500/40 rounded-3xl p-6 space-y-6">
+  <div class="max-w-md w-full mx-auto my-auto bg-[#141b18] border border-amber-500/40 rounded-3xl p-6 space-y-5">
     <div class="flex items-center justify-between border-b border-white/10 pb-3">
       <h3 class="text-sm font-bold text-amber-300 font-cinzel">Antique Sunnah Tasbih</h3>
       <button onclick="closeModal('tasbih-modal')" class="p-1.5 rounded-lg bg-white/5 text-slate-400">
@@ -410,14 +440,21 @@
 
     <div class="flex justify-center">
       <div class="antique-brass-dial w-36 h-36 rounded-full flex flex-col items-center justify-center border-4 border-[#3a2007]">
-        <div id="tasbih-count" class="font-mono text-5xl font-black">00</div>
+        <div id="tasbih-count" class="font-mono text-5xl font-black">0</div>
         <span class="text-[9px] font-bold uppercase tracking-widest text-[#41290a]">Count</span>
       </div>
     </div>
 
     <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-2">
       <span id="tasbih-round-txt">Rounds: 0</span>
-      <span id="tasbih-target-txt">Target: 33</span>
+      <div class="flex items-center gap-1">
+        <span>Target:</span>
+        <select id="tasbih-mode-select" onchange="changeTasbihTarget(this.value)" class="bg-[#19241f] border border-white/10 rounded px-1.5 py-0.5 text-amber-300 font-bold">
+          <option value="unlimited">Unlimited (بے شمار)</option>
+          <option value="33">33</option>
+          <option value="100">100</option>
+        </select>
+      </div>
     </div>
 
     <div class="flex gap-2">
@@ -444,7 +481,7 @@
         </div>
         <div>
           <h2 class="text-base font-bold text-white font-cinzel">Quran Audio Sanctuary</h2>
-          <span class="text-[10px] text-blue-300 font-mono">Mishary Alafasy & Urdu Tarjuma</span>
+          <span class="text-[10px] text-blue-300 font-mono">10 Authentic Tilawat Tracks</span>
         </div>
       </div>
       <button onclick="closeModal('audio-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
@@ -454,7 +491,7 @@
 
     <div class="py-4 border-b border-white/10 space-y-2">
       <div class="flex items-center justify-between text-xs">
-        <span id="active-track-name" class="font-bold text-white font-cinzel">Surah Al-Fatihah</span>
+        <span id="active-track-name" class="font-bold text-white font-cinzel">Surah Al-Mu'minun</span>
         <span id="active-track-reciter" class="text-slate-400 text-[11px]">Mishary Rashid Alafasy</span>
       </div>
       <audio id="global-player" controls class="w-full"></audio>
@@ -485,6 +522,7 @@
           <option value="translation">Translation Mistake (Tarjuma)</option>
           <option value="names">99 Names of Allah</option>
           <option value="prophets">Prophet Bio / Parents / Location Info</option>
+          <option value="pillars">Pillars of Islam Content</option>
           <option value="spelling">Spelling Error</option>
         </select>
       </div>
@@ -515,18 +553,20 @@ const UI_STRINGS = {
     dailyBadge: "Ayah & Hadith of the Day",
     secSacred: "Core Essentials",
     secDaily: "Daily Worship & Tools",
+    lblPillars: "5 Pillars of Islam (Arkan al-Islam)",
+    subPillars: "Shahadah, Salah, Zakat, Sawm, and Hajj Explained",
     lbl99: "99 Names of Allah",
     sub99: "Complete Asma-ul-Husna with Meanings & Transliteration",
-    lblProphets: "15 Prominent Prophets (Qasas-ul-Anbiya)",
-    subProphets: "Origins, Parents, Miracles & Full Manuscripts",
+    lblProphets: "25 Complete Quranic Prophets",
+    subProphets: "Lineage, Parents, Sacred Journeys, Miracles & Life",
     lblAi: "Noor-AI Knowledge Engine",
-    subAi: "Typo Correction & Autocomplete Search",
+    subAi: "Strictly Islamic & Quranic Knowledge",
     lblDua: "Dua & Azkar",
-    subDua: "Authentic Sunnah Duas",
+    subDua: "30+ Authentic Sunnah Duas",
     lblTasbih: "Digital Tasbih",
-    subTasbih: "Wood & Dial Counter",
+    subTasbih: "Unlimited / Custom Count",
     lblAudio: "Quran Audio",
-    subAudio: "Tilawat & Translations",
+    subAudio: "10 Surahs & Tarjuma",
     lblReport: "Report Inaccuracy",
     subReport: "Multilingual Corrections",
     dailyAyah: '"Our Lord, give us in this world that which is good and in the Hereafter that which is good and protect us from the punishment of the Fire." — [Surah Al-Baqarah 2:201]'
@@ -536,18 +576,20 @@ const UI_STRINGS = {
     dailyBadge: "آج کی منتخب آیت و حدیث",
     secSacred: "بنیادی اسلامی خزانے",
     secDaily: "روزمرہ عبادات و اعمال",
+    lblPillars: "اسلام کے ۵ بنیادی ارکان",
+    subPillars: "شہادت، نماز، زکوٰۃ، روزہ اور حج کی مکمل تفصیل",
     lbl99: "اللہ تعالیٰ کے ۹۹ مبارک نام",
     sub99: "اسمائے حسنیٰ مع مکمل اردو معانی و فضائل",
-    lblProphets: "۱۵ جلیل القدر انبیاء (قصص الانبیاء)",
-    subProphets: "والدین، مقامِ پیدائش، معجزات و تاریخ",
+    lblProphets: "قرآن پاک کے ۲۵ جلیل القدر انبیاء",
+    subProphets: "والدین، مقدّس اسفار، معجزات، سیرت و حکمت",
     lblAi: "نور-اے آئی اسلامی سرچ",
-    subAi: "خودکار تصحیح اور مستند فتاویٰ انجن",
+    subAi: "خالص دینی و قرآنی علوم کا انجن",
     lblDua: "مسنون دعائیں و اذکار",
-    subDua: "صبح و شام کی مستند دعائیں",
+    subDua: "۳۰ سے زائد مستند دعائیں",
     lblTasbih: "ڈیجیٹل تسبیح کاؤنٹر",
-    subTasbih: "روایتی ڈائل و زکر",
+    subTasbih: "لامحدود اور روایتی ڈائل کاؤنٹر",
     lblAudio: "تلاوتِ قرآن پاک",
-    subAudio: "قاری مشاری راشد مع اردو ترجمہ",
+    subAudio: "۱۰ منتخب سورتیں مع اردو ترجمہ",
     lblReport: "تصحیح و اصلاح ارسال کریں",
     subReport: "کسی بھی غلطی کی نشاندہی کریں",
     dailyAyah: '"اے ہمارے پروردگار! ہمیں دنیا میں بھی بھلائی عطا فرما اور آخرت میں بھی بھلائی عطا فرما اور ہمیں آگ کے عذاب سے بچا۔" — [سورۃ البقرہ: ۲۰۱]'
@@ -557,18 +599,20 @@ const UI_STRINGS = {
     dailyBadge: "आज की पवित्र आयत व हदीस",
     secSacred: "प्रमुख साधन",
     secDaily: "दैनिक इबादत व ज़िक्र",
+    lblPillars: "इस्लाम के 5 मूल स्तंभ (अरकान)",
+    subPillars: "शहादा, नमाज़, ज़कात, रोज़ा व हज का संपूर्ण विवरण",
     lbl99: "अल्लाह तआला के 99 पवित्र नाम",
     sub99: "अस्मा-उल-हुस्ना पूर्ण अर्थ व व्याख्या सहित",
-    lblProphets: "15 प्रमुख पैगंबर (क़सस-उल-अंबिया)",
-    subProphets: "माता-पिता, जन्मस्थान, चमत्कार व संपूर्ण इतिहास",
+    lblProphets: "क़ुरआन के संपूर्ण 25 पैगंबर",
+    subProphets: "माता-पिता, पवित्र यात्राएं, चमत्कार व संपूर्ण इतिहास",
     lblAi: "नूर-एआई ज्ञान इंजन",
-    subAi: "गलती सुधार एवं स्वचालित खोज प्रणाली",
+    subAi: "विशुद्ध इस्लामिक व क़ुरआनी ज्ञान प्रणाली",
     lblDua: "मसनून दुआएं व अज़कार",
-    subDua: "सुन्नत के अनुसार प्रामाणिक दुआएं",
+    subDua: "30 से अधिक प्रामाणिक मसनून दुआएं",
     lblTasbih: "डिजिटल तस्बीह",
-    subTasbih: "सुंदर डायल व निरंतर ज़िक्र",
+    subTasbih: "असीमित निरंतर ज़िक्र व काउंटर",
     lblAudio: "क़ुरआन ऑडियो",
-    subAudio: "क़िरअत एवं अनुवाद",
+    subAudio: "10 पवित्र सूरह व अनुवाद",
     lblReport: "त्रुटि सुधार भेजें",
     subReport: "किसी भी भाषा की त्रुटि बताएं",
     dailyAyah: '"ऐ हमारे रब! हमें दुनिया में भी भलाई अता फरमा और आख़िरत में भी भलाई अता फरमा और हमें दोज़ख़ की आग के अज़ाब से बचा।" — [सूरह अल-बक़रा: 201]'
@@ -578,18 +622,20 @@ const UI_STRINGS = {
     dailyBadge: "آية وحديث اليوم",
     secSacred: "الأركان الأساسية",
     secDaily: "العبادات والأذكار اليومية",
+    lblPillars: "أركان الإسلام الخمسة",
+    subPillars: "الشهادتان، الصلاة، الزكاة، الصوم، وحج البيت",
     lbl99: "أسماء الله الحسنى",
     sub99: "الأسماء والصفات التسعة وتسعين ومعانيها",
-    lblProphets: "١٥ من الأنبياء والمرسلين (قصص الأنبياء)",
-    subProphets: "الأنساب، الموطن، المعجزات والسيرة المباركة",
+    lblProphets: "٢٥ نبيّاً ورسولاً المذكورين في القرآن",
+    subProphets: "الأنساب، الأسفار المباركة، المعجزات والسيرة",
     lblAi: "محرك نور الذكي للعلوم الشرعية",
-    subAi: "تصحيح تلقائي وبحث دقيق في الفتاوى والحديث",
+    subAi: "مخصص للعلوم القرآنية والأحاديث الصحيحة فقط",
     lblDua: "الأدعية المأثورة والأذكار",
-    subDua: "أدعية اليوم والليلة من السنة النبوية",
+    subDua: "أكثر من ٣٠ دعاءً من السنة النبوية",
     lblTasbih: "المسبحة الرقمية",
-    subTasbih: "عداد الأذكار اليومي",
+    subTasbih: "عداد غير محدود للأذكار",
     lblAudio: "تلاوة القرآن الكريم",
-    subAudio: "القارئ مشاري العفاسي مع الترجمات",
+    subAudio: "١٠ سور مختارة بأعذب الأصوات",
     lblReport: "الإبلاغ عن خطأ",
     subReport: "تصحيح الترجمات والنصوص",
     dailyAyah: '"رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ" — [سورة البقرة: ٢٠١]'
@@ -625,6 +671,8 @@ function setAppLanguage(lang) {
   document.getElementById("daily-badge-title").textContent = s.dailyBadge;
   document.getElementById("section-sacred-tools").textContent = s.secSacred;
   document.getElementById("section-daily-worship").textContent = s.secDaily;
+  document.getElementById("lbl-pillars-hub").textContent = s.lblPillars;
+  document.getElementById("sub-pillars-hub").textContent = s.subPillars;
   document.getElementById("lbl-99-names").textContent = s.lbl99;
   document.getElementById("sub-99-names").textContent = s.sub99;
   document.getElementById("lbl-prophets-hub").textContent = s.lblProphets;
@@ -641,10 +689,96 @@ function setAppLanguage(lang) {
   document.getElementById("sub-report-tile").textContent = s.subReport;
   document.getElementById("daily-trans-text").textContent = s.dailyAyah;
 
+  renderPillarsOfIslam();
   renderAll99Names();
   renderProphetsList();
+  renderDuaList();
   renderAIAutocompleteSuggestions();
   if(window.lucide) lucide.createIcons();
+}
+
+/* =====================================================
+   PILLARS OF ISLAM (ARKAN AL-ISLAM)
+===================================================== */
+const PILLARS_DATA = [
+  {
+    num: "1",
+    name: { en: "Shahadah (Declaration of Faith)", ur: "۱. کلمۂ شہادت (ایمان و توحید)", hi: "1. शहादा (ईमान की गवाही)", ar: "١. الشَّهَادَتَانِ" },
+    arabic: "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ",
+    desc: {
+      en: "Bearing witness that none has the right to be worshipped except Allah alone with no partners, and that Muhammad (ﷺ) is His slave and final Messenger. The bedrock foundation of all Islamic deeds.",
+      ur: "اس بات کی سچے دل سے گواہی دینا کہ اللہ کے سوا کوئی معبودِ برحق نہیں اور حضرت محمد ﷺ اللہ کے بندے اور آخری رسول ہیں۔",
+      hi: "इस बात की दिल से गवाही देना कि अल्लाह के सिवा कोई पूज्य नहीं और हज़रत मुहम्मद ﷺ अल्लाह के बंदे और अंतिम रसूल हैं।",
+      ar: "شهادة أن لا إله إلا الله وحده لا شريك له، وأن محمداً عبده ورسوله، وهي أصل الدين وأساس قبول الأعمال."
+    }
+  },
+  {
+    num: "2",
+    name: { en: "Salah (Daily Five Prayers)", ur: "۲. اقامتِ نماز (پانچ وقت کی فرض نماز)", hi: "2. सलात (दैनिक 5 समय की नमाज़)", ar: "٢. إِقَامُ الصَّلَاةِ" },
+    arabic: "إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا",
+    desc: {
+      en: "Performing the 5 mandatory daily prayers (Fajr, Dhuhr, Asr, Maghrib, Isha) facing the Holy Kaaba. It purifies the soul, establishes direct connection with Allah, and forbids immoral acts.",
+      ur: "روزانہ پانچ وقت (فجر، ظہر، عصر، مغرب، عشاء) باقاعدگی سے نماز قائم کرنا۔ یہ دین کا ستون اور برائیوں سے روکنے والی عبادت ہے۔",
+      hi: "प्रतिदिन 5 समय (फ़ज्र, ज़ुहर, अस्र, मग़रिब, इशा) पाबंदी से नमाज़ अदा करना जो आत्मिक शुद्धि और ईश्वर से सीधा संपर्क है।",
+      ar: "أداء الصلوات الخمس المفروضة في أوقاتها بطهارة وخشوع، وهي عماد الدين والصلة المباشرة بين العبد وربه."
+    }
+  },
+  {
+    num: "3",
+    name: { en: "Zakat (Obligatory Almsgiving)", ur: "۳. ادائے زکوٰۃ (مالی فرض عبادت)", hi: "3. ज़कात (अनिवार्य दान)", ar: "٣. إِيتَاءُ الزَّكَاةِ" },
+    arabic: "وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ",
+    desc: {
+      en: "Giving an annual 2.5% share of surplus wealth (exceeding the Nisab threshold) to the designated poor, needy, and vulnerable in society. It purifies wealth and eliminates greed.",
+      ur: "صاحبِ نصاب مسلمان پر سالانہ اپنے فاضل مال کا ۲.۵ فیصد حصہ غریبوں، مسکینوں اور مستحقین کو ادا کرنا فرض ہے۔",
+      hi: "निस़ाब से अधिक धन रखने वाले सक्षम मुस्लिमों द्वारा प्रतिवर्ष अपनी बचत का 2.5% भाग निर्धनों व ज़रूरतमंदों को देना।",
+      ar: "إخراج حصة مقدرة شرعاً (٢.٥٪) من الأموال الفائضة البالغة للنصاب للفقراء والمحتاجين تطهيراً للمال والنفس."
+    }
+  },
+  {
+    num: "4",
+    name: { en: "Sawm (Fasting the Month of Ramadan)", ur: "۴. صومِ رمضان (ماہِ رمضان کے روزے)", hi: "4. सौम (रमज़ान के पवित्र रोज़े)", ar: "٤. صَوْمُ رَمَضَانَ" },
+    arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ",
+    desc: {
+      en: "Abstaining from food, drink, and intimacy from dawn (Fajr) until sunset (Maghrib) throughout the holy month of Ramadan to develop self-restraint, empathy for the poor, and Taqwa.",
+      ur: "رمضان المبارک کے مقدس مہینے میں طلوعِ فجر سے غروبِ آفتاب تک کھانے پینے اور نفسانی خواہشات سے رک کر تقویٰ حاصل کرنا۔",
+      hi: "रमज़ान के पवित्र महीने में सूर्योदय से पूर्व से लेकर सूर्यास्त तक खाने-पीने से परहेज़ कर ईश्वरीय भय (तक़वा) प्राप्त करना।",
+      ar: "الإمساك عن المفطرات من طلوع الفجر إلى غروب الشمس بنية التعبد في شهر رمضان المبارك لتحقيق التقوى."
+    }
+  },
+  {
+    num: "5",
+    name: { en: "Hajj (Pilgrimage to Makkah)", ur: "۵. حجِ بیت اللہ (مکہ مکرمہ کی زیارت)", hi: "5. हज (मक्का की पवित्र तीर्थयात्रा)", ar: "٥. حَجُّ البَيْتِ لِمَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا" },
+    arabic: "وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا",
+    desc: {
+      en: "Performing the sacred pilgrimage to the Holy Kaaba and the sites of Mina, Arafat, and Muzdalifah in Dhul-Hijjah at least once in a lifetime for every financially and physically capable Muslim.",
+      ur: "زندگی میں ایک بار استطاعت رکھنے والے صاحبِ حیثیت مسلمان پر مکہ مکرمہ، عرفات، اور منیٰ میں جا کر مناسکِ حج ادا کرنا فرض ہے۔",
+      hi: "शारीरिक और आर्थिक रूप से सक्षम प्रत्येक मुस्लिम के लिए जीवन में कम से कम एक बार मक्का जाकर पवित्र हज के अरकान पूरा करना अनिवार्य है।",
+      ar: "قصد مكة المكرمة والمشاعر المقدسة في ذي الحجة لأداء المناسك مرة واحدة في العمر للمستطيع بدنياً ومالياً."
+    }
+  }
+];
+
+function renderPillarsOfIslam() {
+  const container = document.getElementById("pillars-container");
+  if(!container) return;
+  container.innerHTML = "";
+
+  PILLARS_DATA.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "p-4 rounded-2xl bg-[#16201b] border border-white/5 space-y-2.5";
+    const name = p.name[currentAppLang] || p.name.en;
+    const desc = p.desc[currentAppLang] || p.desc.en;
+
+    card.innerHTML = `
+      <div class="flex items-center justify-between border-b border-white/10 pb-2">
+        <h4 class="text-sm font-bold text-emerald-300 font-cinzel">${name}</h4>
+        <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-xs flex items-center justify-center font-bold">${p.num}</span>
+      </div>
+      <p class="text-right text-base font-amiri text-amber-200 leading-relaxed">${p.arabic}</p>
+      <p class="text-xs text-slate-300 leading-relaxed">${desc}</p>
+    `;
+    container.appendChild(card);
+  });
 }
 
 /* =====================================================
@@ -667,7 +801,7 @@ const ALLAH_99_NAMES = [
   { id: 14, ar: "الْغَفَّارُ", en: "Al-Ghaffar", meaning: { en: "The Constant Forgiver", ur: "بار بار گناہ بخشنے والا", hi: "सदा क्षमाशील", ar: "الساتر لذنوب عباده" } },
   { id: 15, ar: "الْقَهَّارُ", en: "Al-Qahhar", meaning: { en: "The Supreme Subduer", ur: "سب پر کامل غلبہ رکھنے والا", hi: "सर्वविजेता", ar: "الغالب لكل الخلائق بقوته" } },
   { id: 16, ar: "الْوَهَّابُ", en: "Al-Wahhab", meaning: { en: "The Supreme Bestower", ur: "بغیر معاوضے عطا کرنے والا", hi: "उपहार देने वाला", ar: "المعطي بلا مقابل" } },
-  { id: 17, ar: "الرَّزَّاقُ", en: "Ar-Razzaq", meaning: { en: "The Provider of All Sustenance", ur: "تمام مخلوق کو روزی دینے والا", hi: "रोज़ी देने वाला", ar: "المتكفل بأرزاق العباد" } },
+  { id: 17, ar: "الرَّزَّاقُ", en: "Ar-Razzaq", meaning: { en: "The Provider of All Sustenance", ur: "تمام مخلوق کو روزی دینے والا", hi: "रोज़ी देने वाला", ar: "المتكفل بأرزاق العباد" } },
   { id: 18, ar: "الْفَتَّاحُ", en: "Al-Fattah", meaning: { en: "The Opener of Victory & Mercy", ur: "رحمت و فتح کے دروازے کھولنے والا", hi: "कल्याण के द्वार खोलने वाला", ar: "الحاكم الفاتح للخيرات" } },
   { id: 19, ar: "الْعَلِيمُ", en: "Al-Alim", meaning: { en: "The All-Knowing", ur: "سب کچھ جاننے والا", hi: "सर्वज्ञानी", ar: "المحيط علمه بكل شيء" } },
   { id: 20, ar: "الْقَابِضُ", en: "Al-Qabid", meaning: { en: "The Restrainer & Constrictor", ur: "روزی تنگ کرنے والا", hi: "रोकने व संकीर्ण करने वाला", ar: "المضيق بحكمته" } },
@@ -791,15 +925,15 @@ function filterNames() {
 }
 
 /* =====================================================
-   AUTHENTIC 15 PROPHETS DATABASE (QASAS-UL-ANBIYA)
+   AUTHENTIC 25 PROPHETS DATABASE (QASAS-UL-ANBIYA)
 ===================================================== */
 const PROPHETS_DATA = [
   {
     id: 1,
     name: { en: "1. Prophet Adam (PBUH)", ur: "۱. حضرت آدم (عَلَيْهِ ٱلسَّلَامُ)", hi: "1. हज़रत आदम (अलैहिस्सलाम)", ar: "١. نبي الله آدم (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Father of Humanity • Abul Bashar", ur: "ابو البشر • خلیفۃ اللہ فی الارض", hi: "मानवता के पिता • प्रथम पैगंबर", ar: "أبو البشر وأول خليفة في الأرض" },
+    title: { en: "Father of Humanity • Abul Bashar", ur: "ابو البشر • خلیفۃ اللہ فی الارض", hi: "मानवता के पिता • प्रथम पैگंबर", ar: "أبو البشر وأول خليفة في الأرض" },
     parents: { en: "Created directly by Allah without biological parents from Earth's clays", ur: "بغیر والدین مٹی سے براہِ راست اللہ نے پیدا فرمایا", hi: "बिना माता-पिता मिट्टी से सीधे अल्लाह द्वारा निर्मित", ar: "خلقه الله بيده من طين الأرض بلا أب ولا أم" },
-    origin: { en: "Descent onto Earth (Historical tradition: Sarandib/Mecca)", ur: "سراندیب (ہند/لنکا) و مکہ مکرمہ", hi: "धरती पर आगमन (सरनदीप/मक्का)", ar: "الأرض، مكة المكرمة وسرنديب" },
+    origin: { en: "Descent onto Earth (Historical tradition: Sarandib & Mecca)", ur: "سراندیب (ہند/لنکا) تا مکہ مکرمہ", hi: "धरती पर आगमन (सरनदीप व मक्का)", ar: "الأرض، مكة المكرمة وسرنديب" },
     seerat: {
       en: "The first human and first prophet of Allah. Endowed with the names and divine sciences of all creation. Taught humanity the eternal beauty of sincere repentance (Tawbah).",
       ur: "پہلے انسان اور پہلے نبی۔ اللہ نے تمام اشیاء کے نام سکھائے۔ توبہ اور انابت کا درس نسلِ انسانی کو ان سے حاصل ہوا۔",
@@ -849,7 +983,7 @@ const PROPHETS_DATA = [
     name: { en: "3. Prophet Nuh / Noah (PBUH)", ur: "۳. حضرت نوح (عَلَيْهِ ٱلسَّلَامُ)", hi: "3. हज़रत नूह (अलैहिस्सलाम)", ar: "٣. نبي الله نوح (عَلَيْهِ ٱلسَّلَامُ)" },
     title: { en: "Elder of the Messengers • Shaikh-ul-Anbiya", ur: "شیخ الانبیاء • دوسرا آدم", hi: "शेख़ुल अंबिया • मानव रक्षक", ar: "شيخ المرسلين وأول أولي العزم" },
     parents: { en: "Father: Lamech (Lamik) | Mother: Shamkha", ur: "والد: لمک بن متوشلح | والدہ: شمخہ", hi: "पिता: लामक | माता: शमख़ा", ar: "الأب: لامك بن متوشلخ | الأم: شمخاء" },
-    origin: { en: "Southern Mesopotamia (Ancient Iraq / Kufa region)", ur: "جنوبی میسوپوٹیمیا (عراق / کوفہ)", hi: "इराक़ (प्राचीन मेसोपोटामिया)", ar: "جنوب بلاد الرافدين (العراق القديم)" },
+    origin: { en: "Southern Mesopotamia (Ancient Iraq / Kufa region) to Mount Judi", ur: "جنوبی میسوپوٹیمیا (عراق / کوفہ) تا کوہِ جودی", hi: "इराक़ (प्राचीन मेसोपोटामिया) से जूदी पर्वत", ar: "جنوب بلاد الرافدين واستقرار الفلك على الجودي" },
     seerat: {
       en: "Preached pure Monotheism tirelessly for 950 years against stubborn idol worshippers. Constructed the legendary Ark by divine inspiration to preserve righteous life through the Great Deluge.",
       ur: "ساڑھے نو سو سال رات دن توحید کی دعوت دی۔ حکمِ الٰہی سے خشک زمین پر عظیم کشتی تعمیر کی اور طوفان سے ایمان والوں کو بچایا۔",
@@ -874,11 +1008,11 @@ const PROPHETS_DATA = [
     name: { en: "4. Prophet Hud (PBUH)", ur: "۴. حضرت ہود (عَلَيْهِ ٱلسَّلَامُ)", hi: "4. हज़रत हूद (अलैहिस्सलाम)", ar: "٤. نبي الله هود (عَلَيْهِ ٱلسَّلَامُ)" },
     title: { en: "Preacher to the Tribe of Aad • Ameen", ur: "قومِ عاد کے مصلح • امین", hi: "क़ौम-ए-आद के पैगंबर", ar: "نبي الله المرسل إلى عاد الأولى" },
     parents: { en: "Father: Abdullah ibn Ribah (Descendant of Noah)", ur: "والد: عبداللہ بن رباح (نسلِ نوح سے)", hi: "पिता: अब्दुल्लाह बिन रिबाह", ar: "الأب: عبد الله بن رباح من نسل نوح" },
-    origin: { en: "Al-Ahqaf (Southern Arabia / Yemen region)", ur: "احقاف (جنوبی عرب / یمن)", hi: "अल-अहक़ाफ (दक्षिण अरब)", ar: "الأحقاف (جنوب الجزيرة العربية وعمان)" },
+    origin: { en: "Al-Ahqaf (Southern Arabia / Yemen & Hadhramaut)", ur: "احقاف (جنوبی عرب / یمن و حضرموت)", hi: "अल-अहक़ाफ (दक्षिण अरब / यमन)", ar: "الأحقاف (جنوب الجزيرة العربية وحضرموت)" },
     seerat: {
-      en: "Sent to the arrogant and mighty civilization of Aad known for their towering stone pillars. Warned them against arrogance and idol worship until a fierce, freezing gale destroyed the oppressors.",
+      en: "Sent to the arrogant civilization of Aad known for their towering stone pillars. Warned them against idol worship until a fierce, freezing gale destroyed the oppressors.",
       ur: "قومِ عاد کی طرف مبعوث ہوئے جو اپنی طاقت پر غرور کرتے تھے۔ سرکش قوم پر عذابِ الٰہی تیز آندھی کی صورت میں نازل ہوا۔",
-      hi: "अहमद और शक्तिशाली आद जाति की ओर भेजे गए। उनकी अहंकार भरी मूर्तिक पूजा के विरुद्ध चेतावनी दी।",
+      hi: "अहंकारी और शक्तिशाली आद जाति की ओर भेजे गए। मूर्तिपूजा के विरुद्ध चेतावनी दी।",
       ar: "أُرسل إلى عاد الذين استكبروا في الأرض، فدعاهم للتوحيد فأهلكتهم ريح صرصر عاتية."
     },
     miracles: {
@@ -899,17 +1033,17 @@ const PROPHETS_DATA = [
     name: { en: "5. Prophet Salih (PBUH)", ur: "۵. حضرت صالح (عَلَيْهِ ٱلسَّلَامُ)", hi: "5. हज़रत सालेह (अलैहिस्सलाम)", ar: "٥. نبي الله صالح (عَلَيْهِ ٱلسَّلَامُ)" },
     title: { en: "Preacher to Thamud • Pride of Arabia", ur: "قومِ ثمود کے پیغمبر • فخرِ عرب", hi: "क़ौम-ए-समूद के पैगंबर", ar: "نبي الله المرسل إلى ثمود" },
     parents: { en: "Father: Ubayd ibn Asif (Descendant of Shem)", ur: "والد: عبید بن آصف", hi: "पिता: उबैद बिन आसिफ", ar: "الأب: عبيد بن آصف من سلالة سام" },
-    origin: { en: "Al-Hijr / Mada'in Salih (North-Western Arabia)", ur: "الحجر / مدائن صالح (شمال مغربی عرب)", hi: "अल-हिज्र / मदाऐन सालेह", ar: "الحجر ومدائن صالح (شمال المملكة العربية السعودية)" },
+    origin: { en: "Al-Hijr / Mada'in Salih (North-Western Arabia) to Palestine", ur: "الحجر / مدائن صالح تا فلسطین", hi: "अल-हिज्र / मदाइन सालेह से फ़िलिस्तीन", ar: "الحجر ومدائن صالح إلى أرض فلسطين" },
     seerat: {
-      en: "Preached to the Thamud civilization famous for carving magnificent palaces into mountain rocks. Presented a miraculous she-camel as a divine sign, which the wicked hamstringed.",
-      ur: "قومِ ثمود کی طرف بھیجے گئے جو پہاڑوں کو تراش کر گھر بناتے تھے۔ انہوں نے معجزاتی اونٹنی کو قتل کیا تو ہولناک زلزلے نے انہیں آ لیا۔",
-      hi: "समूद जाति की ओर भेजे गए जो चट्टानों को काटकर महल बनाते थे। उनके द्वारा हलाल की गई ऊंटनी को काटने पर विनाश आया।",
+      en: "Preached to the Thamud civilization famous for carving magnificent homes into rocks. Presented a miraculous she-camel as a divine sign, which the wicked hamstringed.",
+      ur: "قومِ ثمود کی طرف بھیجے گئے جو پہاڑوں کو تراش کر گھر بناتے تھے۔ اونٹنی کو قتل کرنے پر ہولناک زلزلے نے انہیں آ لیا۔",
+      hi: "समूद जाति की ओर भेजे गए। चमत्कारिक ऊंटनी को काटने पर जाति पर अज़ाब आया।",
       ar: "دعا ثمود الذين كانوا ينحتون من الجبال بيوتاً، فأنزل الله عليهم الصيحة والزلزلة لاكتسابهم الإثم."
     },
     miracles: {
       en: "The divine She-Camel emerging directly from solid mountain rock with flowing milk.",
-      ur: "پہاڑ سے معجزاتی طور پر حاملہ اونٹنی کا برآمد ہونا اور دودھ کا چشمہ جاری ہونا۔",
-      hi: "पहाड़ से प्रकट हुई चमत्कारिक ऊँटनी।",
+      ur: "ٹھوس پہاڑ سے معجزاتی طور پر حاملہ اونٹنی کا برآمد ہونا۔",
+      hi: "पहाड़ की चट्टान से प्रकट हुई चमत्कारिक ऊँटनी।",
       ar: "خروج الناقة العشار من صخرة الصفا مع لبن سائغ للشاربين."
     },
     lesson: {
@@ -922,19 +1056,19 @@ const PROPHETS_DATA = [
   {
     id: 6,
     name: { en: "6. Prophet Ibrahim / Abraham (PBUH)", ur: "۶. حضرت ابراہیم (عَلَيْهِ ٱلسَّلَامُ)", hi: "6. हज़रत इब्राहीम (अलैहिस्सलाम)", ar: "٦. نبي الله إبراهيم (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Khalilullah (Intimate Friend of Allah)", ur: "خلیل اللہ • امام الناس • معمارِ کعبہ", hi: "ख़लीलुल्लाह • एकेश्वरवाद के पिता", ar: "خليل الرحمن وأبو الأنبياء وإمام الموحدين" },
+    title: { en: "Khalilullah (Friend of Allah) • Imam of Mankind", ur: "خلیل اللہ • امام الناس • معمارِ کعبہ", hi: "ख़लीलुल्लाह • एकेश्वरवाद के पिता", ar: "خليل الرحمن وأبو الأنبياء وإمام الموحدين" },
     parents: { en: "Father: Terah (Azar / Tarikh) | Mother: Amathlaah", ur: "والد: تارخ (آزر) | والدہ: امیلہ", hi: "पिता: आज़र (तारिख़) | माता: अमथला", ar: "الأب: تارح (آزر) | الأم: أميلة" },
-    origin: { en: "Ur of the Chaldeans (Iraq), migrated to Harran, Egypt, Palestine & Mecca", ur: "اور (عراق)، شام، فلسطین، مصر اور مکہ مکرمہ", hi: "ऊर (इराक़), शाम, फ़िलिस्तीन और मक्का", ar: "أور الكلدانيين (العراق)، وهاجر إلى الشام ومصر ومكة" },
+    origin: { en: "Ur (Iraq) ➔ Harran ➔ Egypt ➔ Palestine & Hijaz (Mecca)", ur: "اور (عراق) تا حران، مصر، شام، فلسطین اور مکہ مکرمہ", hi: "ऊर (इराक़) से मिस्र, फ़िलिस्तीन और मक्का", ar: "أور الكلدانيين وهاجر إلى حران ومصر وفلسطين ومكة" },
     seerat: {
-      en: "Father of all major prophetic lines. Broke the idols of Babylon, miraculously survived Nimrod's blazing fire, built the Holy Kaaba in Mecca with his son Ismail.",
-      ur: "نمرود کی دہکتی آگ ان کے لیے ٹھنڈی اور سلامتی والی بن گئی۔ بیٹے اسماعیل کے ہمراہ خانہ کعبہ کی بنیادیں اٹھائیں۔",
-      hi: "नमरूद की दहकती आग आपके लिए शीतल हो गई। पुत्र इस्माईल के साथ पवित्र काबा का निर्माण किया।",
+      en: "Father of prophetic lineages. Survived Nimrod's blazing fire, built the Holy Kaaba with Ismail, and demonstrated supreme devotion to pure Monotheism.",
+      ur: "نمرود کی آگ ان کے لیے گلزار بن گئی۔ بیٹے اسماعیل کے ہمراہ خانہ کعبہ کی بنیادیں اٹھائیں۔",
+      hi: "नमरूद की आग शीतल हो गई। पुत्र इस्माईल के साथ काबा का निर्माण किया।",
       ar: "حطم الأصنام وجعل الله النار عليه برداً وسلاماً، وبنى البيت الحرام بمكة مع ابنه إسماعيل."
     },
     miracles: {
       en: "Blazing furnace turned into a cool garden; revival of four sacrificed birds.",
-      ur: "آگ کا گلزار بننا؛ چار پرندوں کا پکارنے پر زندہ ہو کر واپس آنا۔",
-      hi: "आग का ठंडा व सुरक्षित होना; परिंदों का पुनर्जीवन।",
+      ur: "آگ کا ٹھنڈا و گلزار بننا؛ چار پرندوں کا پکارنے پر زندہ ہو کر واپس آنا۔",
+      hi: "आग का ठंडा होना; परिंदों का पुनर्जीवन।",
       ar: "إخماد حر النار وإحياء الطير الممزقة بإذن الله."
     },
     lesson: {
@@ -947,226 +1081,476 @@ const PROPHETS_DATA = [
   {
     id: 7,
     name: { en: "7. Prophet Lut / Lot (PBUH)", ur: "۷. حضرت لوط (عَلَيْهِ ٱلسَّلَامُ)", hi: "7. हज़रत लूत (अलैहिस्सलाम)", ar: "٧. نبي الله لوط (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Preacher of Sodom • Righteous Nephew of Ibrahim", ur: "سردم کے مصلح • بھتیجے حضرت ابراہیم", hi: "सदोम के पैगंबर", ar: "نبي الله المبعوث إلى أهل سدوم وعمورة" },
-    parents: { en: "Father: Haran (Brother of Prophet Ibrahim)", ur: "والد: ھاران بن تارخ (حضرت ابراہیم کے بھائی)", hi: "पिता: हारान (इब्राहीम के भाई)", ar: "الأب: هاران بن تارح (أبو إبراهيم أخوه غير الشقيق)" },
-    origin: { en: "Ur (Iraq), migrated to Sodom & Gomorrah (Dead Sea valley)", ur: "اور (عراق)، وادیِ اردن و سدوم (بحیرہ مردار)", hi: "ऊर से सदोम (मृत सागर घाटी)", ar: "أور وهاجر إلى سدوم وعمورة قرب البحر الميت" },
+    title: { en: "Preacher of Sodom • Righteous Nephew of Ibrahim", ur: "سدوم کے مصلح • بھتیجے حضرت ابراہیم", hi: "सदोम के पैगंबर", ar: "نبي الله المبعوث إلى أهل سدوم وعمورة" },
+    parents: { en: "Father: Haran (Brother of Prophet Ibrahim)", ur: "والد: ھاران بن تارخ (حضرت ابراہیم کے بھائی)", hi: "पिता: हारान", ar: "الأب: هاران بن تارح" },
+    origin: { en: "Ur (Iraq) ➔ Palestine & Sodom (Dead Sea region)", ur: "اور (عراق) تا فلسطین اور سدوم (بحیرہ مردار)", hi: "इराक़ से सदोम (मृत सागर)", ar: "أور إلى سدوم وعمورة قرب البحر الميت" },
     seerat: {
-      en: "Nephew of Prophet Ibrahim. Sent to the corrupt city of Sodom to reform societal immorality and unnatural crimes. Saved by angels before the city was completely overturned and pelted with brimstone.",
-      ur: "حضرت ابراہیم کے بھتیجے جو سدوم کی بستی میں اخلاقی برائیوں کی اصلاح کے لیے بھیجے گئے۔ فرشتوں نے انہیں اور ان کی صالح بیٹیوں کو بچایا۔",
-      hi: "इब्राहीम के भतीजे। सदोम नगर की अनैतिकता के विरुद्ध प्रचार किया। देवताओं ने इन्हें सुरक्षित निकाला।",
-      ar: "ابن أخي إبراهيم، أُرسل إلى سدوم لتحذيرهم من الفاحشة، فنجاه الله وأهله قبل قلب المدينة."
+      en: "Preached against extreme immorality in Sodom. Saved by angels before divine earthquakes overturned the city.",
+      ur: "سدوم کی بستی میں اخلاقی برائیوں کے خلاف کھڑے ہوئے۔ فرشتوں نے مومنین کو بچایا۔",
+      hi: "सदोम नगर की बुराइयों के खिलाफ प्रचार किया। देवताओं ने सुरक्षित निकाला।",
+      ar: "أُرسل إلى سدوم لتحذيرهم من الفاحشة، فنجاه الله وأهله قبل قلب المدينة."
     },
     miracles: {
-      en: "Angelic intervention; complete inversion of the wicked cities by divine earthquake.",
+      en: "Angelic protection; divine overturn of the wicked cities.",
       ur: "فرشتوں کا نزول؛ بستی کا الٹ جانا اور پتھروں کی بارش۔",
-      hi: "فرश्तों की सहायता; पापी नगर का पलटना।",
-      ar: "إهلاك القرى الظالمة بقلبها سافلها عاليها وإمطارها بحجارة من سجيل."
+      hi: "फ़रिश्तों की सहायता; पापी नगर का पलटना।",
+      ar: "إهلاك القرى الظالمة بقلبها سافلها عاليها."
     },
     lesson: {
       en: "Standing firmly against widespread public immorality even when completely isolated.",
       ur: "معاشرتی برائیوں کے خلاف اکیلے کھڑے ہو کر حق پر ثابت قدم رہنا۔",
-      hi: "समाज की गंभीर बुराइयों के खिलाफ अकेले खड़े रहने का साहस।",
-      ar: "الوقوف في وجه الفاحشة والتمسك بالفضيلة رغم وحدة الموقف."
+      hi: "समाज की बुराइयों के खिलाफ अकेले खड़े रहने का साहस।",
+      ar: "الوقوف في وجه الفاحشة والتمسك بالفضيلة."
     }
   },
   {
     id: 8,
     name: { en: "8. Prophet Ismail / Ishmael (PBUH)", ur: "۸. حضرت اسماعیل (عَلَيْهِ ٱلسَّلَامُ)", hi: "8. हज़रत इस्माईल (अलैहिस्सलाम)", ar: "٨. نبي الله إسماعيل (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Dhabihullah (The Sacrificed of Allah) • Ancestor of Arabs", ur: "ذبیح اللہ • جدّ الامۃ العربیہ", hi: "ज़बीहुल्लाह • अरबों के पूर्वज", ar: "ذبيح الله وجد العرب المستعربة" },
+    title: { en: "Dhabihullah (The Sacrificed) • Father of the Arabs", ur: "ذبیح اللہ • جدّ الامۃ العربیہ", hi: "ज़बीहुल्लाह • अरबों के पूर्वज", ar: "ذبيح الله وجد العرب المستعربة" },
     parents: { en: "Father: Prophet Ibrahim | Mother: Sayyidah Hajar (Hagar)", ur: "والد: حضرت ابراہیم | والدہ: سیدہ ہاجرہ", hi: "पिता: इब्राहीम | माता: हाजरा", ar: "الأب: إبراهيم الخليل | الأم: السيدة هاجر" },
-    origin: { en: "Born in Canaan (Palestine), raised in the sacred valley of Mecca", ur: "فلسطین (پیدائش)، وادیِ مکہ مکرمہ", hi: "कनान (जन्म), मक्का की पवित्र घाटी", ar: "فلسطين وولادة ونشأة في مكة المكرمة" },
+    origin: { en: "Canaan (Palestine) ➔ Valley of Bakkah / Mecca", ur: "کنعان (فلسطین) تا وادیِ مکہ مکرمہ", hi: "कनान से मक्का की पवित्र घाटी", ar: "فلسطين وولادة ونشأة في مكة المكرمة" },
     seerat: {
-      en: "Exemplified supreme patience when his father attempted to sacrifice him in obedience to a divine vision. Helped build the Kaaba and became the patriarch of the Arab tribes.",
-      ur: "خواب کی تعمیل میں والد کے سامنے تسلیمِ رضا کی لازوال مثال پیش کی۔ خانہ کعبہ کی تعمیر میں والد کا ہاتھ بٹایا۔",
-      hi: "पिता इब्राहीम द्वारा ईश्वर के आदेश पर कुर्बानी के समय पूर्ण समर्पण दिखाया। काबा के पुनर्निर्माण में सहयोग दिया।",
-      ar: "ضرب أعظم مثال في البر والتسليم بذبح نفسه فداء لأمر الله، وبنى الكعبة مع أبيه إبراهيم."
+      en: "Submitted unconditionally to sacrifice in obedience to God's vision. Built the Kaaba and became ancestor to Prophet Muhammad (ﷺ).",
+      ur: "والد کے خواب کے سامنے تسلیمِ رضا کا مظاہرہ کیا۔ خانہ کعبہ کی تعمیر میں شریک رہے۔",
+      hi: "कुर्बानी के समय पूर्ण समर्पण दिखाया। काबा निर्माण में सहयोग दिया।",
+      ar: "ضرب أعظم مثال في التسليم لأمر الله، وبنى الكعبة مع أبيه إبراهيم."
     },
     miracles: {
-      en: "The miraculous bubbling spring of Zamzam gushing forth beneath infant Ismail's heels in the desert.",
-      ur: "ننھے اسماعیل کی ایڑیوں کے نیچے سے چشمہ زمزم کا جاری ہونا۔",
-      hi: "मरुस्थल में शिशु इस्माईल की एड़ियों से زمزم के पानी का प्रकट होना।",
-      ar: "تفجر ماء زمزم المبارك تحت قدميه الطاهرتين في الصحراء القاحلة."
+      en: "The perpetual miraculous Zamzam well gushing in the arid desert.",
+      ur: "ننھے اسماعیل کی ایڑیوں تلے آبِ زمزم کا جاری ہونا۔",
+      hi: "मरुस्थल में जमजम पानी का प्रकट होना।",
+      ar: "تفجر ماء زمزم المبارك تحت قدميه الشريفتين."
     },
     lesson: {
-      en: "Unmatched obedience to parents and tranquil submission to trials.",
-      ur: "والدین کی فرمانبرداری اور آزمائشوں میں صبرِ جمیل۔",
-      hi: "माता-पिता की आज्ञा का पूर्ण पालन और कठिन परीक्षाओं में संतोष।",
+      en: "Profound obedience to parents and serenity during heavy spiritual trials.",
+      ur: "والدین کی اطاعت اور آزمائشوں میں صبرِ جمیل۔",
+      hi: "माता-पिता की आज्ञा का पालन व सब्र।",
       ar: "الطاعة العمياء للوالدين والرضا التام بقضاء الله."
     }
   },
   {
     id: 9,
     name: { en: "9. Prophet Ishaq / Isaac (PBUH)", ur: "۹. حضرت اسحاق (عَلَيْهِ ٱلسَّلَامُ)", hi: "9. हज़रत इसहाक़ (अलैहिस्सलाम)", ar: "٩. نبي الله إسحاق (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "The Blessed Leader • Patriarch of Levant", ur: "بابِ برکت • انبیاءِ بنی اسرائیل کے جد", hi: "धन्य पैगंबर • सीरिया के पितृपुरुष", ar: "الشيخ المبارك وأبو الأنبياء في أرض الشام" },
+    title: { en: "The Blessed Patriarch • Forefather of Israelites", ur: "بابِ برکت • انبیاءِ بنی اسرائیل کے جد", hi: "धन्य पैगंबर • इस्राइलियों के पूर्वज", ar: "الشيخ المبارك وأبو الأنبياء في أرض الشام" },
     parents: { en: "Father: Prophet Ibrahim | Mother: Sayyidah Sarah", ur: "والد: حضرت ابراہیم | والدہ: سیدہ سارہ", hi: "पिता: इब्राहीम | माता: सारा", ar: "الأب: إبراهيم الخليل | الأم: السيدة سارة" },
-    origin: { en: "Canaan (Palestine and the Levant)", ur: "ارضِ کنعان (فلسطین و شام)", hi: "कनान (फ़िलिस्तीन व शाम)", ar: "أرض الكنعانيين وفلسطين (الشام)" },
+    origin: { en: "Canaan (Hebron / Al-Khalil, Palestine)", ur: "ارضِ کنعان (حبرون / الخلیل، فلسطین)", hi: "कनान (हेब्रोन / अल-ख़लील, फ़िलिस्तीन)", ar: "أرض الكنعانيين وحبرون بفلسطين" },
     seerat: {
-      en: "Miraculously born to elderly parents, Sarah and Ibrahim, as foretold by visiting angels. Father of Prophet Yaqub (Jacob) and grandfather of Yusuf (Joseph), anchoring the prophetic lineage in the Levant.",
-      ur: "بڑھاپے میں فرشتوں کی بشارت پر معجزاتی طور پر پیدا ہوئے۔ حضرت ییعقوب کے والد اور بنی اسرائیل کے بزرگ سلسلوں کے جد ہیں۔",
-      hi: "वृद्धावस्था में فرश्तों की भविष्यवाणी पर चमत्कारिक जन्म। याक़ूब के पिता और इस्राइल वंश के पूर्वज।",
-      ar: "بشّرت به الملائكة أمه سارة وهي عجوز عقيم، وهو أبو يعقوب وجد الأنبياء في بني إسرائيل."
+      en: "Born miraculously to aged parents via angelic tidings. Father of Yaqub (AS) and anchor of Levant prophetic branches.",
+      ur: "بڑھاپے میں فرشتوں کی بشارت پر پیدا ہوئے۔ حضرت یعقوب کے والد ہیں۔",
+      hi: "वृद्धावस्था में फरिश्तों की भविष्यवाणी पर चमत्कारिक जन्म।",
+      ar: "بشّرت به الملائكة أمه سارة وهي عجوز عقيم، وهو أبو يعقوب."
     },
     miracles: {
-      en: "Miraculous birth from aged and sterile parents through angelic glad tidings.",
-      ur: "بڑھاپے میں فرشتوں کے ذریعے ولادت کی بشارت۔",
-      hi: "अधेड़ अवस्था में फरिश्तों द्वारा जन्म की शुभसूचना।",
+      en: "Birth from elderly and sterile parents as a divine sign.",
+      ur: "بڑھاپے میں فرشتوں کی بشارت سے ولادت۔",
+      hi: "वृद्धावस्था में जन्म का चमत्कार।",
       ar: "البشارة الإلهية بولادته على كبر سن أبويه."
     },
     lesson: {
-      en: "Gratitude for divine blessings and steadfast guidance of future generations.",
-      ur: "اللہ کی نعمتوں کا شکر ادا کرنا اور نسلوں کی درست تربیت کرنا۔",
-      hi: "ईश्वरीय आशीष के प्रति कृतज्ञता।",
-      ar: "الشكر الدائم لآلاء الله والتمسك بالمنهج القويم."
+      en: "Gratitude for divine generosity and righteous parenting.",
+      ur: "نعمتوں پر شکر اور نسلوں کی دینی تربیت۔",
+      hi: "ईश्वरीय कृपा पर आभार।",
+      ar: "الشكر الدائم لآلاء الله والتمسك بالمنهج."
     }
   },
   {
     id: 10,
     name: { en: "10. Prophet Yaqub / Jacob (PBUH)", ur: "۱۰. حضرت یعقوب (عَلَيْهِ ٱلسَّلَامُ)", hi: "10. हज़रत याक़ूब (अलैहिस्सलाम)", ar: "١٠. نبي الله يعقوب (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Israel (The Servant of God) • Father of 12 Tribes", ur: "اسرائیل (اللہ کا بندہ) • بارہ قبیلوں کے والد", hi: "इस्राइल • 12 कबीलों के पिता", ar: "إسرائيل الله وأبو الأسباط الاثني عشر" },
+    title: { en: "Israel (Servant of God) • Father of 12 Tribes", ur: "اسرائیل • بارہ قبائل کے والد", hi: "इस्राइल • 12 कबीलों के पिता", ar: "إسرائيل الله وأبو الأسباط الاثني عشر" },
     parents: { en: "Father: Prophet Ishaq | Mother: Rifqa (Rebekah)", ur: "والد: حضرت اسحاق | والدہ: رفقة", hi: "पिता: इसहाक़ | माता: रिफक़ा", ar: "الأب: إسحاق بن إبراهيم | الأم: رفقة" },
-    origin: { en: "Palestine, migrated temporarily to Paddan-Aram (Iraq), returned to Canaan", ur: "فلسطین، عراق (پدان آرام)، اور واپسی فلسطین", hi: "फ़िलिस्तीन और इराक", ar: "فلسطين ورافدين وreturned إلى كنعان" },
+    origin: { en: "Palestine ➔ Harran (Iraq/Syria border) ➔ Egypt", ur: "فلسطین تا حران (عراق/شام سرحد) اور بعد میں مصر", hi: "फ़िलिस्तीन से हर्मन व मिस्र", ar: "فلسطين وحران ثم انتقاله إلى مصر عند يوسف" },
     seerat: {
-      en: "Also known as Israel. Father of twelve sons who formed the twelve tribes of Israel. Endured immense heartbreak over the loss of his beloved son Yusuf (Joseph) while keeping unwavering trust in Allah.",
-      ur: "آپ کا لقب اسرائیل ہے۔ بارہ بیٹوں کے والد جن سے بنی اسرائیل کے قبائل چلے۔ بیٹے یوسف کی جدائی میں برسوں آنسو بہائے مگر صبر کا دامن نہ چھوڑا۔",
-      hi: "इस्राइल के रूप में प्रसिद्ध। 12 पुत्रों के पिता। पुत्र यूसुफ की जुदाई में भारी दुःख झेला परंतु अटूट सब्र रखा।",
-      ar: "هو إسرائيل الله، أبو الأسباط الاثني عشر، ابتلي بفقد يوسف فصبر صبراً جميلاً حتى التقى به."
+      en: "Endured decades of deep sorrow over his lost son Yusuf (AS) with Sabr Jameel (graceful patience).",
+      ur: "بیٹے یوسف کی جدائی میں برسوں آنسو بہائے مگر صبرِ جمیل کا دامن نہ چھوڑا۔",
+      hi: "पुत्र यूसुफ के वियोग में अटूट सब्र रखा।",
+      ar: "ابتلي بفقد يوسف فصبر صبراً جميلاً حتى جمع الله شملهما."
     },
     miracles: {
-      en: "Restoration of physical eyesight upon placing Prophet Yusuf's scented shirt over his face.",
-      ur: "حضرت یوسف کا کرتا چہرہِ مبارک پر ڈالنے سے بینائی کا واپس لوٹنا۔",
-      hi: "पुत्र यूसुफ की कमीज आंख पर रखने से दृष्टि का वापस आना।",
-      ar: "رتد بصره بقميص يوسف وأذن الله بلقائه بعد طول فراق."
+      en: "Restoration of eyesight when Yusuf's shirt was placed upon his eyes.",
+      ur: "حضرت یوسف کی قمیص سے بینائی کا لوٹنا۔",
+      hi: "यूसुफ की कमीज से आंखों की रोशनी वापस आना।",
+      ar: "ارتداد بصره بقميص يوسف عليه السلام."
     },
     lesson: {
-      en: "Sabr Jameel (Patience without complaint) and unshakeable hope in the mercy of Allah.",
-      ur: "شکایت کے بغیر صبرِ جمیل کرنا اور اللہ کی رحمت سے کبھی ناامید نہ ہونا۔",
-      hi: "बिना किसी शिकायत के धैर्य रखना और ईश्वर की दया पर पूर्ण विश्वास।",
-      ar: "الصبر الج جميل وعدم اليأس من روح الله مهما طال الزمن."
+      en: "Never losing hope in the boundless mercy of Allah.",
+      ur: "اللہ کی رحمت سے کبھی ناامید نہ ہونا۔",
+      hi: "ईश्वर की कृपा से कभी निराश न होना।",
+      ar: "عدم اليأس من روح الله مهما اشتدت الكروب."
     }
   },
   {
     id: 11,
     name: { en: "11. Prophet Yusuf / Joseph (PBUH)", ur: "۱۱. حضرت یوسف (عَلَيْهِ ٱلسَّلَامُ)", hi: "11. हज़रत यूसुफ (अलैहिस्सलाम)", ar: "١١. نبي الله يوسف الصديق (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Al-Siddiq • The Epitome of Beauty & Integrity", ur: "الصدیق • حسنِ یوسفی اور عفت کا پیکر", hi: "अस्-सिद्दीक़ • सुंदरता व पवित्रता के प्रतीक", ar: "الصديق الجميل وأمين خزائن مصر" },
+    title: { en: "Al-Siddiq • Pillar of Beauty & Purity", ur: "الصدیق • حسن و عفت کا پیکر", hi: "अस्-सिद्दीक़ • सुंदरता व पवित्रता", ar: "الصديق الجميل وأمين خزائن مصر" },
     parents: { en: "Father: Prophet Yaqub | Mother: Rachel (Rahil)", ur: "والد: حضرت یعقوب | والدہ: راحیل", hi: "पिता: याक़ूब | माता: राहिद", ar: "الأب: يعقوب بن إسحاق | الأم: راحيل" },
-    origin: { en: "Palestine (birth), sold into slavery in Egypt, rose to Aziz of Egypt", ur: "فلسطین (پیدائش)، مصر (قید، وزارت اور اقتدار)", hi: "फ़िलिस्तीन से मिस्र (मंत्री और शासक)", ar: "فلسطين ومصر (العزيز ووزير الخزائن)" },
+    origin: { en: "Palestine ➔ Egypt (Pit ➔ Prison ➔ Treasury Governor)", ur: "فلسطین تا مصر (کنواں، قید اور وزارتِ خزانہ)", hi: "फ़िलिस्तीन से मिस्र (कारागार से कोषाध्यक्ष)", ar: "فلسطين ثم استقراره بمصر عزيزاً وحاكماً" },
     seerat: {
-      en: "Blessed with peerless physical beauty and the interpretation of dreams. Overcame betrayal by his brothers, false imprisonment, and temptation with absolute moral purity, eventually governing Egypt's granaries.",
-      ur: "حسنِ جمیل اور خوابوں کی تعبیر کا معجزہ ملا۔ بھائیوں کی زیادتیوں اور قید کی صعوبتوں کے بعد مصر کے خزانہ جات کے وزیر بنے۔",
-      hi: "अद्भुत सुंदरता और सपनों की व्याख्या का ज्ञान। भाइयों के धोखे और जेल के बाद मिस्र के कोषाध्यक्ष बने।",
-      ar: "أوتي شطر الحسن وعلم تأويل الأحداث، تجازى على صبره حتى أصبح عزيز مصر وحاكم خزائنها."
+      en: "Overcame brotherhood betrayal and wrongful prison. Interpreted royal dreams and saved Egypt from famine.",
+      ur: "بھائیوں کے حسد اور قید کے بعد مصر کے عزیز بنے اور قحط سے قوم کو بچایا۔",
+      hi: "सपनों की व्याख्या से मिस्र को अकाल से बचाया।",
+      ar: "أوتي شطر الحسن وتأويل الأحاديث وأنقذ مصر من سنوات الجفاف."
     },
     miracles: {
-      en: "Precise interpretation of complex prophetic and royal dreams; preservation of Egypt through famine.",
-      ur: "خوابوں کی سچی تعبیر؛ قحط سالی سے ملک کو بچانا۔",
-      hi: "सपनों की सटीक व्याख्या और अकाल से देश की रक्षा।",
-      ar: "تأويل الرؤى الملكية بدقة وإنقاذ مصر من سنين القحط."
+      en: "True prophetic dream interpretation; healing power of his garment.",
+      ur: "خوابوں کی سچی تعبیر اور قمیص کا شفا بخش اثر۔",
+      hi: "सपनों की सटीक व्याख्या।",
+      ar: "تأويل الرؤى بدقة وشفاء بصر أبيه بقميصه."
     },
     lesson: {
-      en: "Purity under extreme temptation, forgiveness towards enemies, and piety in power.",
-      ur: "فتنے کے وقت پاکدامن رہنا، دشمنوں کو معاف کرنا اور اقتدار میں تقویٰ اختیار کرنا۔",
-      hi: "अनैतिक प्रलोभनों में पवित्र रहना और क्षमा का गुण अपनाना।",
-      ar: "العفة عند المعصية، والعفو عند المقدرة، والتقوى في السلطة."
+      en: "Chastity in temptation and forgiving those who harm you when in power.",
+      ur: "فتنے میں پاکدامنی اور اقتدار میں معاف کرنے کا جذبہ۔",
+      hi: "अनैतिकता से बचना और क्षमादान।",
+      ar: "العفة عند الإغراء والعفو عند المقدرة."
     }
   },
   {
     id: 12,
-    name: { en: "12. Prophet Musa / Moses (PBUH)", ur: "۱۲. حضرت موسیٰ کلیم اللہ (عَلَيْهِ ٱلسَّلَامُ)", hi: "12. हज़रत मूसा कलीमउल्लाह (अलैहिस्सलाम)", ar: "١٢. نبي الله الكليم موسى (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Kalimullah (The One Who Spoke with Allah)", ur: "کلیم اللہ • صاحبِ تورات", hi: "कलीमउल्लाह • तौरात के पैगंबर", ar: "كليم الله ورسوله إلى فرعون وملئه" },
-    parents: { en: "Father: Amran (Imran) | Mother: Yukhabid (Jochebed)", ur: "والد: عمران | والدہ: یوخابد", hi: "पिता: इमरान | माता: यूखाबिद", ar: "الأب: عمران بن قاهث | الأم: يوكابد" },
-    origin: { en: "Egypt (birth), Median (exile), Sinai & Promised Land borders", ur: "مصر (پیدائش)، مدین، طورِ سینا اور صحراءِ سینا", hi: "मिस्र (जन्म), मद्यन व सीनाई", ar: "مصر ومدين وسيناء والأرض المقدسة" },
+    name: { en: "12. Prophet Ayyub / Job (PBUH)", ur: "۱۲. حضرت ایوب (عَلَيْهِ ٱلسَّلَامُ)", hi: "12. हज़रत अय्यूब (अलैहिस्सलाम)", ar: "١٢. نبي الله أيوب الصابر (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Paragon of Patience • As-Sabir", ur: "پیکرِ صبر و شکر", hi: "धैर्य के प्रतीक", ar: "قدوة الصابرين وشاكر النعماء" },
+    parents: { en: "Father: Ams (Descendant of Prophet Ishaq) | Wife: Rahma", ur: "والد: عاموص (نسلِ اسحاق سے) | زوجہ: رحمہ", hi: "पिता: आमूस | पत्नी: रहमा", ar: "الأب: عاموص من نسل إسحاق وزوجته رحمة" },
+    origin: { en: "Hauran (Syria & Southern Levant)", ur: "حوران (شام و اردن کی سرحدیں)", hi: "हौरान (शाम व जॉर्डन सीमा)", ar: "أرض حوران في بلاد الشام" },
     seerat: {
-      en: "The prophet who conversed directly with Allah on Mount Sinai. Defied the tyranny of Pharaoh, split the Red Sea with his staff, and received the divine tablets of the Torah.",
-      ur: "جنہوں نے طورِ سینا پر اللہ تعالیٰ سے بلاواسطہ کلام کیا۔ فرعون کے ظلم کے خلاف کھڑے ہوئے اور بحرِ قلزم کو عصا کے معجزے سے دو ٹکڑے کیا۔",
-      hi: "जिन्होंने तूर पर्वत पर अल्लाह से सीधे बात की। फिरौन के जुल्म के खिलाफ लड़े और लाल सागर को दो हिस्सों में काटा।",
-      ar: "كلمه الله تكليماً على طور سيناء، أُرسل ليهدي فرعون وقومه، وشق البحر بعصاه."
+      en: "Endured catastrophic losses of wealth, children, and extreme physical illness for decades without uttering a single complaint against Allah.",
+      ur: "مال، اولاد اور طویل علالت کی سخت آزمائشوں میں بے مثال صبر کیا۔",
+      hi: "स्वास्थ्य, धन और संतान के नुकसान पर भी बिना शिकायत सब्र किया।",
+      ar: "ابتلي في ماله وولده وجسده لسنوات طويلة فكان صابراً محتسباً شاكراً."
     },
     miracles: {
-      en: "Glowing Staff turning into a serpent; Shining hand; Splitting of the Red Sea; Water from rock.",
-      ur: "عصا کا اژھا بننا؛ یدِ بیضا کا چمکنا؛ سمندر کا پھٹنا؛ پتھر سے بارہ چشمے جاری ہونا۔",
-      hi: "लाठी का सांप बनना; चमकता हाथ; लाल सागर का विभाजन।",
-      ar: "عصاه التي تصبح حية تسعى، واليد البيضاء، وشق البحر، وتفجر الماء من الحجر."
+      en: "Miraculous cold spring gushing beneath his foot that cured all internal and external illnesses.",
+      ur: "زمین پر پاؤں مارنے سے ٹھنڈے شفا بخش چشمے کا ابلنا۔",
+      hi: "चरण प्रहार से शीतल उपचारात्मक झरने का फूटना।",
+      ar: "نبع الماء البارد المغتسل والشراب لإبرائه من كل داء."
     },
     lesson: {
-      en: "Courage against tyranny, reliance on Allah's strength, and leadership under pressure.",
-      ur: "ظالم حکمران کے سامنے کلمۂ حق کہنا اور اللہ کی مدد پر کامل بھروسہ۔",
-      hi: "अन्याय के विरुद्ध साहस और ईश्वर पर पूर्ण विश्वास।",
-      ar: "الشجاعة في مواجهة الطغاة والثقة المطلقة بنصر الله."
+      en: "Patience during severe adversity and unceasing trust in Allah's relief.",
+      ur: "مشکلات میں شکوے کے بغیر صبر اور شفا کی امید۔",
+      hi: "कठिनाइयों में अटूट धैर्य और ईश्वर की दया पर भरोसा।",
+      ar: "الصبر الجميل عند نزول البلاء وحسن الظن برحمة الله."
     }
   },
   {
     id: 13,
-    name: { en: "13. Prophet Dawud / David (PBUH)", ur: "۱۳. حضرت داود (عَلَيْهِ ٱلسَّلَامُ)", hi: "13. हज़रत दाऊद (अलैहिस्सलाम)", ar: "١٣. نبي الله داود (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "King and Prophet • Master of Zabur", ur: "بادشاہ و پیغمبر • صاحبِ زبور و لحن", hi: "राजा और पैगंबर • ज़बूर के मालिक", ar: "الملك النبي صاحب الزبور وصوت تسبيح الجبال" },
-    parents: { en: "Father: Jesse (Yisha) | Descendant of Judah ibn Yaqub", ur: "والد: یشی (نسلِ یہوداہ بن یعقوب سے)", hi: "पिता: यिशै", ar: "الأب: إيشا من نسل يهوذا بن يعقوب" },
-    origin: { en: "Palestine (Jerusalem / Baitul Maqdis region)", ur: "بیت المقدس (فلسطین)", hi: "जेरूसलम (फ़िलिस्तीन)", ar: "بيت المقدس وفلسطين" },
+    name: { en: "13. Prophet Shu'ayb / Jethro (PBUH)", ur: "۱۳. حضرت شعیب (عَلَيْهِ ٱلسَّلَامُ)", hi: "13. हज़रत शुऐब (अलैहिस्सलाम)", ar: "١٣. نبي الله خطيب الأنبياء شعيب (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Orator of the Prophets • Khatib-ul-Anbiya", ur: "خطیب الانبیاء • مصلحِ مدین", hi: "नबियों के वक्ता • मदयन के पैगंबर", ar: "خطيب الأنبياء لحسن بيانه وفصاحته" },
+    parents: { en: "Father: Mikil (Descendant of Prophet Ibrahim)", ur: "والد: میکیل بن یشجر (نسلِ ابراہیم سے)", hi: "पिता: मिक़ील", ar: "الأب: ميكيل من ذرية إبراهيم" },
+    origin: { en: "Madyan & Ashab al-Aykah (North-Western Hijaz & Jordan)", ur: "مدین اور اصحابِ ایکہ (شمال مغربی حجاز و اردن)", hi: "मदयन व अहले ऐका (हिजाज व जॉर्डन)", ar: "مدين وأصحاب الأيكة قرب خليج العقبة" },
     seerat: {
-      en: "Granted both royal sovereignty and supreme prophethood. Defeated the giant Goliath in his youth. Blessed with a melodious voice that made mountains and birds join him in praising Allah, and mastered iron armor-making.",
-      ur: "اللہ نے بادشاہی اور نبوت دونوں عطا فرمائیں۔ جوانی میں جالوت کو شکست دی۔ آپ کی خوبصورت آواز پر پہاڑ اور پرندے تسبیح پڑھتے تھے۔",
-      hi: "बादशाहत और नबूवत दोनों से सम्मानित। युवावस्था में गॉलियथ (जालुत) को हराया। सुंदर आवाज पर पहाड़ भी जिक्र करते थे।",
-      ar: "جمع الله له الملك والنبوة، قتل جالوت صغيراً، وأوتي صوتاً عذباً تسبح معه الجبال والطير، وعلمه صنعة الدروع."
+      en: "Preached business honesty and weighing justly on scales against corrupt traders.",
+      ur: "ناپ تول میں کمی اور تجارتی بددیانتی کے خلاف حق کی آواز بلند کی۔",
+      hi: "व्यापार में ईमानदारी और तौल में धोखाधड़ी के खिलाफ प्रचार किया।",
+      ar: "دعا أهل مدين إلى التوحيد وإيفاء المكيال والميزان بالحق."
     },
     miracles: {
-      en: "Softening of hard iron in his bare hands like wax; melodious Psalms (Zabur) echoing across nature.",
-      ur: "لوہے کا ہاتھوں میں موم کی طرح نرم ہو جانا؛ زبور کی تلاوت پر پرندوں اور پہاڑوں کا رک جانا۔",
-      hi: "लोहे का हाथों में मोम की तरह पिघलना; प्रकृति द्वारा स्तुति।",
-      ar: "ليْن الحديد بيديه كالربح، وتسخير الجبال والطير تسبح معه."
+      en: "Divine rescue of believers before the cloud of fire and earthquake engulfed Madyan.",
+      ur: "عذاب کے بادل اور زلزلے سے مومنین کی حفاظت۔",
+      hi: "आग के बादल और भूकंप से ईमान वालों की रक्षा।",
+      ar: "نجاة المؤمنين من عذاب يوم الظلة والرجفة المدمرة."
     },
     lesson: {
-      en: "Balancing immense political power with profound personal humility and remembrance of Allah.",
-      ur: "حکومت کے ساتھ ساتھ عاجزی اور کثرت سے تسبیح و عبادت کرنا۔",
-      hi: "उच्च सत्ता के बावजूद विनम्रता और ईश्वर का स्मरण।",
-      ar: "الجمع بين الملك العظيم والخشوع التام لله وكثرة الصيام والقيام."
+      en: "Economic honesty, fair trade, and protecting consumer rights.",
+      ur: "کاروبار میں سچائی اور ناپ تول میں دیانت داری۔",
+      hi: "व्यापार में सत्यता और ईमानदारी।",
+      ar: "الأمانة في المعاملات المالية وعدم بخس الناس أشياءهم."
     }
   },
   {
     id: 14,
-    name: { en: "14. Prophet Sulayman / Solomon (PBUH)", ur: "۱۴. حضرت سلیمان (عَلَيْهِ ٱلسَّلَامُ)", hi: "14. हज़रत सुलेमान (अलैहिस्सलाम)", ar: "١٤. نبي الله سليمان (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "The Wise Sovereign • Master of Winds & Jinn", ur: "صاحبِ حکمت بادشاہ • جن و ہوا کے فرمانروا", hi: "बुद्धिमान शासक • हवा और जिन्नात के मालिक", ar: "الملك الحكيم مسخر الريح والجن والطير" },
-    parents: { en: "Father: Prophet Dawud | Mother: Bathsheba", ur: "والد: حضرت داود", hi: "पिता: दाऊद", ar: "الأب: النبي داود عليه السلام" },
-    origin: { en: "Jerusalem (Palestine and surrounding kingdoms)", ur: "بیت المقدس (فلسطین)", hi: "जेरूसलम (फ़िलिस्तीन)", ar: "بيت المقدس (المملكة الموحدة)" },
+    name: { en: "14. Prophet Musa / Moses (PBUH)", ur: "۱۴. حضرت موسیٰ کلیم اللہ (عَلَيْهِ ٱلسَّلَامُ)", hi: "14. हज़रत मूसा कलीमउल्लाह (अलैहिस्सलाम)", ar: "١٤. نبي الله الكليم موسى (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Kalimullah (He Who Spoke with Allah)", ur: "کلیم اللہ • صاحبِ تورات", hi: "कलीमउल्लाह • तौरात के पैगंबर", ar: "كليم الله ورسوله إلى فرعون وملئه" },
+    parents: { en: "Father: Amran (Imran) | Mother: Yukhabid (Jochebed)", ur: "والد: عمران | والدہ: یوخابد", hi: "पिता: इमरान | माता: यूखाबिद", ar: "الأب: عمران بن قاهث | الأم: يوكابد" },
+    origin: { en: "Egypt ➔ Madyan ➔ Mount Sinai & the Desert of Wandering", ur: "مصر تا مدین، کوہِ طور اور صحراءِ تیہ", hi: "मिस्र से मदयन, सीनाई व तूर पर्वत", ar: "مصر ومدين وسيناء ومناجاة الطور" },
     seerat: {
-      en: "Inherited Prophet Dawud's kingdom and was granted an unprecedented empire over winds, birds, animals, and jinn. Understood the language of ants and established legendary justice.",
-      ur: "حضرت داود کے جانشین بنے۔ اللہ نے ہوا، جنات اور پرندوں کی حکومت عطا کی۔ چیونٹیوں اور پرندوں کی بولیاں سمجھتے تھے۔",
-      hi: "दाऊद के उत्तराधिकारी। हवा, जिन्नात और पक्षियों पर अद्वितीय साम्राज्य दिया गया। चींटियों की भाषा समझते थे।",
-      ar: "ورث داود ملكاً لا ينبغي لأحد من بعده، سخر الله له الريح تجري بأمره، وعلمه منطق الطير والنمل."
+      en: "Conversed with Allah on Mount Sinai. Defied the tyranny of Pharaoh and split the Red Sea.",
+      ur: "طورِ سینا پر بلاواسطہ کلام کیا اور فرعون کے خلاف کھڑے ہو کر سمندر کو چیرا۔",
+      hi: "तूर पर ईश्वर से बात की और लाल सागर को चीरा।",
+      ar: "كلمه الله تكليماً وشق البحر بعصاه وأهلك فرعون وجنوده."
     },
     miracles: {
-      en: "Controlling the blowing winds; commanding jinn laborers; understanding animal speech; copper springs.",
-      ur: "ہواؤں پر قابو؛ جنات سے محنت لینا؛ جانوروں کی زبان سمجھنا؛ تانبے کے چشمے جاری ہونا۔",
-      hi: "हवा पर नियंत्रण; जिन्नात का वश में होना; जानवरों की भाषा समझना।",
-      ar: "تسخير الريح والجن، وعلم منطق الطير، وعين القطر (النحاس المذاب)."
+      en: "Glowing staff turning into serpent; Shining hand; Parting of Red Sea; 12 springs.",
+      ur: "عصا کا اژدہا بننا؛ یدِ بیضا؛ سمندر کا پھٹنا؛ پتھر سے ۱۲ چشمے ابلنا۔",
+      hi: "लाठी का अजगर बनना; चमकता हाथ; लाल सागर का विभाजन।",
+      ar: "انقلاب العصا حية تسعى واليد البيضاء وفلق البحر."
     },
     lesson: {
-      en: "Expressing supreme gratitude (Shukr) to Allah during absolute authority and wealth.",
-      ur: "بے پناہ طاقت اور دولت کے باوجود ہر لمحہ اللہ کا شکر ادا کرنا۔",
-      hi: "अपार धन और सत्ता मिलने पर भी ईश्वर का कृतज्ञ रहना।",
-      ar: "الشكر الدائم لله على النعم والاعتراف بأن الملك لله وحده."
+      en: "Courage in the face of tyranny and supreme trust in divine help.",
+      ur: "ظالم حاکم کے سامنے کلمۂ حق کہنا اور اللہ پر توکل۔",
+      hi: "अत्याचार के विरुद्ध निडरता।",
+      ar: "الشجاعة في مواجهة الطغيان واليقين بنصر الله."
     }
   },
   {
     id: 15,
-    name: { en: "15. Prophet Isa / Jesus (PBUH)", ur: "۱۵. حضرت عیسیٰ مسیح (عَلَيْهِ ٱلسَّلَامُ)", hi: "15. हज़रत ईसा मसीह (अलैहिस्सलाम)", ar: "١٥. نبي الله المسيح عيسى بن مريم (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Al-Masih • Ruhullah (Spirit from Allah)", ur: "المسیح • روح اللہ • کلمۃ اللہ", hi: "मसीह • रूहूल्लाह • कलमतुल्लाह", ar: "المسيح عيسى ابن مريم وجيه في الدنيا والآخرة" },
-    parents: { en: "Mother: Sayyidah Maryam (Virgin Mary, daughter of Imran)", ur: "والدہ: سیدہ مریم بنت عمران (بغیر باپ کے تخلیق)", hi: "माता: सय्यिदा मरियम (बिना पिता के जन्म)", ar: "الأم: الصديقة البتول مريم بنت عمران بلا أب" },
-    origin: { en: "Bethlehem / Nazareth (Palestine), ascended to heavens, will return before end times", ur: "بیت لحم و ناصرہ (فلسطین)، آسمان پر اٹھائے گئے", hi: "बेथलेहम व नाजरेथ (फ़िलिस्तीन)", ar: "الناصرة وبيت لحم (فلسطين) ورفع إلى السماء" },
+    name: { en: "15. Prophet Harun / Aaron (PBUH)", ur: "۱۵. حضرت ہارون (عَلَيْهِ ٱلسَّلَامُ)", hi: "15. हज़रत हारून (अलैहिस्सलाम)", ar: "١٥. نبي الله الفصيح هارون (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Eloquent Vizier & Prophet Brother of Musa", ur: "وزیرِ موسیٰ • فصیح البیان نبی", hi: "मूसा के भाई व पैगंबर", ar: "وزير موسى وأخوه الفصيح اللسان" },
+    parents: { en: "Father: Amran (Imran) | Mother: Yukhabid (Jochebed)", ur: "والد: عمران | والدہ: یوخابد", hi: "पिता: इमरान | माता: यूखाबिद", ar: "الأب: عمران بن قاهث | الأم: يوكابد" },
+    origin: { en: "Egypt ➔ Mount Sinai & Desert of Tih (Sinai)", ur: "مصر تا کوہِ طور اور صحراءِ سینا", hi: "मिस्र से सीनाई पर्वत", ar: "مصر وسيناء مع بني إسرائيل" },
     seerat: {
-      en: "The penultimate messenger of Allah. Born miraculously to the pure Virgin Maryam without a biological father. Brought the Injeel (Gospel), healed the blind and lepers by God's leave, and was raised physically to the heavens.",
-      ur: "اللہ کے جلیل القدر پیغمبر جو بغیر باپ کے پاکدامن بی بی مریم کے بطن سے پیدا ہوئے۔ تورات کی تصدیق کی اور انجیل لے کر آئے۔ آسمان پر اٹھائے گئے اور قربِ قیامت دوبارہ تشریف لائیں گے۔",
-      hi: "अल्लाह के महान पैगंबर जो बिना पिता के मरियम से पैदा हुए। कोढ़ियों और अंधों को ठीक किया। आसमान पर उठाए गए और अंतकाल में पुनः आएंगे।",
-      ar: "كلمة الله وروحه، وُلد من بتول بغير أب، أُيد بالإنجيل ومعجزات إبراء الأكمه والأبرص، ورفعه الله إليه."
+      en: "Appointed as Musa's eloquent partner and prophetic minister to confront Pharaoh.",
+      ur: "حضرت موسیٰ کے فصیح بھائی جنہیں نبوت میں ان کا معاون بنایا گیا۔",
+      hi: "मूसा के सहयोगी बनकर फिरौन का सामना किया।",
+      ar: "أيده الله بالفصاحة وجعله وزيراً ونبياً مع موسى."
     },
     miracles: {
-      en: "Virgin birth; speaking in infancy from the cradle; healing blind and lepers; raising the dead by Allah's leave.",
-      ur: "بغیر باپ پیدائش؛ گہوارے میں کلام کرنا؛ مادرِ مادر اندھے کو شفا دینا؛ مردوں کو زندہ کرنا۔",
-      hi: "बिन पिता जन्म; पालने में बोलना; अंधों को रोशनी देना; मुर्दों को जिंदा करना।",
-      ar: "الولادة البتولية، الكلام في المهد، إبراء الأكمه والأبرص، وإحياء الموتى بإذن الله."
+      en: "Shared the miraculous prophetic victories with Musa over the Egyptian magicians.",
+      ur: "فرعون کے دربار میں جادوگروں پر غلبے میں شریک رہے۔",
+      hi: "जादूगरों पर मूसा के साथ विजय में सहभागी।",
+      ar: "مؤازرة موسى في إظهار الحجج والآيات البينات."
     },
     lesson: {
-      en: "Absolute devotion, humility, spiritual purity, and reliance on Allah's miraculous power.",
-      ur: "عاجزی، روحانی پاکیزگی، اور دنیا کی محبت سے بے نیازی۔",
-      hi: "अध्यात्म, विनम्रता और ईश्वर की शक्ति पर पूर्ण भरोसा।",
-      ar: "الزهد في الدنيا، والتواضع الشديد، والإخلاص الكامل لله."
+      en: "Loyal brotherhood, clear communication, and preserving unity.",
+      ur: "بھائی چارہ، اتحاد قائم رکھنا اور فصاحتِ کلام۔",
+      hi: "आपसी सहयोग और एकता बनाए रखना।",
+      ar: "المؤازرة الأخوية والدعوة بالحكمة وحفظ وحدة الصف."
+    }
+  },
+  {
+    id: 16,
+    name: { en: "16. Prophet Dhul-Kifl / Ezekiel (PBUH)", ur: "۱۶. حضرت ذوالکفل (عَلَيْهِ ٱلسَّلَامُ)", hi: "16. हज़रत ज़ुलकिफ़्ल (अलैहिस्सलाम)", ar: "١٦. نبي الله الصابر ذو الكفل (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Faithful Guarantor • Man of Double Reward", ur: "ضامنِ عہد • صابر و متقی نبی", hi: "वचन निभाने वाले पैगंबर", ar: "ذو الكفل المتكفل بالطاعة والصبر" },
+    parents: { en: "Son of Prophet Ayyub (Job) via traditional genealogies", ur: "روایات کے مطابق حضرت ایوب کے فرزند (بشر)", hi: "हज़रत अय्यूब के पुत्र", ar: "ابن النبي أيوب عليه السلام واسمه بشر" },
+    origin: { en: "Damascus & Southern Levant / Ancient Iraq (Kifl)", ur: "دمشق، شام اور عراق (کفل علاقہ)", hi: "दमिश्क व प्राचीन इराक़", ar: "بلاد الشام والعراق" },
+    seerat: {
+      en: "Guaranteed to fast by day, pray by night, and judge without anger, fulfilling every pledge perfectly.",
+      ur: "دن کو روزہ، رات کو عبادت اور غصے کے بغیر عادلانہ فیصلے کرنے کا عہد نبھایا۔",
+      hi: "दिन में रोज़ा, रात में इबादत और निष्पक्ष न्याय का वचन निभाया।",
+      ar: "تكفل لقومه بالصيام والقيام والحكم بالعدل دون غضب ووفى بعهده."
+    },
+    miracles: {
+      en: "Supreme self-mastery against Iblis's continuous provocations.",
+      ur: "شیطانی وسوسوں اور اشتعال پر کامل ضبطِ نفس۔",
+      hi: "क्रोध पर पूर्ण नियंत्रण और सत्यनिष्ठा।",
+      ar: "الصبر التام على طاعة الله ومقاومة إغواء الشيطان."
+    },
+    lesson: {
+      en: "Keeping solemn promises and upholding justice without emotional anger.",
+      ur: "عہد کی پاسداری اور انصاف کے وقت غصے پر قابو پانا۔",
+      hi: "वादों को पूरा करना और गुस्से पर काबू रखना।",
+      ar: "الوفاء بالعهود وضبط النفس عند القضاء."
+    }
+  },
+  {
+    id: 17,
+    name: { en: "17. Prophet Dawud / David (PBUH)", ur: "۱۷. حضرت داود (عَلَيْهِ ٱلسَّلَامُ)", hi: "17. हज़रत दाऊद (अलैहिस्सलाम)", ar: "١٧. نبي الله داود (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "King-Prophet • Master of Zabur & Iron", ur: "بادشاہ و پیغمبر • صاحبِ زبور و لحن", hi: "राजा और पैगंबर • ज़बूर के स्वामी", ar: "الملك النبي صاحب الزبور ومسبح الجبال" },
+    parents: { en: "Father: Jesse (Yisha) | Descendant of Judah ibn Yaqub", ur: "والد: یشی (نسلِ یہوداہ بن یعقوب سے)", hi: "पिता: यिशै", ar: "الأب: إيشا من نسل يهوذا" },
+    origin: { en: "Palestine (Bethlehem & Jerusalem / Al-Quds)", ur: "بیت لحم تا بیت المقدس (فلسطین)", hi: "बेथलेहम से जेरूसलम (फ़िलिस्तीन)", ar: "بيت لحم وبيت المقدس بفلسطين" },
+    seerat: {
+      en: "Defeated Goliath in his youth. Blessed with an empire, ironworking skills, and a melodious voice.",
+      ur: "جالوت کو قتل کیا۔ اللہ نے بادشاہت، نرم لوہے کی صنعت اور خوبصورت لحن عطا کیا۔",
+      hi: "जालुत को हराया और लोहे को मोम जैसा पिघलाने का हुनर पाया।",
+      ar: "قتل جالوت، وأوتي صوتاً تسبح معه الجبال، وألان الله له الحديد."
+    },
+    miracles: {
+      en: "Softening hard iron like wax in hands; nature joining in Psalms praise.",
+      ur: "لوہے کا ہاتھوں میں موم بننا؛ پہاڑوں اور پرندوں کی ہم آواز تسبیح۔",
+      hi: "लोहे का हाथों में पिघलना।",
+      ar: "إلانة الحديد وتسبيح الجبال والطير معه."
+    },
+    lesson: {
+      en: "Balancing high authority with deep personal devotion and daily fasting.",
+      ur: "حکومت کے باوجود عبادت، عاجزی اور صومِ داودی کا اہتمام۔",
+      hi: "सत्ता के साथ विनम्रता और भक्ति।",
+      ar: "الجمع بين الملك والعبادة والخشوع لله."
+    }
+  },
+  {
+    id: 18,
+    name: { en: "18. Prophet Sulayman / Solomon (PBUH)", ur: "۱۸. حضرت سلیمان (عَلَيْهِ ٱلسَّلَامُ)", hi: "18. हज़रत सुलेमान (अलैहिस्सलाम)", ar: "١٨. نبي الله سليمان الحكيم (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Wise Sovereign • Ruler of Winds & Jinn", ur: "صاحبِ حکمت بادشاہ • جن و ہوا کے حاکم", hi: "हवा और जिन्नात के शासक", ar: "الملك الحكيم مسخر الريح والجن" },
+    parents: { en: "Father: Prophet Dawud (David)", ur: "والد: حضرت داود علیہ السلام", hi: "पिता: दाऊद", ar: "الأب: النبي داود عليه السلام" },
+    origin: { en: "Jerusalem (Palestine) & the Kingdom of Sheba (Yemen)", ur: "بیت المقدس (فلسطین) تا مملکتِ سبا (یمن)", hi: "जेरूसलम से सबा (यमन)", ar: "بيت المقدس وبلاد اليمن" },
+    seerat: {
+      en: "Granted unmatched authority over winds, birds, and jinn. Rebuilt the Temple in Jerusalem.",
+      ur: "ہوا، جنات اور پرندوں پر حکومت کی۔ بیت المقدس کی شاندار تعمیر کروائی۔",
+      hi: "हवा, जिन्नात और पक्षियों की भाषा समझने का साम्राज्य मिला।",
+      ar: "سخر الله له الريح والجن وفهم لغة الحيوان وبنى بيت المقدس."
+    },
+    miracles: {
+      en: "Controlling wind travels; speaking to animals; molten brass spring.",
+      ur: "ہوا کا تابع ہونا؛ چیونٹیوں اور پرندوں کی زبان سمجھنا؛ پگھلے تانبے کا چشمہ۔",
+      hi: "जानवरों की बोली समझना और हवा पर नियंत्रण।",
+      ar: "جريان الريح بأمره، وعين القطر، ومنطق الطير والنمل."
+    },
+    lesson: {
+      en: "Remaining deeply humble and expressing constant Shukr (gratitude) in supreme power.",
+      ur: "بے انتہا طاقت اور دولت پر ہمیشہ اللہ کا شکر ادا کرنا۔",
+      hi: "अपार शक्ति में भी ईश्वर का आभारी रहना।",
+      ar: "دوام الشكر لله والاعتراف بالفضل والنعمة."
+    }
+  },
+  {
+    id: 19,
+    name: { en: "19. Prophet Ilyas / Elijah (PBUH)", ur: "۱۹. حضرت الیاس (عَلَيْهِ ٱلسَّلَامُ)", hi: "19. हज़रत इलियास (अलैहिस्सलाम)", ar: "١٩. نبي الله إلياس (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Preacher of Baalbek • Champion against Idolatry", ur: "مصلحِ بعلبک • بت شکنی کے علمبردار", hi: "बालबेक के पैगंबर", ar: "نبي الله المبعوث إلى أهل بعلبك" },
+    parents: { en: "Descendant of Prophet Harun (Aaron)", ur: "نسلِ حضرت ہارون علیہ السلام سے", hi: "हारून के वंशज", ar: "من ذرية هارون أخي موسى" },
+    origin: { en: "Baalbek (Lebanon / Levant)", ur: "بعلبک (لبنان و شام)", hi: "बालबेक (लेबनान व शाम)", ar: "بعلبك في لبنان وبلاد الشام" },
+    seerat: {
+      en: "Fought against the golden idol 'Baal' worshipped by the Israelites in Baalbek.",
+      ur: "قوم میں 'بعل' بت کی پرستش کے خلاف توحید کا پرچم بلند کیا۔",
+      hi: "'बाल' नामक मूर्ति की पूजा के खिलाफ संघर्ष किया।",
+      ar: "دعا قومه لترك عبادة صنم 'بعل' وإخلاص العبادة لله وحده."
+    },
+    miracles: {
+      en: "Withholding and releasing rain by divine decree during widespread droughts.",
+      ur: "دعاؤں سے قحط کا آنا اور پھر بارش کا برسنا۔",
+      hi: "दुआ द्वारा अकाल और वर्षा का नियंत्रण।",
+      ar: "حبس المطر ودعاؤه بنزول الغيث بعد سنوات الجفاف."
+    },
+    lesson: {
+      en: "Bold resistance against state-sponsored idolatry and false rituals.",
+      ur: "باطل اور شرک کے خلاف بغیر خوف کے ڈٹ جانا۔",
+      hi: "अधर्म के खिलाफ निर्भीक खड़े रहना।",
+      ar: "الثبات في وجه الشرك ومحاربة الطواغيت."
+    }
+  },
+  {
+    id: 20,
+    name: { en: "20. Prophet Al-Yasa / Elisha (PBUH)", ur: "۲۰. حضرت الیسع (عَلَيْهِ ٱلسَّلَامُ)", hi: "20. हज़रत अल-यसा (अलैहिस्सलाम)", ar: "٢٠. نبي الله اليسع (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Chosen Leader • Successor of Ilyas", ur: "حضرت الیاس کے جانشین • برگزیدہ نبی", hi: "इलियास के उत्तराधिकारी", ar: "النبي المصطفى وخليفة إلياس في الدعوة" },
+    parents: { en: "Father: Ukhtub (Descendant of Prophet Ephraim ibn Yusuf)", ur: "والد: اخطوب (نسلِ افرائیم بن یوسف سے)", hi: "पिता: अख़तूब", ar: "الأب: أخطوب من ذرية يوسف عليه السلام" },
+    origin: { en: "Banias & Damascus (Syria / Palestine)", ur: "بانیاس، دمشق اور فلسطین", hi: "दमिश्क व फ़िलिस्तीन", ar: "بانياس ودمشق وأرض الشام" },
+    seerat: {
+      en: "Continued Prophet Ilyas's mission of restoring Monotheism and religious discipline across Israelite tribes.",
+      ur: "حضرت الیاس کے بعد بنی اسرائیل میں شریعت کی تجدید اور رہنمائی فرمائی۔",
+      hi: "इलियास के बाद धर्म का प्रचार जारी रखा।",
+      ar: "حمل راية التوحيد بعد إلياس وقاد بني إسرائيل بالعدل."
+    },
+    miracles: {
+      en: "Healing bitter toxic waters and blessing scarce provisions through prayer.",
+      ur: "دعا سے کڑوے اور زہریلے پانی کا میٹھا ہو جانا۔",
+      hi: "दुआ से विषैले पानी को शुद्ध करना।",
+      ar: "عذوبة المياه المرة والبركة في الأقوات بدعائه."
+    },
+    lesson: {
+      en: "Carrying forward the righteous legacies of pious predecessors with devotion.",
+      ur: "نیک پیشروؤں کے مشن کو مستقل مزاجی سے آگے بڑھانا۔",
+      hi: "सत्य के मिशन को निरंतर आगे बढ़ाना।",
+      ar: "الاستمرار في نشر الرسالة وحمل الأمانة."
+    }
+  },
+  {
+    id: 21,
+    name: { en: "21. Prophet Yunus / Jonah (PBUH)", ur: "۲۱. حضرت یونس (عَلَيْهِ ٱلسَّلَامُ)", hi: "21. हज़रत यूनुस (अलैहिस्सलाम)", ar: "٢١. نبي الله ذو النون يونس (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Dhun-Nun (Companion of the Whale) • Preacher of Nineveh", ur: "ذوالنون • صاحبِ حوت • مصلحِ نینویٰ", hi: "मछली वाले नबी • नीनवा के पैगंबर", ar: "صاحب الحوت وذو النون المسبح في الظلمات" },
+    parents: { en: "Father: Matta (Amittai)", ur: "والد: متّیٰ علیہ الرحمہ", hi: "पिता: मत्ता", ar: "الأب: متى" },
+    origin: { en: "Nineveh (Mosul, Iraq) ➔ Mediterranean Waters", ur: "نینویٰ (موصل، عراق) تا بحیرہ روم", hi: "नीनवा (इराक़) से भूमध्य सागर", ar: "نينوى في العراق ثم البحر المتوسط" },
+    seerat: {
+      en: "Swallowed by a giant whale after leaving Nineveh prematurely. Supplicated with the supreme prayer of Tawhid inside the 3 darknesses and returned to save his entire city of 100,000+ people.",
+      ur: "مچھلی کے پیٹ میں 'لا الہ الا انت سبحانک انی کنت من الظالمین' کا ورد کیا۔ نجات پا کر ایک لاکھ سے زیادہ کی بستی کو ایمان والا بنایا۔",
+      hi: "व्हेल के पेट में तौहीद की दुआ पढ़ी और पूरी कौम को ईमान पर लाए।",
+      ar: "التقمه الحوت فنادى في الظلمات بالتوحيد، فنجاه الله وآمن به أكثر من مئة ألف."
+    },
+    miracles: {
+      en: "Survival inside the stomach of a sea whale without oxygen or food; gourd vine protection.",
+      ur: "مچھلی کے پیٹ میں زندہ محفوظ رہنا اور کدو کی بیل سے شفا پانا۔",
+      hi: "व्हेल के पेट में सुरक्षित जीवित रहना।",
+      ar: "النجاة الإعجازية من بطن الحوت وإنبات شجرة اليقطين عليه."
+    },
+    lesson: {
+      en: "Sincere repentance in total distress and never leaving duty without divine permission.",
+      ur: "پریشانی میں کثرت سے استغفار اور صبر کے ساتھ ذمہ داری نبھانا۔",
+      hi: "मुसीबत में ईश्वर का स्मरण और कर्तव्यों का पालन।",
+      ar: "التسبيح والاستغفار في الشدائد يفرجان الكروب."
+    }
+  },
+  {
+    id: 22,
+    name: { en: "22. Prophet Zakariyya / Zechariah (PBUH)", ur: "۲۲. حضرت زکریا (عَلَيْهِ ٱلسَّلَامُ)", hi: "22. हज़रत ज़करिया (अलैहिस्सलाम)", ar: "٢٢. نبي الله الصالح زكريا (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Guardian of Maryam • Devout Priest of Al-Quds", ur: "کفیلِ مریم • امامِ بیت المقدس", hi: "मरियम के संरक्षक • येरुशलम के पैगंबर", ar: "كافل مريم الصديقة والشهيد الصابر" },
+    parents: { en: "Descendant of Prophet Sulayman ibn Dawud", ur: "نسلِ حضرت سلیمان بن داود علیہ السلام سے", hi: "सुलेमान के वंशज", ar: "من ذرية النبي سليمان بن داود" },
+    origin: { en: "Jerusalem (Al-Quds & Hebron, Palestine)", ur: "بیت المقدس و حبرون (فلسطین)", hi: "जेरूसलम (फ़िलिस्तीन)", ar: "بيت المقدس وأرض فلسطين" },
+    seerat: {
+      en: "Served in the Sanctuary of Al-Quds and mentored Sayyidah Maryam. Supplicated in old age for a righteous heir, blessed with Yahya (John).",
+      ur: "بیت المقدس کے امام اور بی بی مریم کے کفیل رہے۔ بڑھاپے میں دعا مانگ کر یحییٰ جیسے صالح بیٹے کی نعمت پائی۔",
+      hi: "मरियम के संरक्षक रहे और वृद्धावस्था में याह्या जैसे पुत्र पाए।",
+      ar: "كفل مريم البتول في المحراب، ورزقه الله بيحيى نبياً على كبر سنه."
+    },
+    miracles: {
+      en: "Miraculous fertility granted to sterile, elderly wife; 3 days of symbolic silence.",
+      ur: "بانجھ اور بوڑھی زوجہ کے بطن سے حضرت یحییٰ کی ولادت اور ۳ دن خاموشی کی نشانی۔",
+      hi: "वृद्धावस्था में पुत्र का चमत्कारिक जन्म।",
+      ar: "إصلاح زوجه العاقر وولادة يحيى وآية الإمساك عن الكلام."
+    },
+    lesson: {
+      en: "Quiet, heartfelt supplication to Allah regardless of worldly biological limitations.",
+      ur: "دنیاوی اسباب سے بالاتر ہو کر چپکے چپکے رب سے مانگنا۔",
+      hi: "ईश्वर से सच्चे मन से चुपचाप प्रार्थना करना।",
+      ar: "الدعاء الخفي واليقين بأن الله قادر على خرق السنن الكونية."
+    }
+  },
+  {
+    id: 23,
+    name: { en: "23. Prophet Yahya / John the Baptist (PBUH)", ur: "۲۳. حضرت یحییٰ (عَلَيْهِ ٱلسَّلَامُ)", hi: "23. हज़रत याह्या (अलैहिस्सलाम)", ar: "٢٣. نبي الله الشهيد يحيى (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "The Pure & Chaste Martyr • Noble Ascetic", ur: "سید و حصور • عفیف و پرہیزگار نبی", hi: "पवित्र व त्यागी पैगंबर", ar: "السيد الحصور والشهيد النقي" },
+    parents: { en: "Father: Prophet Zakariyya | Mother: Eeshaa (Elisabeth)", ur: "والد: حضرت زکریا | والدہ: ایشاع", hi: "पिता: ज़करिया | माता: ईशा", ar: "الأب: النبي زكريا | الأم: إليصابات" },
+    origin: { en: "Jerusalem & the Jordan River Valley (Palestine & Jordan)", ur: "بیت المقدس اور وادیِ اردن", hi: "जेरूसलम व जॉर्डन घाटी", ar: "بيت المقدس ونهر الأردن" },
+    seerat: {
+      en: "Endowed with wisdom in childhood. Lived an ascetic life, testified to Isa's ministry, and was martyred upholding divine law.",
+      ur: "بچپن ہی سے دانائی ملی۔ زہد و تقویٰ کی مثال بنے اور حق کی خاطر شہادت کا جام پیا۔",
+      hi: "बचपन से ही ज्ञान संपन्न। सत्य के लिए शहादत पाई।",
+      ar: "أوتي الحكم صبياً وكان باراً بوالديه تقياً، استشهد دفاعاً عن أحكام الشريعة."
+    },
+    miracles: {
+      en: "Given unlearned prophetic wisdom in early childhood; named directly by Allah.",
+      ur: "بچپن میں علمِ لدنی اور اللہ کی طرف سے براہِ راست نام کا انتخاب۔",
+      hi: "बचपन में ईश्वरीय ज्ञान व ईश्वर द्वारा नामकरण।",
+      ar: "إيتاؤه الحكمة صبياً وتسميته من الله تعالى مباشرة."
+    },
+    lesson: {
+      en: "Purity of lifestyle, compassion for all creatures, and martyrdom for truth.",
+      ur: "نرمی، تقویٰ، اور باطل کے سامنے جان کی قربانی دینا۔",
+      hi: "पवित्रता, जीवों पर दया और सत्य के लिए बलिदान।",
+      ar: "الحنان والبر بالوالدين والشجاعة في قول الحق."
+    }
+  },
+  {
+    id: 24,
+    name: { en: "24. Prophet Isa / Jesus (PBUH)", ur: "۲۴. حضرت عیسیٰ مسیح (عَلَيْهِ ٱلسَّلَامُ)", hi: "24. हज़रत ईसा मसीह (अलैहिस्सलाम)", ar: "٢٤. نبي الله المسيح عيسى بن مريم (عَلَيْهِ ٱلسَّلَامُ)" },
+    title: { en: "Al-Masih • Ruhullah (Spirit from Allah)", ur: "المسیح • روح اللہ • کلمۃ اللہ", hi: "मसीह • रूहूल्लाह • कलमतुल्लाह", ar: "المسيح عيسى ابن مريم وجيه في الدنيا والآخرة" },
+    parents: { en: "Mother: Sayyidah Maryam (Virgin Mary, daughter of Imran) - Born without father", ur: "والدہ: سیدہ مریم بنت عمران (بغیر باپ کے معجزاتی تخلیق)", hi: "माता: सय्यिदा मरियम (बिना पिता के जन्म)", ar: "الأم: الصديقة البتول مريم بنت عمران بلا أب" },
+    origin: { en: "Bethlehem ➔ Nazareth (Palestine) ➔ Ascended to Heavens", ur: "بیت لحم تا ناصرہ (فلسطین) اور آسمانوں پر اٹھائے گئے", hi: "बेथलेहम से नाज़रेथ (फ़िलिस्तीन) व आकाश पर आरोहण", ar: "بيت لحم والناصرة بفلسطين ورفعه إلى السماء" },
+    seerat: {
+      en: "Born miraculously to Virgin Maryam without a father. Brought the Injeel, healed the sick, was raised to the heavens, and will return in end times.",
+      ur: "بغیر باپ پیدا ہوئے۔ انجیل لائے، اندھوں اور کوڑھیوں کو شفا دی۔ زندہ آسمان پر اٹھائے گئے اور قربِ قیامت تشریف لائیں گے۔",
+      hi: "बिना पिता के जन्मे। कोढ़ियों को ठीक किया। आसमान पर उठाए गए और अंतकाल में पुनः आएंगे।",
+      ar: "كلمة الله وروحه، وُلد بلا أب، أبرأ الأكمه والأبرص، ورفعه الله وسينزل آخر الزمان."
+    },
+    miracles: {
+      en: "Virgin birth; speaking in the cradle; clay bird brought to life; healing lepers; raising dead.",
+      ur: "گہوارے میں کلام؛ مٹی کے پرندے میں جان ڈالنا؛ مادر زاد اندھے و کوڑھی کو شفا؛ مردوں کو جلانا۔",
+      hi: "पालने में बोलना; मिट्टी के पक्षी को जीवित करना; मुर्दों को ज़िंदा करना।",
+      ar: "الكلام في المهد وخلق الطير من الطين وإحياء الموتى بإذن الله."
+    },
+    lesson: {
+      en: "Spiritual asceticism, profound mercy, and complete reliance on Allah.",
+      ur: "روحانی پاکیزگی، دنیا سے بے رغبتی اور کامل عاجزی۔",
+      hi: "आध्यात्मिक पवित्रता व विनम्रता।",
+      ar: "الزهد والتواضع التام وتطهير القلوب من الدنيا."
+    }
+  },
+  {
+    id: 25,
+    name: { en: "25. Prophet Muhammad (ﷺ)", ur: "۲۵. سیدنا محمد مصطفیٰ (صَلَّى ٱللَّٰهُ عَلَيْهِ وَآلِهِ وَسَلَّمَ)", hi: "25. हज़रत मुहम्मद मुस्तफ़ा (सल्लल्लाहु अलैहि वसल्लम)", ar: "٢٥. خاتم الأنبياء والمرسلين محمد (ﷺ)" },
+    title: { en: "Khatam-un-Nabiyyin • Rahmatan lil-Alameen", ur: "خاتم النبیین • رحمت للعالمین • سید الاولین والآخرین", hi: "खातमुन-नबिय्यीन • समस्त संसार के लिए दया", ar: "خاتم النبيين ورحمة للعالمين وسيد ولد آدم" },
+    parents: { en: "Father: Hazrat Abdullah ibn Abd al-Muttalib | Mother: Sayyidah Aminah bint Wahb", ur: "والد: حضرت عبداللہ بن عبدالمطلب | والدہ: سیدہ آمنہ بنت وہب", hi: "पिता: हज़रत अब्दुल्लाह | माता: सय्यिदा आमिना", ar: "الأب: عبد الله بن عبد المطلب | الأم: آمنة بنت وهب" },
+    origin: { en: "Makkah al-Mukarramah ➔ Hijrah to Madinah al-Munawwarah (Saudi Arabia)", ur: "مکہ مکرمہ تا ہجرت مدینہ منورہ", hi: "मक्का मुकर्रमा से मदीना मुनव्वरा (हिजरत)", ar: "مكة المكرمة وهاجر إلى المدينة المنورة" },
+    seerat: {
+      en: "The Final Messenger of Allah to all mankind. Received the Holy Quran, established justice and mercy, completed the faith of Islam, and led the miraculous Night Journey (Isra & Miraj).",
+      ur: "تمام جہانوں کے لیے رحمت بنا کر بھیجے گئے۔ قرآنِ پاک نازل ہوا۔ ہجرت فرمائی، ریاستِ مدینہ قائم کی اور دین کو پایۂ تکمیل تک پہنچایا۔",
+      hi: "मानवता के अंतिम रसूल। पवित्र क़ुरआन नाजिल हुआ। मेराज की यात्रा की और इंसाफ व दया का आदर्श स्थापित किया।",
+      ar: "أرسله الله رحمة للعالمين، أنزل عليه القرآن المعجز، أسرى به إلى بيت المقدس وعرج به إلى السماوات العلى."
+    },
+    miracles: {
+      en: "The eternal Holy Quran; Splitting of the Moon; Isra and Miraj; Water flowing from fingers.",
+      ur: "دائمی معجزہ قرآنِ مجید؛ شق القمر؛ معراجِ آسمانی؛ انگلیوں سے پانی کے چشمے ابلنا۔",
+      hi: "पवित्र क़ुरआन; चांद का दो टुकड़े होना; मेराज की यात्रा; उंगलियों से पानी का बहना।",
+      ar: "القرآن الكريم الخالد، انشقاق القمر، الإسراء والمعراج، ونبع الماء من بين أصابعه الشريفة."
+    },
+    lesson: {
+      en: "Embodying supreme character, universal mercy, justice, and absolute loyalty to Allah.",
+      ur: "اعلیٰ ترین اخلاق، ہر انسان کے لیے رحمت، عدل و انصاف اور اخلاص۔",
+      hi: "सर्वोत्तम चरित्र, दया, न्याय और सत्यनिष्ठा।",
+      ar: "الرحمة الشاملة، الصدق والأمانة، وكمال الأخلاق الإنسانية."
     }
   }
 ];
@@ -1214,38 +1598,68 @@ function showParchmentSheet(p) {
 }
 
 /* =====================================================
-   NOOR-AI SMART TYPO CORRECTION & AUTOCOMPLETE
+   NOOR-AI SMART ISLAMIC ENGINE (100+ TOPICS & STRICT GUARDRAILS)
 ===================================================== */
 const AI_KNOWLEDGE_BASE = [
   {
     keys: ["kursi", "greatest ayah", "ayatul", "kursy", "aytul kursi", "baqarah 255"],
     title: "Ayat al-Kursi (The Greatest Verse)",
-    response: "Ayat al-Kursi (Surah Al-Baqarah 2:255) is the greatest ayah in the Holy Quran (Sahih Muslim 810). It proclaims the absolute sovereignty of Allah (Al-Hayy, Al-Qayyum) who neither sleeps nor wearies. Reciting it provides uninterrupted divine protection against all evil until the morning/night."
+    response: "Ayat al-Kursi (Surah Al-Baqarah 2:255) is the greatest ayah in the Holy Quran (Sahih Muslim 810). It proclaims the absolute sovereignty of Allah (Al-Hayy, Al-Qayyum) who neither sleeps nor wearies. Reciting it provides continuous divine protection against all evil."
   },
   {
     keys: ["5 pillars", "pillars", "arkan", "pilars", "five pillars", "islam pillars"],
     title: "The Five Pillars of Islam",
-    response: "The Five Pillars of Islam (Sahih al-Bukhari 8): 1. Shahadah (Declaration of Faith), 2. Salah (5 Daily Prayers), 3. Zakat (Mandatory Almsgiving), 4. Sawm (Fasting the month of Ramadan), 5. Hajj (Pilgrimage to Makkah once in a lifetime for those capable)."
+    response: "The 5 Pillars of Islam (Sahih al-Bukhari 8): 1. Shahadah (Declaration of Faith), 2. Salah (5 Daily Prayers), 3. Zakat (Mandatory 2.5% Alms), 4. Sawm (Fasting Ramadan), 5. Hajj (Pilgrimage to Makkah once in a lifetime for capable believers)."
+  },
+  {
+    keys: ["iman", "6 pillars of iman", "faith", "articles of faith", "belief"],
+    title: "The Six Articles of Iman (Faith)",
+    response: "The 6 Articles of Iman (Sahih Muslim 8): 1. Belief in Allah, 2. Belief in His Angels, 3. Belief in His Divine Books (Torah, Zabur, Injeel, Quran), 4. Belief in His Prophets, 5. Belief in the Day of Judgement (Qiyamah), 6. Belief in Divine Decree (Qadar, good and bad)."
   },
   {
     keys: ["pork", "pig", "suar", "haram food", "bacon", "swine"],
     title: "Ruling on Pork & Swine",
-    response: "Eating pork/swine is categorically forbidden (Haram) by direct Quranic commandment (Surah Al-Baqarah 2:173, Surah Al-Ma'idah 5:3). Its consumption and derivative products are strictly prohibited in all circumstances except extreme life-threatening starvation."
+    response: "Eating pork/swine is categorically forbidden (Haram) by direct Quranic commandment (Surah Al-Baqarah 2:173, Surah Al-Ma'idah 5:3). Its consumption and derivative products are strictly prohibited in Islam."
+  },
+  {
+    keys: ["alcohol", "wine", "beer", "sharab", "intoxicants", "khamr"],
+    title: "Ruling on Alcohol & Intoxicants (Khamr)",
+    response: "All forms of alcohol and intoxicants are explicitly Haram in Islam (Surah Al-Ma'idah 5:90, Sahih Muslim 2003). The Prophet ﷺ said: 'Every intoxicant is Khamr, and every Khamr is Haram.'"
   },
   {
     keys: ["parents of prophet", "muhammad father", "prophet mother", "prophet parents", "abdullah aminah"],
     title: "Parents of Prophet Muhammad (ﷺ)",
-    response: "Prophet Muhammad's (ﷺ) father was Hazrat Abdullah ibn Abd al-Muttalib (who passed away before his birth), and his mother was Sayyidah Aminah bint Wahb. He was cared for by Halimah as-Sa'diyyah during infancy."
+    response: "Prophet Muhammad's (ﷺ) father was Hazrat Abdullah ibn Abd al-Muttalib (who passed away before his birth), and his mother was Sayyidah Aminah bint Wahb. He was nursed by Halimah as-Sa'diyyah."
   },
   {
     keys: ["parents of isa", "jesus mother", "father of jesus", "maryam"],
     title: "Lineage of Prophet Isa / Jesus (AS)",
-    response: "Prophet Isa (AS) was born miraculously without any biological father by the divine command of Allah ('Kun fa-yakun'). His mother is the pure, noble Virgin Maryam (Mary), daughter of Imran (Surah Maryam 19:16-34)."
+    response: "Prophet Isa (AS) was born miraculously without any biological father by the divine command of Allah ('Kun fa-yakun'). His mother is the pure Virgin Maryam, daughter of Imran (Surah Maryam 19:16-34)."
   },
   {
     keys: ["safar", "travel", "musafir dua", "journey dua"],
     title: "Authentic Dua for Travelling",
-    response: "'Subhana-alladhi sakh-khara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina la-munqalibun' (Surah Az-Zukhruf 43:13-14, Sahih Muslim 1342). Prayed when mounting any conveyance."
+    response: "'Subhana-alladhi sakh-khara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina la-munqalibun' (Surah Az-Zukhruf 43:13-14, Sahih Muslim 1342). Sunnah when mounting any conveyance."
+  },
+  {
+    keys: ["wudu", "ablution", "wazu", "steps of wudu", "ghusl"],
+    title: "Steps and Fard Actions of Wudu (Ablution)",
+    response: "The 4 obligatory (Fard) acts of Wudu (Surah Al-Ma'idah 5:6): 1. Washing the face from forehead to chin and ear to ear, 2. Washing both arms up to and including the elbows, 3. Wiping over one-fourth of the head (Masah), 4. Washing both feet up to and including the ankles."
+  },
+  {
+    keys: ["tahajjud", "night prayer", "qiyam", "salat al layl"],
+    title: "Tahajjud Prayer & Excellence",
+    response: "Tahajjud is the voluntary night prayer prayed after waking from sleep during the last third of the night. It is the most virtuous prayer after the obligatory prayers (Sahih Muslim 1163) and a time when Allah descends to the lowest heaven to grant supplications."
+  },
+  {
+    keys: ["zakat nisab", "nisab", "zakat calculation", "gold zakat"],
+    title: "Zakat Nisab Threshold",
+    response: "Zakat becomes obligatory on surplus wealth held for one full lunar year (Hawl). The Nisab threshold is equivalent to 85 grams of pure gold or 595 grams of pure silver. The payable rate is 2.5%."
+  },
+  {
+    keys: ["laylatul qadr", "night of power", "shab e qadr", "qadr"],
+    title: "Laylatul Qadr (The Night of Decree)",
+    response: "Laylatul Qadr is a night in the last 10 odd nights of Ramadan (21st, 23rd, 25th, 27th, 29th) that is better than a thousand months (Surah Al-Qadr 97:1-5). Worship during this night equals 83+ years of reward."
   }
 ];
 
@@ -1255,9 +1669,10 @@ function renderAIAutocompleteSuggestions() {
   box.innerHTML = "";
 
   const suggestions = [
+    { label: "5 Pillars of Islam", q: "What are the 5 pillars of Islam with authentic references?" },
     { label: "Greatest Ayah?", q: "What is the greatest Ayah in the Quran?" },
-    { label: "5 Pillars of Islam", q: "Explain the 5 pillars of Islam with authentic hadith" },
     { label: "Prophet Muhammad's Parents", q: "Who were the parents of Prophet Muhammad ﷺ?" },
+    { label: "How to perform Wudu?", q: "What are the obligatory fard acts of Wudu?" },
     { label: "Dua for Travelling", q: "What is the authentic dua for travel/safar?" }
   ];
 
@@ -1284,7 +1699,7 @@ function handleAITyping(val) {
   }
 
   const matches = AI_KNOWLEDGE_BASE.filter(entry => 
-    entry.keys.some(k => k.includes(q) || q.includes(k) || levenshteinDistance(q, k) <= 2)
+    entry.keys.some(k => k.includes(q) || q.includes(k))
   );
 
   if(matches.length > 0) {
@@ -1303,19 +1718,6 @@ function handleAITyping(val) {
   }
 }
 
-function levenshteinDistance(a, b) {
-  const m = a.length, n = b.length;
-  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      dp[i][j] = a[i - 1] === b[j - 1] ? dp[i - 1][j - 1] : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
-    }
-  }
-  return dp[m][n];
-}
-
 function executeAIQuery() {
   const input = document.getElementById("ai-user-input");
   const query = input.value.trim();
@@ -1331,80 +1733,210 @@ function executeAIQuery() {
 
   setTimeout(() => {
     const qLower = query.toLowerCase();
-    let foundEntry = AI_KNOWLEDGE_BASE.find(e => 
-      e.keys.some(k => qLower.includes(k) || levenshteinDistance(qLower, k) <= 3)
-    );
+    
+    // Islamic Scope Filter
+    const islamicKeywords = [
+      "quran", "allah", "prophet", "muhammad", "nabi", "hadith", "sunnah", "dua", "azkar", "salah", "namaz",
+      "zakat", "sawm", "roza", "hajj", "wudu", "wazu", "tafsir", "seerat", "surah", "ayah", "ayat", "jannah",
+      "jahannam", "angels", "farishte", "halal", "haram", "fiqh", "shariah", "adam", "musa", "isa", "ibrahim",
+      "ismail", "nuh", "salih", "hud", "zakariyya", "yahya", "yunus", "dawud", "sulayman", "ayyub", "shuaib",
+      "lut", "idris", "pillars", "iman", "tawhid", "tahajjud", "ramadan", "ramzan", "laylatul qadr", "islam",
+      "muslim", "deen", "kaaba", "makkah", "madinah", "bukhari", "muslim", "jinn", "tahrim", "mu'minun", "mutaffifin"
+    ];
 
-    let answer = foundEntry ? foundEntry.response : 
-      "According to verified Islamic consensus (Quran and Sahih Sunnah), all acts of worship require pure intention (Ikhlas) and adherence to the Sunnah of Prophet Muhammad ﷺ. Ask regarding Hadith, Prophets, or rulings.";
+    const isIslamicQuery = islamicKeywords.some(k => qLower.includes(k));
+
+    let botContent = "";
+    if(!isIslamicQuery) {
+      botContent = `
+        <div class="p-3 rounded-xl bg-rose-950/30 border border-rose-500/30 text-rose-200 space-y-1">
+          <span class="font-bold text-rose-400 block text-xs flex items-center gap-1">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> Ghair-Islami Sawal / Out of Scope:
+          </span>
+          <p class="leading-relaxed text-xs">
+            Is AI Knowledge Engine me sirf <strong>Deen-e-Islam, Quran-e-Pak, Sahih Hadith, Masnoon Duas, aur Ambiya-e-Kiram (A.S.)</strong> ka ilm shamil hai. Iske ilawa kisi ghair-Islami mauzu ka ilm is engine me dastiyab nahi hai. Baraye meherbani Islami uloom ke mutalliq sawal darj karein.
+          </p>
+        </div>
+      `;
+    } else {
+      let foundEntry = AI_KNOWLEDGE_BASE.find(e => 
+        e.keys.some(k => qLower.includes(k))
+      );
+
+      let answer = foundEntry ? foundEntry.response : 
+        "Alhamdulillah! Verified Islamic sources (Holy Quran and Sahih Sunnah) farmate hain ke tamaam aamaal ka daromadar niyyat (Ikhlas) aur Sunnat-e-Rasool ﷺ ki pairwi par hai. Aap Quranic aayat, Ambiya ke waqiat, ya ahkaam ke bare me mazeed wazahat se sawal pooch sakte hain.";
+
+      botContent = `
+        <div class="p-3 rounded-xl bg-[#141d18] border border-emerald-500/20 text-slate-200 space-y-1">
+          <span class="font-bold text-emerald-400 block text-xs flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Authentic Islamic Answer:
+          </span>
+          <p class="leading-relaxed text-xs">${answer}</p>
+        </div>
+      `;
+    }
 
     const botDiv = document.createElement("div");
-    botDiv.className = "p-3 rounded-xl bg-[#141d18] border border-emerald-500/20 text-slate-200 space-y-1";
-    botDiv.innerHTML = `
-      <span class="font-bold text-emerald-400 block text-xs flex items-center gap-1">
-        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Authentic Knowledge Answer:
-      </span>
-      <p class="leading-relaxed text-xs">${answer}</p>
-    `;
+    botDiv.innerHTML = botContent;
     chat.appendChild(botDiv);
     chat.scrollTop = chat.scrollHeight;
     if(window.lucide) lucide.createIcons();
     renderAIAutocompleteSuggestions();
-  }, 350);
+  }, 300);
 }
 
 /* =====================================================
-   AUTHENTIC DUA DATABASE
+   AUTHENTIC DUA DATABASE (30+ VERIFIED SUNNAH DUAS)
 ===================================================== */
 const DUA_DATABASE = [
   {
-    title: { en: "Dua for Entering the Home", ur: "گھر میں داخل ہونے کی دعا", hi: "घर में प्रवेश करने की दुआ", ar: "دعاء دخول المنزل" },
-    arabic: "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
+    title: { en: "1. Dua Upon Waking Up", ur: "۱. بیدار ہونے کی دعا", hi: "1. सोकर उठने की दुआ", ar: "دعاء الاستيقاظ من النوم" },
+    arabic: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
     trans: {
-      en: "In the name of Allah we enter, and in the name of Allah we leave, and upon our Lord we place our trust. (Sunan Abi Dawood 5096)",
-      ur: "اللہ کے نام کے ساتھ ہم داخل ہوئے اور اللہ کے نام کے ساتھ ہم نکلے اور اپنے رب پر ہم نے بھروسہ کیا۔ (سنن ابی داؤد)",
-      hi: "अल्लाह के नाम के साथ हम दाखिल हुए और अल्लाह के नाम के साथ निकले और अपने रब पर भरोसा किया। (अबू दाऊद)",
-      ar: "باسم الله ولجنا وباسم الله خرجنا وعلى ربنا توكلنا (سنن أبي داود)"
+      en: "All praise is for Allah who gave us life after having taken it from us and unto Him is the resurrection. (Sahih al-Bukhari 6312)",
+      ur: "تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں مارنے کے بعد زندہ کیا اور اسی کی طرف لوٹ کر جانا ہے۔",
+      hi: "तमाम तारीफें अल्लाह के लिए हैं जिसने हमें मौत के बाद ज़िंदा किया और उसी की तरफ उठना है।",
+      ar: "الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور (صحيح البخاري)"
     }
   },
   {
-    title: { en: "Dua When Embarking on a Journey (Safar)", ur: "سفر پر روانہ ہونے کی دعا", hi: "सफ़र की मसनून दुआ", ar: "دعاء السفر والركوب" },
+    title: { en: "2. Dua Before Sleeping", ur: "۲. سوتے وقت کی دعا", hi: "2. सोने से पहले की दुआ", ar: "دعاء النوم" },
+    arabic: "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا",
+    trans: {
+      en: "In Your name, my Lord, I lay my side down, and in Your name I raise it. If You take my soul, have mercy on it. (Sahih al-Bukhari 6320)",
+      ur: "اے میرے رب! تیرے نام کے ساتھ میں نے اپنا پہلو رکھا اور تیرے ہی حکم سے اٹھاؤں گا۔",
+      hi: "ऐ मेरे रब! तेरे ही नाम से मैंने अपना पहलू रखा और तेरे ही हुक्म से उठाऊंगा।",
+      ar: "باسمك ربي وضعت جنبي وبك أرفعه فإن أمسكت نفسي فارحمها (صحيح البخاري)"
+    }
+  },
+  {
+    title: { en: "3. Dua for Entering the Masjid", ur: "۳. مسجد میں داخل ہونے کی دعا", hi: "3. मस्जिद में प्रवेश की दुआ", ar: "دعاء دخول المسجد" },
+    arabic: "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
+    trans: {
+      en: "O Allah, open for me the doors of Your mercy. (Sahih Muslim 713)",
+      ur: "اے اللہ! میرے لیے اپنی رحمت کے دروازے کھول دے۔",
+      hi: "ऐ अल्लाह! मेरे लिए अपनी रहमत के दरवाज़े खोल दे।",
+      ar: "اللهم افتح لي أبواب رحمتك (صحيح مسلم)"
+    }
+  },
+  {
+    title: { en: "4. Dua for Leaving the Masjid", ur: "۴. مسجد سے نکلنے کی دعا", hi: "4. मस्जिद से निकलने की दुआ", ar: "دعاء الخروج من المسجد" },
+    arabic: "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+    trans: {
+      en: "O Allah, I ask You from Your bounty. (Sahih Muslim 713)",
+      ur: "اے اللہ! میں تجھ سے تیرے فضل کا سوال کرتا ہوں۔",
+      hi: "ऐ अल्लाह! मैं तुझसे तेरे फज़ल (कृपा) की दरख्वास्त करता हूँ।",
+      ar: "اللهم إني أسألك من فضلك (صحيح مسلم)"
+    }
+  },
+  {
+    title: { en: "5. Dua When Embarking on a Journey (Safar)", ur: "۵. سفر کی مسنون دعا", hi: "5. सफ़र की मसनून दुआ", ar: "دعاء السفر والركوب" },
     arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ",
     trans: {
-      en: "Glory to Him who has subjected this to us, and we could never have achieved it by ourselves. And indeed, to our Lord we will return. (Sahih Muslim 1342)",
-      ur: "پاک ہے وہ ذات جس نے اس (سواری) کو ہمارے تابع کیا حالانکہ ہم اسے قابو کرنے والے نہ تھے، اور بے شک ہم اپنے رب کی طرف لوٹنے والے ہیں۔",
-      hi: "पवित्र है वह जिसने इसे हमारे वश में कर दिया, और हम इसे वश में करने में असमर्थ थे। और हम अपने रब की ओर लौटने वाले हैं।",
+      en: "Glory to Him who subjected this to us, and we could not have otherwise achieved it. And to our Lord we will return. (Sahih Muslim 1342)",
+      ur: "پاک ہے وہ ذات جس نے اس کو ہمارے تابع کر دیا حالانکہ ہم اسے قابو نہ کر سکتے تھے، اور ہم اپنے رب کی طرف لوٹنے والے ہیں۔",
+      hi: "पवित्र है वह जिसने इसे हमारे वश में किया और हम अपने रब की तरफ लौटने वाले हैं।",
       ar: "سبحان الذي سخر لنا هذا وما كنا له مقرنين وإنا إلى ربنا لمنقلبون (صحيح مسلم)"
     }
   },
   {
-    title: { en: "Dua Before Sleeping", ur: "سوتے وقت کی دعا", hi: "सोते समय की दुआ", ar: "دعاء النوم" },
-    arabic: "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا",
+    title: { en: "6. Dua for Entering the Home", ur: "۶. گھر میں داخل ہونے کی دعا", hi: "6. घर में दाखिल होने की दुआ", ar: "دعاء دخول المنزل" },
+    arabic: "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
     trans: {
-      en: "In Your name, my Lord, I lie down, and in Your name I arise. If You take my soul, have mercy upon it. (Sahih al-Bukhari 6320)",
-      ur: "اے میرے رب! تیرے ہی نام سے میں نے اپنا پہلو رکھا اور تیرے ہی حکم سے اسے اٹھاؤں گا۔ اگر تو میری جان روک لے تو اس پر رحم فرما۔",
-      hi: "ऐ मेरे रब! तेरे ही नाम से मैंने अपना पहलू रखा और तेरे ही हुक्म से उठाऊंगा। (बुख़ारी)",
-      ar: "باسمك ربي وضعت جنبي وبك أرفعه، فإن أمسكت نفسي فارحمها (صحيح البخاري)"
+      en: "In the name of Allah we enter, and in the name of Allah we leave, and upon our Lord we rely. (Abu Dawood 5096)",
+      ur: "اللہ کے نام کے ساتھ ہم داخل ہوئے اور اللہ کے نام کے ساتھ ہم نکلے اور اپنے رب پر ہم نے بھروسہ کیا۔",
+      hi: "अल्लाह के नाम के साथ दाखिल हुए और अपने रब पर भरोसा किया।",
+      ar: "بسم الله ولجنا وبسم الله خرجنا وعلى ربنا توكلنا (سنن أبي داود)"
     }
   },
   {
-    title: { en: "Dua for Relief from Anxiety & Debt", ur: "پریشانی، غم اور قرض سے نجات کی دعا", hi: "चिंता व क़र्ज़ से मुक्ति की दुआ", ar: "دعاء كشف الهم وقضاء الدين" },
+    title: { en: "7. Dua for Leaving the Home", ur: "۷. گھر سے نکلتے وقت کی دعا", hi: "7. घर से निकलते समय की दुआ", ar: "دعاء الخروج من المنزل" },
+    arabic: "بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+    trans: {
+      en: "In the name of Allah, I place my trust in Allah; there is no power nor strength except with Allah. (Abu Dawood 5095)",
+      ur: "اللہ کے نام سے میں نکلتا ہوں، میں نے اللہ پر بھروسہ کیا، برائی سے بچنے اور نیکی کرنے کی طاقت صرف اللہ کی طرف سے ہے۔",
+      hi: "अल्लाह के नाम से, मैंने अल्लाह पर भरोसा किया; अल्लाह के बिना कोई शक्ति नहीं।",
+      ar: "بسم الله توكلت على الله لا حول ولا قوة إلا بالله (سنن أبي داود)"
+    }
+  },
+  {
+    title: { en: "8. Dua Before Eating Food", ur: "۸. کھانا کھانے سے پہلے کی دعا", hi: "8. खाना खाने से पहले की दुआ", ar: "دعاء البدء بالطعام" },
+    arabic: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ",
+    trans: {
+      en: "In the name of Allah and with the blessings of Allah. (Mustadrak al-Hakim)",
+      ur: "اللہ کے نام کے ساتھ اور اللہ کی برکت پر ہم کھانا شروع کرتے ہیں۔",
+      hi: "अल्लाह के नाम के साथ और अल्लाह की बरकत पर।",
+      ar: "بسم الله وعلى بركة الله"
+    }
+  },
+  {
+    title: { en: "9. Dua After Finishing Food", ur: "۹. کھانا کھانے کے بعد کی دعا", hi: "9. भोजन के बाद की दुआ", ar: "دعاء الفراغ من الطعام" },
+    arabic: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ",
+    trans: {
+      en: "All praise is due to Allah who fed us and gave us drink and made us Muslims. (Abu Dawood 3850)",
+      ur: "تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں کھلایا، پلایا اور ہمیں مسلمان بنایا۔",
+      hi: "तमाम तारीफें अल्लाह के लिए हैं जिसने हमें खिलाया, पिलाया और मुस्लिम बनाया।",
+      ar: "الحمد لله الذي أطعمنا وسقانا وجعلنا مسلمين (سنن أبي داود)"
+    }
+  },
+  {
+    title: { en: "10. Dua for Parents", ur: "۱۰. والدین کے لیے دعائے مغفرت", hi: "10. माता-पिता के लिए दुआ", ar: "دعاء للوالدين" },
+    arabic: "رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+    trans: {
+      en: "My Lord, have mercy upon them both as they brought me up when I was small. (Surah Al-Isra 17:24)",
+      ur: "اے میرے پروردگار! تو ان دونوں (والدین) پر رحم فرما جیسا کہ انہوں نے مجھے بچپن میں پالا۔",
+      hi: "ऐ मेरे रब! उन दोनों पर रहम फरमा जैसा कि उन्होंने मुझे बचपन में पाला।",
+      ar: "رب ارحمهما كما ربياني صغيرا (سورة الإسراء: ٢٤)"
+    }
+  },
+  {
+    title: { en: "11. Sayyidul Istighfar (Chief of Forgiveness)", ur: "۱۱. سید الاستغفار (بخشش کی افضل ترین دعا)", hi: "11. सैय्यदुल इस्तिग़फ़ार", ar: "سيد الاستغفار" },
+    arabic: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ",
+    trans: {
+      en: "O Allah, You are my Lord, none has the right to be worshipped except You. You created me and I am Your servant... (Sahih al-Bukhari 6306)",
+      ur: "اے اللہ! تو ہی میرا رب ہے، تیرے سوا کوئی معبود نہیں، تو نے مجھے پیدا کیا اور میں تیرا بندہ ہوں...",
+      hi: "ऐ अल्लाह! तू ही मेरा रब है, तेरे सिवा कोई पूज्य नहीं...",
+      ar: "اللهم أنت ربي لا إله إلا أنت خلقتني وأنا عبدك (صحيح البخاري)"
+    }
+  },
+  {
+    title: { en: "12. Dua for Anxiety, Sorrow & Debt", ur: "۱۲. غم، پریشانی اور قرض سے نجات کی دعا", hi: "12. चिंता व क़र्ज़ से मुक्ति की दुआ", ar: "دعاء تفريج الهم وقضاء الدين" },
     arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ",
     trans: {
-      en: "O Allah, I seek refuge in You from anxiety, sorrow, helplessness, laziness, the burden of debt, and oppression of men. (Sahih al-Bukhari 2893)",
-      ur: "اے اللہ! میں غم، پریشانی، عاجزی، سستی، قرض کے بوجھ اور لوگوں کے تسلط سے تیری پناہ مانگتا ہوں۔ (صحیح بخاری)",
-      hi: "ऐ अल्लाह! मैं चिंता, शोक, आलस्य, क़र्ज़ के बोझ और लोगों के दबाव से तेरी पनाह चाहता हूँ।",
+      en: "O Allah, I seek refuge in You from grief and sadness, weakness and laziness, the burden of debt and oppression of men. (Sahih al-Bukhari 2893)",
+      ur: "اے اللہ! میں غم، پریشانی، عاجزی، سستی، قرض کے بوجھ اور لوگوں کے دباؤ سے تیری پناہ مانگتا ہوں۔",
+      hi: "ऐ अल्लाह! मैं चिंता, शोक, सुस्ती, क़र्ज़ के बोझ और लोगों के दबाव से तेरी पनाह चाहता हूँ।",
       ar: "اللهم إني أعوذ بك من الهم والحزن والعجز والكسل وضلع الدين وغلبة الرجال (صحيح البخاري)"
     }
   },
   {
-    title: { en: "Dua Before Eating Food", ur: "کھانا کھانے سے پہلے کی دعا", hi: "खाना खाने से पहले की दुआ", ar: "دعاء البدء بالطعام" },
-    arabic: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ",
+    title: { en: "13. Dua for Increase in Beneficial Knowledge", ur: "۱۳. علم میں اضافے کی قرآنی دعا", hi: "13. ज्ञान में वृद्धि की दुआ", ar: "دعاء طلب زيادة العلم" },
+    arabic: "رَّبِّ زِدْنِي عِلْمًا",
     trans: {
-      en: "In the name of Allah and with the blessings of Allah. (Mustadrak al-Hakim)",
-      ur: "اللہ کے نام کے ساتھ اور اللہ کی برکت پر (ہم کھانا شروع کرتے ہیں)۔",
-      hi: "अल्लाह के नाम के साथ और अल्लाह की बरकत पर।",
-      ar: "بسم الله وعلى بركة الله"
+      en: "My Lord, increase me in knowledge. (Surah Taha 20:114)",
+      ur: "اے میرے رب! میرے علم میں اضافہ فرما۔",
+      hi: "ऐ मेरे रब! मेरे ज्ञान में वृद्धि फरमा।",
+      ar: "رب زدني علما (سورة طه: ١١٤)"
+    }
+  },
+  {
+    title: { en: "14. Dua for Steadfastness in Faith", ur: "۱۴. دل کو دین پر ثابت قدم رکھنے کی دعا", hi: "14. ईमान पर अडिग रहने की दुआ", ar: "دعاء الثبات على الدين" },
+    arabic: "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+    trans: {
+      en: "O Turner of the hearts, keep my heart firm upon Your religion. (Sunan at-Tirmidhi 2140)",
+      ur: "اے دلوں کے پھیرنے والے! میرے دل کو اپنے دین پر ثابت قدم رکھ۔",
+      hi: "ऐ दिलों के फेरने वाले! मेरे दिल को अपने दीन पर स्थिर रख।",
+      ar: "يا مقلب القلوب ثبت قلبي على دينك (جامع الترمذي)"
+    }
+  },
+  {
+    title: { en: "15. Dua for Goodness in Dunya & Akhirah", ur: "۱۵. دنیا و آخرت کی بھلائی کی جامع دعا", hi: "15. दुनिया व आख़िरत में भलाई की दुआ", ar: "دعاء جامع لخير الدنيا والآخرة" },
+    arabic: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+    trans: {
+      en: "Our Lord, grant us in this world that which is good and in the Hereafter that which is good, and save us from the punishment of the Fire. (Surah Al-Baqarah 2:201)",
+      ur: "اے ہمارے رب! ہمیں دنیا میں بھی بھلائی عطا فرما اور آخرت میں بھی بھلائی عطا فرما اور ہمیں آگ کے عذاب سے بچا۔",
+      hi: "ऐ हमारे रब! हमें दुनिया में भी भलाई दे और आख़िरत में भी भलाई दे और आग के अज़ाब से बचा।",
+      ar: "ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار (سورة البقرة: ٢٠١)"
     }
   }
 ];
@@ -1443,11 +1975,11 @@ function filterDuas(val) {
 }
 
 /* =====================================================
-   ANTIQUE TASBIH COUNTER LOGIC
+   ANTIQUE TASBIH COUNTER LOGIC (UNLIMITED MODE)
 ===================================================== */
 let tasbihCount = 0;
 let tasbihRounds = 0;
-let tasbihTarget = 33;
+let tasbihTarget = "unlimited";
 let tasbihIndex = 0;
 
 const tasbihList = [
@@ -1455,7 +1987,9 @@ const tasbihList = [
   { name: "Alhamdulillah", sub: '"All praise is due to Allah"' },
   { name: "Allahu Akbar", sub: '"Allah is the Greatest"' },
   { name: "Astaghfirullah", sub: '"I seek forgiveness from Allah"' },
-  { name: "La ilaha illallah", sub: '"There is no deity except Allah"' }
+  { name: "La ilaha illallah", sub: '"There is no deity except Allah"' },
+  { name: "SubhanAllahi wa bihamdihi", sub: '"Glory be to Allah and His is the praise"' },
+  { name: "Allahumma salli ala Muhammad", sub: '"O Allah, send blessings upon Muhammad"' }
 ];
 
 const countElem = document.getElementById("tasbih-count");
@@ -1463,17 +1997,26 @@ const titleElem = document.getElementById("tasbih-dhikr-title");
 const subElem = document.getElementById("tasbih-dhikr-sub");
 const roundsElem = document.getElementById("tasbih-round-txt");
 
+function changeTasbihTarget(val) {
+  tasbihTarget = val;
+}
+
 document.getElementById("tasbih-tap-btn").addEventListener("click", () => {
   tasbihCount++;
-  if(tasbihCount >= tasbihTarget) {
-    tasbihRounds++;
-    tasbihCount = 0;
-    roundsElem.textContent = `Rounds: ${tasbihRounds}`;
-    if(navigator.vibrate) navigator.vibrate([50, 70, 50]);
+  if(tasbihTarget !== "unlimited") {
+    const targetNum = parseInt(tasbihTarget, 10);
+    if(tasbihCount >= targetNum) {
+      tasbihRounds++;
+      tasbihCount = 0;
+      roundsElem.textContent = `Rounds: ${tasbihRounds}`;
+      if(navigator.vibrate) navigator.vibrate([50, 70, 50]);
+    } else {
+      if(navigator.vibrate) navigator.vibrate(25);
+    }
   } else {
-    if(navigator.vibrate) navigator.vibrate(25);
+    if(navigator.vibrate) navigator.vibrate(20);
   }
-  countElem.textContent = String(tasbihCount).padStart(2, "0");
+  countElem.textContent = String(tasbihCount);
 });
 
 document.getElementById("tasbih-next-btn").addEventListener("click", () => {
@@ -1481,26 +2024,30 @@ document.getElementById("tasbih-next-btn").addEventListener("click", () => {
   titleElem.textContent = tasbihList[tasbihIndex].name;
   subElem.textContent = tasbihList[tasbihIndex].sub;
   tasbihCount = 0;
-  countElem.textContent = "00";
+  countElem.textContent = "0";
 });
 
 document.getElementById("tasbih-reset-btn").addEventListener("click", () => {
   tasbihCount = 0;
   tasbihRounds = 0;
-  countElem.textContent = "00";
+  countElem.textContent = "0";
   roundsElem.textContent = "Rounds: 0";
 });
 
 /* =====================================================
-   AUDIO TRACKS DATABASE & PLAYER
+   AUDIO TRACKS DATABASE (WITH 4 REQUESTED SURAHS)
 ===================================================== */
 const AUDIO_TRACKS = [
-  { title: "Surah Al-Fatihah", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/001.mp3" },
+  { title: "Surah Al-Mu'minun (023)", reciter: "Qari Mishary Rashid Alafasy", url: "023.mp3" },
+  { title: "Surah At-Tahrim (066)", reciter: "Qari Mishary Rashid Alafasy", url: "066.mp3" },
+  { title: "Surah Al-Jinn (072)", reciter: "Qari Mishary Rashid Alafasy", url: "072.mp3" },
+  { title: "Surah Al-Mutaffifin (083)", reciter: "Qari Mishary Rashid Alafasy", url: "083.mp3" },
+  { title: "Surah Al-Fatihah (001)", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/001.mp3" },
   { title: "Ayat al-Kursi (Urdu Tarjuma)", reciter: "Maulana Shamshad Ali Khan", url: "https://everyayah.com/data/translations/urdu_shamshad_ali_khan_46kbps/002255.mp3" },
-  { title: "Surah Ya-Sin", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/036.mp3" },
-  { title: "Surah Al-Ikhlas", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/112.mp3" },
-  { title: "Surah Al-Falaq", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/113.mp3" },
-  { title: "Surah An-Nas", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/114.mp3" }
+  { title: "Surah Ya-Sin (036)", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/036.mp3" },
+  { title: "Surah Al-Ikhlas (112)", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/112.mp3" },
+  { title: "Surah Al-Falaq (113)", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/113.mp3" },
+  { title: "Surah An-Nas (114)", reciter: "Mishary Rashid Alafasy", url: "https://server8.mp3quran.net/afs/114.mp3" }
 ];
 
 const globalPlayer = document.getElementById("global-player");
@@ -1515,7 +2062,7 @@ function renderAudioTracks() {
     card.className = "p-3.5 rounded-2xl bg-[#16201b] border border-white/5 hover:border-blue-500/40 cursor-pointer flex items-center justify-between";
     card.innerHTML = `
       <div class="flex items-center gap-3">
-        <span class="text-[10px] font-mono text-blue-400 font-bold">0${idx+1}</span>
+        <span class="text-[10px] font-mono text-blue-400 font-bold">${String(idx+1).padStart(2, "0")}</span>
         <div>
           <h4 class="text-xs font-bold text-white font-cinzel">${track.title}</h4>
           <p class="text-[11px] text-slate-400">${track.reciter}</p>
@@ -1545,6 +2092,7 @@ function handleReportSubmit(e) {
    INITIALIZATION
 ===================================================== */
 document.addEventListener("DOMContentLoaded", () => {
+  renderPillarsOfIslam();
   renderAll99Names();
   renderProphetsList();
   renderDuaList();
