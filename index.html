@@ -491,8 +491,8 @@ body {
 
     <div class="py-4 border-b border-white/10 space-y-2">
       <div class="flex items-center justify-between text-xs">
-        <span id="active-track-name" class="font-bold text-white font-cinzel">Surah Al-Mu'minun</span>
-        <span id="active-track-reciter" class="text-slate-400 text-[11px]">Mishary Rashid Alafasy</span>
+        <span id="active-track-name" class="font-bold text-white font-cinzel">Surah Al-Mu'minun (023)</span>
+        <span id="active-track-reciter" class="text-slate-400 text-[11px]">Qari Mishary Rashid Alafasy</span>
       </div>
       <audio id="global-player" controls class="w-full"></audio>
     </div>
@@ -693,6 +693,7 @@ function setAppLanguage(lang) {
   renderAll99Names();
   renderProphetsList();
   renderDuaList();
+  renderAudioTracks();
   renderAIAutocompleteSuggestions();
   if(window.lucide) lucide.createIcons();
 }
@@ -828,7 +829,7 @@ const ALLAH_99_NAMES = [
   { id: 41, ar: "الْجَلِيلُ", en: "Al-Jalil", meaning: { en: "The Majestic & Sublime", ur: "جلال و عظمت والا", hi: "प्रतापी", ar: "المتصف بصفات الجلال والعظمة" } },
   { id: 42, ar: "الْكَرِيمُ", en: "Al-Karim", meaning: { en: "The Most Generous", ur: "بڑا سخی اور کریم", hi: "उदार", ar: "الواسع العطاء الكثير الخير" } },
   { id: 43, ar: "الرَّقِيبُ", en: "Ar-Raqib", meaning: { en: "The Watchful Observer", ur: "نگران و نگران", hi: "सतर्क पहरेदार", ar: "الرقيب على أفعال خلقه" } },
-  { id: 44, ar: "الْمُجِيبُ", en: "Al-Mujib", meaning: { en: "The Responder to Prayers", ur: "دعا قبول کرنے والا", hi: "दुआ स्वीकार करने वाला", ar: "المجيب لدعاء السائلين" } },
+  { id: 44, ar: "الْمُجِيبُ", en: "Al-Mujib", meaning: { en: "The Responder to Prayers", ur: "دعا قبول کرنے والا", hi: "دुआ स्वीकार करने वाला", ar: "المجيب لدعاء السائلين" } },
   { id: 45, ar: "الْوَاسِعُ", en: "Al-Wasi", meaning: { en: "The All-Embracing & Vast", ur: "وسعت دینے والا", hi: "व्यापक", ar: "الواسع علمه ورحمته لكل شيء" } },
   { id: 46, ar: "الْحَكِيمُ", en: "Al-Hakim", meaning: { en: "The Perfectly Wise", ur: "حکمت والا", hi: "परम ज्ञानी व विवेकशील", ar: "الذي يوضع كل شيء في موضعه الصحيح" } },
   { id: 47, ar: "الْوَدُودُ", en: "Al-Wadud", meaning: { en: "The Loving & Affectionate", ur: "محبوب اور پیار کرنے والا", hi: "प्रेमी व स्नेही", ar: "المحب لعباده الصالحين" } },
@@ -931,7 +932,7 @@ const PROPHETS_DATA = [
   {
     id: 1,
     name: { en: "1. Prophet Adam (PBUH)", ur: "۱. حضرت آدم (عَلَيْهِ ٱلسَّلَامُ)", hi: "1. हज़रत आदम (अलैहिस्सलाम)", ar: "١. نبي الله آدم (عَلَيْهِ ٱلسَّلَامُ)" },
-    title: { en: "Father of Humanity • Abul Bashar", ur: "ابو البشر • خلیفۃ اللہ فی الارض", hi: "मानवता के पिता • प्रथम पैگंबर", ar: "أبو البشر وأول خليفة في الأرض" },
+    title: { en: "Father of Humanity • Abul Bashar", ur: "ابو البشر • خلیفۃ اللہ فی الارض", hi: "मानवता के पिता • प्रथम पैगंबर", ar: "أبو البشر وأول خليفة في الأرض" },
     parents: { en: "Created directly by Allah without biological parents from Earth's clays", ur: "بغیر والدین مٹی سے براہِ راست اللہ نے پیدا فرمایا", hi: "बिना माता-पिता मिट्टी से सीधे अल्लाह द्वारा निर्मित", ar: "خلقه الله بيده من طين الأرض بلا أب ولا أم" },
     origin: { en: "Descent onto Earth (Historical tradition: Sarandib & Mecca)", ur: "سراندیب (ہند/لنکا) تا مکہ مکرمہ", hi: "धरती पर आगमन (सरनदीप व मक्का)", ar: "الأرض، مكة المكرمة وسرنديب" },
     seerat: {
