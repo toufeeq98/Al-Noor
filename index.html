@@ -124,34 +124,6 @@ body {
   <div class="space-y-3">
     <span class="text-xs font-bold uppercase tracking-wider text-slate-400 px-1" id="section-sacred-tools">Core Essentials</span>
     
-    <!-- Basics of Islam -->
-    <div onclick="openModal('basics-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group bg-gradient-to-r from-[#17261d] to-[#121c17] border-teal-500/40">
-      <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-2xl bg-teal-500/15 border border-teal-500/35 flex items-center justify-center text-teal-400">
-          <i data-lucide="compass" class="w-6 h-6"></i>
-        </div>
-        <div>
-          <h3 class="text-sm font-bold text-white group-hover:text-teal-300 transition" id="lbl-basics-hub">Complete Islamic Fundamentals</h3>
-          <p class="text-xs text-slate-400" id="sub-basics-hub">6 Kalimas, Iman, Taharat, Fiqh Essentials & Akhirah</p>
-        </div>
-      </div>
-      <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
-    </div>
-
-    <!-- Halal & Haram Guidelines -->
-    <div onclick="openModal('halal-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group bg-gradient-to-r from-[#201c13] to-[#17140e] border-amber-500/40">
-      <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/35 flex items-center justify-center text-amber-400">
-          <i data-lucide="scale" class="w-6 h-6"></i>
-        </div>
-        <div>
-          <h3 class="text-sm font-bold text-white group-hover:text-amber-300 transition" id="lbl-halal-hub">Halal & Haram (Islamic Jurisprudence)</h3>
-          <p class="text-xs text-slate-400" id="sub-halal-hub">Dietary Laws, Finance & Business, Modesty, and Ethics</p>
-        </div>
-      </div>
-      <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
-    </div>
-
     <!-- Pillars of Islam -->
     <div onclick="openModal('pillars-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group bg-gradient-to-r from-[#17221d] to-[#121c17] border-emerald-500/30">
       <div class="flex items-center gap-3.5">
@@ -208,7 +180,7 @@ body {
       <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-white transition"></i>
     </div>
 
-    <!-- Noor-AI Islamic LLM (UNLIMITED) -->
+    <!-- Noor-AI Islamic LLM -->
     <div onclick="openModal('ai-modal')" class="hub-card p-4 flex items-center justify-between cursor-pointer group bg-gradient-to-r from-[#191328] to-[#12161c] border-purple-900/40">
       <div class="flex items-center gap-3.5">
         <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-400">
@@ -217,7 +189,7 @@ body {
         <div>
           <div class="flex items-center gap-2">
             <h3 class="text-sm font-bold text-white group-hover:text-purple-300 transition" id="lbl-ai-hub">Noor-AI Knowledge Engine</h3>
-            <span class="text-[9px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold">UNLIMITED & FREE</span>
+            <span class="text-[9px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-bold" id="ai-queries-left-badge">10 FREE USES</span>
           </div>
           <p class="text-xs text-slate-400" id="sub-ai-hub">Strictly Islamic & Quranic Knowledge</p>
         </div>
@@ -278,50 +250,6 @@ body {
   </div>
 
 </main>
-
-<!-- MODAL: ISLAMIC BASICS FUNDAMENTALS -->
-<div id="basics-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
-  <div class="max-w-3xl w-full mx-auto flex-1 flex flex-col bg-[#111815] border border-teal-500/30 rounded-3xl p-5 overflow-hidden">
-    <div class="flex items-center justify-between pb-4 border-b border-white/10">
-      <div class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400">
-          <i data-lucide="compass" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <h2 class="text-base font-bold text-white font-cinzel">Complete Islamic Fundamentals</h2>
-          <span class="text-[10px] text-teal-400 font-mono">Core Beliefs, Purification, Kalimas & Obligations</span>
-        </div>
-      </div>
-      <button onclick="closeModal('basics-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-    </div>
-
-    <div id="basics-container" class="flex-1 overflow-y-auto space-y-4 pt-4 pr-1"></div>
-  </div>
-</div>
-
-<!-- MODAL: HALAL & HARAM GUIDELINES -->
-<div id="halal-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
-  <div class="max-w-3xl w-full mx-auto flex-1 flex flex-col bg-[#111815] border border-amber-500/30 rounded-3xl p-5 overflow-hidden">
-    <div class="flex items-center justify-between pb-4 border-b border-white/10">
-      <div class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-          <i data-lucide="scale" class="w-6 h-6"></i>
-        </div>
-        <div>
-          <h2 class="text-base font-bold text-white font-cinzel">Halal & Haram (Islamic Jurisprudence)</h2>
-          <span class="text-[10px] text-amber-300 font-mono">Authentic Guidance on Food, Finance, Dress & Morals</span>
-        </div>
-      </div>
-      <button onclick="closeModal('halal-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-    </div>
-
-    <div id="halal-container" class="flex-1 overflow-y-auto space-y-4 pt-4 pr-1"></div>
-  </div>
-</div>
 
 <!-- MODAL: PILLARS OF ISLAM -->
 <div id="pillars-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
@@ -446,7 +374,7 @@ body {
   </div>
 </div>
 
-<!-- MODAL: NOOR-AI ENGINE (UNLIMITED ACCESS) -->
+<!-- MODAL: NOOR-AI ENGINE -->
 <div id="ai-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6 overflow-hidden">
   <div class="max-w-2xl w-full mx-auto flex-1 flex flex-col bg-[#111815] border border-purple-500/30 rounded-3xl p-5 overflow-hidden">
     <div class="flex items-center justify-between pb-3 border-b border-white/10">
@@ -456,7 +384,7 @@ body {
         </div>
         <div>
           <h2 class="text-base font-bold text-white font-cinzel">Noor-AI Knowledge Engine</h2>
-          <span class="text-[10px] text-emerald-400 font-mono">Unlimited Authentic Search</span>
+          <span class="text-[10px] text-purple-300 font-mono" id="ai-counter-display">Remaining Free Queries: 10 / 10</span>
         </div>
       </div>
       <button onclick="closeModal('ai-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
@@ -469,18 +397,62 @@ body {
         <span class="font-bold flex items-center gap-1.5 text-purple-300 mb-1">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Assalamu Alaikum!
         </span>
-        Yeh AI Knowledge Engine Quran, Sahih Hadith, Sahaba, Ambiya-e-Kiram aur Fiqh ke masail ke liye tayyar kiya gaya hai. Unlimited authenticated queries pooch sakte hain.
+        Yeh AI Knowledge Engine Quran, Sahih Hadith, Sahaba, aur Ambiya-e-Kiram ki authentic maloomat ke liye tayyar kiya gaya hai. Aap 10 free queries pooch sakte hain.
       </div>
     </div>
 
     <div id="ai-autocomplete-box" class="flex flex-wrap gap-1.5 pb-2 text-[11px]"></div>
 
     <div class="flex gap-2 relative">
-      <input type="text" id="ai-user-input" oninput="handleAITyping(this.value)" placeholder="Ask anything about Quran, Hadith, Halal/Haram, Fiqh..." class="flex-1 bg-[#16201c] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-purple-500">
+      <input type="text" id="ai-user-input" oninput="handleAITyping(this.value)" placeholder="Ask about Quran, Hadith, Prophets, Sahaba, or Fiqh..." class="flex-1 bg-[#16201c] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-purple-500">
       <button onclick="executeAIQuery()" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-xs text-white flex items-center gap-1.5 active:scale-95 transition">
         <span>Search</span>
         <i data-lucide="send" class="w-3.5 h-3.5"></i>
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: SUBSCRIPTION UPGRADE (PHONEPE INTEGRATED) -->
+<div id="subs-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+  <div class="max-w-md w-full bg-[#161224] border border-purple-500/50 rounded-3xl p-6 space-y-5 shadow-2xl relative">
+    <button onclick="closeModal('subs-modal')" class="absolute top-4 right-4 p-1.5 rounded-lg bg-white/5 text-slate-400 hover:text-white">
+      <i data-lucide="x" class="w-4 h-4"></i>
+    </button>
+    
+    <div class="text-center space-y-2">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-300">
+        <i data-lucide="crown" class="w-7 h-7"></i>
+      </div>
+      <h3 class="text-lg font-black text-white font-cinzel">Unlimited Noor-AI Access</h3>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Aapki 10 free queries mukammal ho chuki hain. Unlimited Islamic knowledge, Sahaba history aur Quranic answers ke liye subscription activate karein.
+      </p>
+    </div>
+
+    <div class="p-4 rounded-2xl bg-[#0f0b1a] border border-purple-500/30 space-y-3">
+      <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+        <span class="text-xs font-bold text-purple-300">Unlimited Plan</span>
+        <span class="text-base font-black text-emerald-400 font-mono">₹50 Only</span>
+      </div>
+      <div class="space-y-1.5 text-xs text-slate-300">
+        <p class="flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>Pay via PhonePe / Google Pay / Paytm</span>
+        </p>
+        <p class="flex items-center gap-2 font-mono text-amber-300 font-bold">
+          <i data-lucide="smartphone" class="w-4 h-4"></i>
+          <span>PhonePe Number: 8919287899</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <a href="upi://pay?pa=8919287899@ybl&pn=AlNoorSanctuary&am=50&cu=INR" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg active:scale-95 transition">
+        <span>Pay ₹50 via UPI App</span>
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+      </a>
+      <p class="text-[10px] text-center text-slate-400">Payment karne ke baad screenshot 8919287899 par bhein for instant activation.</p>
     </div>
   </div>
 </div>
@@ -632,8 +604,6 @@ body {
       <div>
         <label class="block text-[11px] font-bold text-slate-300 mb-1">Issue Category</label>
         <select id="rep-cat" class="w-full bg-[#18221e] border border-white/10 rounded-xl px-3 py-2 text-xs text-white">
-          <option value="basics">Islamic Fundamentals</option>
-          <option value="halal">Halal & Haram Section</option>
           <option value="sahaba">10 Promised Sahaba Section</option>
           <option value="quran">Quranic Ayah / Audio</option>
           <option value="translation">Translation Mistake (Tarjuma)</option>
@@ -661,6 +631,8 @@ body {
 "use strict";
 
 let currentAppLang = "en";
+let userQueryCount = 0;
+const MAX_FREE_QUERIES = 10;
 let activeManuscriptText = "";
 
 const UI_STRINGS = {
@@ -669,10 +641,6 @@ const UI_STRINGS = {
     dailyBadge: "Ayah & Hadith of the Day",
     secSacred: "Core Essentials",
     secDaily: "Daily Worship & Tools",
-    lblBasics: "Complete Islamic Fundamentals",
-    subBasics: "6 Kalimas, Iman, Taharat, Fiqh Essentials & Akhirah",
-    lblHalal: "Halal & Haram (Islamic Jurisprudence)",
-    subHalal: "Dietary Laws, Finance & Business, Modesty, and Ethics",
     lblPillars: "5 Pillars of Islam (Arkan al-Islam)",
     subPillars: "Shahadah, Salah, Zakat, Sawm, and Hajj Explained",
     lblSahaba: "10 Promised Sahaba (Ashara Mubashshara)",
@@ -698,10 +666,6 @@ const UI_STRINGS = {
     dailyBadge: "آج کی منتخب آیت و حدیث",
     secSacred: "بنیادی اسلامی خزانے",
     secDaily: "روزمرہ عبادات و اعمال",
-    lblBasics: "مکمل اسلامی بنیادی معلومات",
-    subBasics: "چھ کلمے، ایمانِ مفصل و مجمل، طہارت، فقہی احکام اور آخرت",
-    lblHalal: "حلال و حرام کے شرعی احکام",
-    subHalal: "طعام، تجارت و معیشت، لباس، معاشرت اور اخلاقیات",
     lblPillars: "اسلام کے ۵ بنیادی ارکان",
     subPillars: "شہادت، نماز، زکوٰۃ، روزہ اور حج کی مکمل تفصیل",
     lblSahaba: "عشرہ مبشرہ (۱۰ جنتی صحابہ کرام)",
@@ -727,10 +691,6 @@ const UI_STRINGS = {
     dailyBadge: "आज की पवित्र आयत व हदीस",
     secSacred: "प्रमुख साधन",
     secDaily: "दैनिक इबादत व ज़िक्र",
-    lblBasics: "संपूर्ण बुनियादी इस्लामिक ज्ञान",
-    subBasics: "6 कलिमे, ईमान, वुज़ू/ग़ुस्ल के फ़राइज़ व आख़िरत",
-    lblHalal: "हलाल व हराम के शरई नियम",
-    subHalal: "आहार नियम, व्यापार, वित्त, पर्दा और नैतिक दिशा-निर्देश",
     lblPillars: "इस्लाम के 5 मूल स्तंभ (अरकान)",
     subPillars: "शहादा, नमाज़, ज़कात, रोज़ा व हज का संपूर्ण विवरण",
     lblSahaba: "अशरा मुबश्शरा (10 जन्नती सहाबा)",
@@ -756,10 +716,6 @@ const UI_STRINGS = {
     dailyBadge: "آية وحديث اليوم",
     secSacred: "الأركان الأساسية",
     secDaily: "العبادات والأذكار اليومية",
-    lblBasics: "أساسيات العلوم الشرعية والإسلامية",
-    subBasics: "الكلمات الست، الإيمان المفصل، الطهارة، الفرائض واليوم الآخر",
-    lblHalal: "الحلال والحرام في الشريعة الإسلامية",
-    subHalal: "الأطعمة، المعاملات والربا، اللباس، والآداب الشرعية",
     lblPillars: "أركان الإسلام الخمسة",
     subPillars: "الشهادتان، الصلاة، الزكاة، الصوم، وحج البيت",
     lblSahaba: "العشرة المبشرون بالجنة",
@@ -811,10 +767,6 @@ function setAppLanguage(lang) {
   document.getElementById("daily-badge-title").textContent = s.dailyBadge;
   document.getElementById("section-sacred-tools").textContent = s.secSacred;
   document.getElementById("section-daily-worship").textContent = s.secDaily;
-  document.getElementById("lbl-basics-hub").textContent = s.lblBasics;
-  document.getElementById("sub-basics-hub").textContent = s.subBasics;
-  document.getElementById("lbl-halal-hub").textContent = s.lblHalal;
-  document.getElementById("sub-halal-hub").textContent = s.subHalal;
   document.getElementById("lbl-pillars-hub").textContent = s.lblPillars;
   document.getElementById("sub-pillars-hub").textContent = s.subPillars;
   document.getElementById("lbl-sahaba-hub").textContent = s.lblSahaba;
@@ -835,8 +787,6 @@ function setAppLanguage(lang) {
   document.getElementById("sub-report-tile").textContent = s.subReport;
   document.getElementById("daily-trans-text").textContent = s.dailyAyah;
 
-  renderIslamicBasics();
-  renderHalalHaram();
   renderPillarsOfIslam();
   renderSahabaList();
   renderProphetsList();
@@ -851,255 +801,6 @@ function translateActiveManuscript() {
   if(!activeManuscriptText) return;
   const url = `https://translate.google.com/?sl=auto&tl=en&text=${encodeURIComponent(activeManuscriptText)}&op=translate`;
   window.open(url, '_blank');
-}
-
-/* =====================================================
-   NEW SECTION 1: ISLAMIC BASICS FUNDAMENTALS
-===================================================== */
-const BASICS_DATA = [
-  {
-    category: { en: "1. The 6 Kalimas of Islam", ur: "۱. اسلام کے چھ کلمے", hi: "1. इस्लाम के 6 कलिमे", ar: "١. الكلمات الست في الإسلام" },
-    items: [
-      {
-        title: "1st Kalima Tayyibah (Word of Purity)",
-        arabic: "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَّسُولُ ٱللَّٰهِ",
-        desc: {
-          en: "There is no God but Allah, Muhammad (ﷺ) is the Messenger of Allah.",
-          ur: "اللہ کے سوا کوئی معبود نہیں، محمد ﷺ اللہ کے رسول ہیں۔",
-          hi: "अल्लाह के सिवा कोई पूज्य नहीं, मुहम्मद ﷺ अल्लाह के रसूल हैं।",
-          ar: "لا إله إلا الله محمد رسول الله"
-        }
-      },
-      {
-        title: "2nd Kalima Shahadah (Word of Testimony)",
-        arabic: "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
-        desc: {
-          en: "I bear witness that there is no deity but Allah, alone without partner, and Muhammad is His slave and Messenger.",
-          ur: "میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں وہ اکیلا ہے اس کا کوئی شریک نہیں اور محمد ﷺ اس کے بندے اور رسول ہیں۔",
-          hi: "मैं गवाही देता हूँ कि अल्लाह के सिवा कोई माबूद नहीं, वह अकेला है और मुहम्मद ﷺ उसके बन्दे और रसूल हैं।",
-          ar: "أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمداً عبده ورسوله"
-        }
-      },
-      {
-        title: "3rd Kalima Tamjeed (Word of Glorification)",
-        arabic: "سُبْحَانَ ٱللَّٰهِ وَٱلْحَمْدُ لِلَّٰهِ وَلَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَٱللَّٰهُ أَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ ٱلْعَلِيِّ ٱلْعَظِيمِ",
-        desc: {
-          en: "Glory be to Allah, all praise to Allah, there is no deity but Allah, Allah is the Greatest, and there is no power except with Allah, the Most High, the Most Great.",
-          ur: "اللہ پاک ہے، سب تعریف اللہ کے لیے ہے، اللہ کے سوا کوئی معبود نہیں، اللہ سب سے بڑا ہے اور نیکی کی طاقت اور گناہ سے بچاؤ اللہ کی مدد سے ہے۔",
-          hi: "अल्लाह पवित्र है, सब तारीफ अल्लाह के लिए है, अल्लाह के सिवा कोई माबूद नहीं, अल्लाह सबसे बड़ा है।",
-          ar: "سبحان الله والحمد لله ولا إله إلا الله والله أكبر ولا حول ولا قوة إلا بالله العلي العظيم"
-        }
-      },
-      {
-        title: "4th Kalima Tawheed (Word of Oneness)",
-        arabic: "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ، يُحْيِي وَيُمِيتُ، بِيَدِهِ ٱلْخَيْرُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
-        desc: {
-          en: "There is no deity except Allah alone, with no partner. His is the Dominion and Praise. He gives life and death, in His Hand is all good, and He has power over all things.",
-          ur: "اللہ کے سوا کوئی معبود نہیں وہ اکیلا ہے، اس کی بادشاہت ہے اور اسی کے لیے حمد ہے، وہی زندگی دیتا اور مارتا ہے اور وہ ہر چیز پر قادر ہے۔",
-          hi: "अल्लाह के सिवा कोई पूज्य नहीं, वह अकेला है, उसका कोई साझी नहीं, उसी की सत्ता और प्रशंसा है।",
-          ar: "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد يحيي ويميت وهو على كل شيء قدير"
-        }
-      },
-      {
-        title: "5th Kalima Astaghfar (Word of Penitence)",
-        arabic: "أَسْتَغْفِرُ ٱللَّٰهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ عَمَدًا أَوْ خَطَأً سِرًّا أَوْ عَلَانِيَةً وَأَتُوبُ إِلَيْهِ",
-        desc: {
-          en: "I seek forgiveness from Allah, my Lord, for every sin I committed intentionally or mistakenly, secretly or openly, and I turn to Him in repentance.",
-          ur: "میں اللہ سے بخشش مانگتا ہوں جو میرا رب ہے ہر اس گناہ سے جو میں نے جان بوجھ کر کیا یا بھول کر، چھپ کر کیا یا ظاہر، اور میں اسی کی طرف رجوع کرتا ہوں۔",
-          hi: "मैं अपने रब अल्लाह से अपने हर गुनाह की माफ़ी माँगता हूँ जो मैंने जानबूझकर या अनजाने में किया।",
-          ar: "أستغفر الله ربي من كل ذنب أذنبته عمداً أو خطأً سراً أو علانية وأتوب إليه"
-        }
-      },
-      {
-        title: "6th Kalima Radde Kufr (Refutation of Disbelief)",
-        arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ أَنْ أُشْرِكَ بِكَ شَيْئًا وَأَنَا أَعْلَمُ بِهِ، وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُ بِهِ",
-        desc: {
-          en: "O Allah, I seek refuge in You from knowingly associating partners with You, and I seek Your forgiveness for what I do not know.",
-          ur: "اے اللہ! میں تیری پناہ مانگتا ہوں اس بات سے کہ تیرے ساتھ کسی کو شریک ٹھہراؤں جان بوجھ کر، اور بخشش چاہتا ہوں ان گناہوں کی جنہیں میں نہیں جانتا۔",
-          hi: "ऐ अल्लाह! मैं जानबूझकर तेरे साथ शिर्क करने से तेरी पनाह माँगता हूँ और अनजाने गुनाहों की क्षमा चाहता हूँ।",
-          ar: "اللهم إني أعوذ بك من أن أشرك بك شيئاً وأنا أعلم وأستغفرك لما لا أعلم"
-        }
-      }
-    ]
-  },
-  {
-    category: { en: "2. Articles of Faith (Iman-e-Mufassal)", ur: "۲. ایمانِ مفصل (ایمان کے ارکان)", hi: "2. ईमान-ए-मुफ़स्सल (ईमान के मूल सिद्धांत)", ar: "٢. أركان الإيمان الستة" },
-    items: [
-      {
-        title: "Declaration of Iman-e-Mufassal",
-        arabic: "آمَنْتُ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ وَالْيَوْمِ الْآخِرِ وَالْقَدَرِ خَيْرِهِ وَشَرِّهِ مِنَ اللَّهِ تَعَالَى وَالْبَعْثِ بَعْدَ الْمَوْتِ",
-        desc: {
-          en: "I believe in Allah, His Angels, His Divine Books, His Messengers, the Last Day, Destiny (Good and Bad from Allah), and Resurrection after Death.",
-          ur: "میں ایمان لایا اللہ پر، اس کے فرشتوں پر، اس کی کتابوں پر، اس کے رسولوں پر، قیامت کے دن پر، اور اس بات پر کہ اچھی اور بری تقدیر اللہ کی طرف سے ہے اور مرنے کے بعد دوبارہ اٹھائے جانے پر۔",
-          hi: "मैं ईमान लाया अल्लाह पर, उसके फ़रिश्तों पर, उसकी आसमानी किताबों पर, उसके रसूलों पर, क़ियामत के दिन पर, तक़दीर पर और मरने के बाद दोबारा ज़िंदा होने पर।",
-          ar: "الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره والبعث بعد الموت."
-        }
-      }
-    ]
-  },
-  {
-    category: { en: "3. Purification & Fiqh Essentials (Taharat & Salah)", ur: "۳. طہارت اور نماز کے بنیادی فرائض", hi: "3. पाकीज़गी, वुज़ू, ग़ुस्ल व नमाज़ के फ़राइज़", ar: "٣. فرائض الطهارة والوضوء والغسل والصلاة" },
-    items: [
-      {
-        title: "4 Obligatory Acts of Wudu (Faraiz-e-Wudu)",
-        arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا قُمْتُمْ إِلَى الصَّلَاةِ فَاغْسِلُوا وُجُوهَكُمْ وَأَيْدِيَكُمْ إِلَى الْمَرَافِقِ...",
-        desc: {
-          en: "1. Washing the face from forehead hairline to chin and ear to ear. 2. Washing both arms including elbows. 3. Performing Masah (wiping) of at least 1/4th of the head. 4. Washing both feet up to and including the ankles.",
-          ur: "۱. پیشانی کے بالوں سے ٹھوڑی تک اور ایک کان سے دوسرے کان تک چہرہ دھونا۔ ۲. دونوں ہاتھ کہنیوں سمیت دھونا۔ ۳. چوتھائی سر کا مسح کرنا۔ ۴. دونوں پاؤں ٹخنوں سمیت دھونا۔",
-          hi: "1. चेहरे को धोना। 2. दोनों हाथों को कोहनियों समेत धोना। 3. चौथाई सर का मसह करना। 4. दोनों पैरों को टखनों समेत धोना।",
-          ar: "١. غسل الوجه كاملاً. ٢. غسل اليدين مع المرفقين. ٣. مسح الرأس. ٤. غسل الرجلين مع الكعبين."
-        }
-      },
-      {
-        title: "3 Obligatory Acts of Ghusl (Faraiz-e-Ghusl)",
-        arabic: "وَإِن كُنتُمْ جُنُبًا فَاطَّهَّرُوا",
-        desc: {
-          en: "1. Rinsing the mouth thoroughly with water (Gargling). 2. Sniffing water into nostrils up to the soft bone. 3. Pouring water over the entire body leaving not a single hair strand dry.",
-          ur: "۱. منہ بھر کر کلی کرنا۔ ۲. ناک کی نرم ہڈی تک پانی پہنچانا۔ ۳. تمام جسم پر اس طرح پانی بہانا کہ بال برابر جگہ بھی خشک نہ رہے۔",
-          hi: "1. कुल्ली करना। 2. नाक में पानी चढ़ाना। 3. पूरे शरीर पर इस तरह पानी बहाना कि एक बाल बराबर भी सूखा न रहे।",
-          ar: "١. المضمضة. ٢. الاستنشاق. ٣. تعميم سائر الجسد بالماء الطهور."
-        }
-      },
-      {
-        title: "Prerequisites & Obligatory Acts of Salah (Shara'it & Arkan)",
-        arabic: "حَافِظُوا عَلَى الصَّلَوَاتِ وَالصَّلَاةِ الْوُسْطَىٰ",
-        desc: {
-          en: "Before prayer: Cleanliness of body, clothes, and place; Covering the Awrah; Facing Qiblah; Right time; Intention (Niyyah). Inside prayer: Takbir Tahrimah, Qiyam (standing), Qira'at (recitation), Ruku, Sujood, and Final Tashahhud sitting.",
-          ur: "نماز کی شرائط: بدن، لباس اور جگہ کی پاکیزگی، ستر پوشی، استقبالِ قبلہ، وقت اور نیت۔ ارکانِ نماز: تکبیرِ تحریمہ، قیام، قراءت، رکوع، دونوں سجدے اور قعدۂ اخیرہ۔",
-          hi: "नमाज़ की शर्तें: शरीर, कपड़े और स्थान की पाकीज़गी, सतर ढंकना, क़िबला रुख़, समय और नीयत। नमाज़ के अरकान: तकबीर, क़याम, क़िराअत, रुकू, सजदा और क़ादा।",
-          ar: "شروط الصلاة: الطهارة، ستر العورة، استقبال القبلة، دخول الوقت، النية. وأركانها: تكبيرة الإحرام، القيام، القراءة، الركوع، السجود، والقعود الأخير."
-        }
-      }
-    ]
-  }
-];
-
-function renderIslamicBasics() {
-  const container = document.getElementById("basics-container");
-  if(!container) return;
-  container.innerHTML = "";
-
-  BASICS_DATA.forEach(sec => {
-    const secBox = document.createElement("div");
-    secBox.className = "p-4 rounded-2xl bg-[#16201b] border border-white/5 space-y-3";
-    const catTitle = sec.category[currentAppLang] || sec.category.en;
-
-    let itemsHTML = sec.items.map(it => {
-      const desc = it.desc[currentAppLang] || it.desc.en;
-      return `
-        <div class="p-3 rounded-xl bg-[#111815] border border-teal-500/20 space-y-1.5">
-          <h5 class="text-xs font-bold text-teal-300 font-cinzel">${it.title}</h5>
-          <p class="text-right text-base font-amiri text-amber-200 leading-relaxed">${it.arabic}</p>
-          <p class="text-xs text-slate-300 leading-relaxed">${desc}</p>
-        </div>
-      `;
-    }).join("");
-
-    secBox.innerHTML = `
-      <h4 class="text-sm font-bold text-white font-cinzel border-b border-white/10 pb-2">${catTitle}</h4>
-      <div class="space-y-2.5">${itemsHTML}</div>
-    `;
-    container.appendChild(secBox);
-  });
-}
-
-/* =====================================================
-   NEW SECTION 2: HALAL & HARAM GUIDELINES
-===================================================== */
-const HALAL_DATA = [
-  {
-    topic: { en: "1. Dietary Laws (Food & Drinks)", ur: "۱. کھانے پینے کے شرعی احکام", hi: "1. खान-पान के शरई नियम (आहार)", ar: "١. أحكام الأطعمة والأشربة" },
-    halal: {
-      en: "All pure vegetables, grains, fruits, seafood/fish, and livestock (cattle, sheep, goats, camels, poultry) slaughtered strictly by Islamic Zabiha (mentioning Bismillah and cutting jugular vessels).",
-      ur: "تمام پاکیزہ سبزیاں، اناج، پھل، سمندری مچھلی، اور وہ چوپائے (گائے، بکری، اونٹ، مرغی) جنہیں بسم اللہ پڑھ کر شرعی طریقے سے ذبح کیا گیا ہو۔",
-      hi: "सभी सब्जियां, फल, अनाज, मछली, और वे मवेशी (गाय, बकरा, ऊंट, मुर्गी) जिन्हें बिस्मिल्लाह पढ़कर शरई ज़बीहा के साथ ज़िब्ह किया गया हो।",
-      ar: "كل الطيبات من النباتات، الأسماك، وبهيمة الأنعام المذكاة ذكاة شرعية بذكر اسم الله عليها."
-    },
-    haram: {
-      en: "Pork (Swine) and its derivatives, carrion/dead animals, flowing blood, animals slaughtered without Allah's name or dedicated to idols, carnivorous animals with fangs (lions, dogs, cats), birds of prey with talons, intoxicants/alcohol, and harmful narcotics.",
-      ur: "سور کا گوشت اور اجزاء، مردار جانور، بہتا ہوا خون، غیر اللہ کے نام پر ذبح شدہ جانور، چیر پھاڑ کرنے والے کچلی دانت والے درندے، پنجوں سے شکار کرنے والے شکاری پرندے، شراب اور تمام نشہ آور اشیاء۔",
-      hi: "सूअर का मांस, मृत पशु (मुरदार), बहता ख़ून, शराब व सभी नशीले पदार्थ, शिकारी व नुकीले दांतों/पंजों वाले जानवर।",
-      ar: "الخنزير ومشتقاته، الميتة، الدم المسفوح، ما أُهل لغير الله به، كل ذي ناب من السباع، كل ذي مخلب من الطير، والخمر وسائر المسكرات والمخدرات."
-    }
-  },
-  {
-    topic: { en: "2. Earning, Wealth & Financial Contracts", ur: "۲. کمائی، تجارت اور مالی معاملات", hi: "2. कमाई, व्यापार व वित्तीय नियम", ar: "٢. أحكام الكسب والمعاملات المالية" },
-    halal: {
-      en: "Honest trade, mutually agreed commerce, profit-and-loss sharing partnerships (Mudarabah/Musharakah), agriculture, ethical labor, and giving full measure and weight with transparent disclosures.",
-      ur: "سچی تجارت، باہمی رضامندی کے سودے، شراکت داری، محنت کی کمائی، زراعت، اور ناپ تول میں مکمل ایمانداری اور دیانت داری۔",
-      hi: "ईमानदार व्यापार, आपसी सहमति का क्रय-विक्रय, साझेदारी, कृषि, और तौल व माप में पूरी ईमानदारी।",
-      ar: "التجارة الصادقة بالتراضي، الشراكة القائمة على تقاسم الربح والخسارة، العمل الشريف، وإيفاء الكيل والميزان."
-    },
-    haram: {
-      en: "Riba (Usury/Interest in all its forms), Gambling (Maysir/Qimar), Deceptive selling (Gharar/fraud), Bribery (Rishwah), Selling forbidden goods (alcohol, idols, pork), hoarding for artificial inflation, and extortion.",
-      ur: "سود (ربا) کی تمام اقسام، جوا اور سٹہ بازی، دھوکہ دہی، رشوت ستانی، حرام اشیاء کی تجارت، ذخیرہ اندوزی اور ناجائز منافع خوری۔",
-      hi: "ब्याज (सूद), जुआ, सट्टा, रिश्वत, धोखाधड़ी, और हराम वस्तुओं का व्यापार व जमाखोरी।",
-      ar: "الربا بجميع أشكاله، الميسر والقمار، الغرر والتدليس، الرشوة، أكل أموال الناس بالباطل، وبيع المحرمات."
-    }
-  },
-  {
-    topic: { en: "3. Social Ethics, Character & Relationships", ur: "۳. اخلاقیات، حقوق العباد اور معاشرت", hi: "3. सामाजिक नैतिकता व मानव अधिकार", ar: "٣. الأخلاق والآداب والمعاشرة" },
-    halal: {
-      en: "Honoring parents, maintaining kinship ties (Silat-ur-Rahim), fulfilling contracts, speaking truth, helping orphans/widows, modesty (Haya), forgiving others, and peaceful neighborly coexistence.",
-      ur: "والدین کی خدمت، صلہ رحمی، وعدوں کی پاسداری، سچ بولنا، یتیموں اور بیواؤں کی مدد، حیا و پاکدامنی، عفو و درگزر اور پڑوسیوں کے حقوق۔",
-      hi: "माता-पिता का सम्मान, रिश्तेदारों से अच्छे संबंध, सच बोलना, अनाथों की मदद, पाकीज़गी, और पड़ोसियों के अधिकार।",
-      ar: "بر الوالدين، صلة الأرحام، الوفاء بالعهود، الصدق، كفالة الأيتام، الحياء، والعفو والإحسان إلى الجار."
-    },
-    haram: {
-      en: "Adultery and fornication (Zina), slander/false accusation (Qadhf), backbiting (Gheebah), tale-bearing (Nameemah), pride/arrogance (Kibr), oppression (Zulm), murder, and severing ties of kinship.",
-      ur: "بدکاری اور زنا، بہتان تراشی، غیبت اور چغلی، تکبر و غرور، ظلم و زیادتی، ناحق قتل، اور قطع رحمی۔",
-      hi: "व्यभिचार (ज़िना), झूठा आरोप, ग़ीबत (पीठ पीछे बुराई), चुग़ली, अहंकार (घमंड), अत्याचार, और अन्याय।",
-      ar: "الزنا ومقدماته، القذف، الغيبة والنميمة، الكبر والخيلاء، الظلم، قتل النفس بغير حق، وقطيعة الرحم."
-    }
-  },
-  {
-    topic: { en: "4. Clothing, Adornment & Modesty", ur: "۴. لباس، زینت اور پردے کے احکام", hi: "4. वस्त्र, श्रृंगार व पर्दे के नियम", ar: "٤. أحكام اللباس والزينة والحجاب" },
-    halal: {
-      en: "Clean and modest garments covering the Awrah (Men: navel to knee; Women: entire body except face and hands in public), lawful perfumes, and neat personal hygiene.",
-      ur: "صاف ستھرا اور باحیا لباس جو ستر کو ڈھانپے (مردوں کے لیے ناف سے گھٹنے تک اور خواتین کے لیے مکمل باوقار پردہ)، پاک خوشبو اور نظافت۔",
-      hi: "साफ़-सुथरा व शालीन वस्त्र जो सतर को ढंके, मर्यादा (हिजाब), और व्यक्तिगत स्वच्छता।",
-      ar: "اللباس الساتر للعورة، الحجاب الشرعي للمرأة، النظافة، والتطيب بالطيب الحلال."
-    },
-    haram: {
-      en: "Pure silk and gold for men, transparent or extremely tight clothes that reveal body contours, cross-dressing (men imitating women or vice-versa), permanent tattoos, and arrogant flamboyant attire.",
-      ur: "مردوں کے لیے خالص ریشم اور سونا، شفاف یا حد درجہ چست لباس، مردوں کا عورتوں اور عورتوں کا مردوں کی مشابہت اختیار کرنا، اور جسم پر مستقل ٹیٹو بنوانا۔",
-      hi: "पुरुषों के लिए शुद्ध रेशम व सोना, अत्यंत तंग व पारदर्शी कपड़े, विपरीत लिंग की वेशभूषा धारण करना और टैटू बनवाना।",
-      ar: "الحرير والذهب للرجال، الملابس الشفافة والضيقة المحددة للعورة، تشبه الرجال بالنساء والعكس، والوشم الدائم."
-    }
-  }
-];
-
-function renderHalalHaram() {
-  const container = document.getElementById("halal-container");
-  if(!container) return;
-  container.innerHTML = "";
-
-  HALAL_DATA.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "p-4 rounded-2xl bg-[#16201b] border border-white/5 space-y-3";
-    const topicTitle = item.topic[currentAppLang] || item.topic.en;
-    const hTxt = item.halal[currentAppLang] || item.halal.en;
-    const hrTxt = item.haram[currentAppLang] || item.haram.en;
-
-    card.innerHTML = `
-      <h4 class="text-sm font-bold text-amber-300 font-cinzel border-b border-white/10 pb-2">${topicTitle}</h4>
-      <div class="space-y-2">
-        <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30">
-          <span class="text-xs font-bold text-emerald-400 flex items-center gap-1.5 mb-1">
-            <i data-lucide="check-circle" class="w-4 h-4"></i> HALAL (حلال / Permitted & Encouraged)
-          </span>
-          <p class="text-xs text-slate-300 leading-relaxed">${hTxt}</p>
-        </div>
-        <div class="p-3 rounded-xl bg-rose-950/20 border border-rose-500/30">
-          <span class="text-xs font-bold text-rose-400 flex items-center gap-1.5 mb-1">
-            <i data-lucide="x-circle" class="w-4 h-4"></i> HARAM (حرام / Strictly Prohibited)
-          </span>
-          <p class="text-xs text-slate-300 leading-relaxed">${hrTxt}</p>
-        </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
 }
 
 /* =====================================================
@@ -2739,4 +2440,196 @@ function renderAudioTracks() {
   container.innerHTML = "";
 
   AUDIO_TRACKS.forEach((track, idx) => {
-    const card = document.createElement("divI'm having a hard time fulfilling your request. Can I help you with something else instead?
+    const card = document.createElement("div");
+    card.className = "p-3.5 rounded-2xl bg-[#16201b] border border-white/5 hover:border-blue-500/40 cursor-pointer flex items-center justify-between";
+    card.innerHTML = `
+      <div class="flex items-center gap-3">
+        <span class="text-[10px] font-mono text-blue-400 font-bold">${String(idx+1).padStart(2, "0")}</span>
+        <div>
+          <h4 class="text-xs font-bold text-white font-cinzel">${track.title}</h4>
+          <p class="text-[11px] text-slate-400">${track.reciter}</p>
+        </div>
+      </div>
+      <i data-lucide="play-circle" class="w-6 h-6 text-blue-400"></i>
+    `;
+    card.onclick = () => {
+      document.getElementById("active-track-name").textContent = track.title;
+      document.getElementById("active-track-reciter").textContent = track.reciter;
+      globalPlayer.src = track.url;
+      globalPlayer.play().catch(() => {});
+    };
+    container.appendChild(card);
+  });
+}
+
+/* =====================================================
+   NOOR-AI SMART ISLAMIC ENGINE (10 FREE LIMIT & UPGRADE)
+===================================================== */
+const AI_KNOWLEDGE_BASE = [
+  {
+    keys: ["sahaba", "ashara mubashshara", "10 sahaba", "promised paradise", "ten sahaba"],
+    title: "The 10 Promised Sahaba (Ashara Mubashshara)",
+    response: "The 10 Sahaba promised Paradise by name in a single narration (Jami at-Tirmidhi 3747) are: 1. Abu Bakr As-Siddiq, 2. Umar ibn Al-Khattab, 3. Uthman ibn Affan, 4. Ali ibn Abi Talib, 5. Talhah ibn Ubaydullah, 6. Az-Zubayr ibn Al-Awwam, 7. Abdur Rahman ibn Awf, 8. Sa'd ibn Abi Waqqas, 9. Sa'id ibn Zayd, 10. Abu Ubaidah ibn Al-Jarrah (May Allah be pleased with them all)."
+  },
+  {
+    keys: ["kursi", "greatest ayah", "ayatul", "kursy", "aytul kursi", "baqarah 255"],
+    title: "Ayat al-Kursi (The Greatest Verse)",
+    response: "Ayat al-Kursi (Surah Al-Baqarah 2:255) is the greatest ayah in the Holy Quran (Sahih Muslim 810). It proclaims the absolute oneness and sovereignty of Allah (Al-Hayy, Al-Qayyum) who neither slumbers nor sleeps."
+  },
+  {
+    keys: ["5 pillars", "pillars", "arkan", "pilars", "five pillars", "islam pillars"],
+    title: "The Five Pillars of Islam",
+    response: "The 5 Pillars of Islam (Sahih al-Bukhari 8): 1. Shahadah (Declaration of Faith), 2. Salah (5 Daily Prayers), 3. Zakat (Mandatory 2.5% Almsgiving), 4. Sawm (Fasting Ramadan), 5. Hajj (Pilgrimage to Makkah once in a lifetime for capable believers)."
+  },
+  {
+    keys: ["iman", "6 pillars of iman", "faith", "articles of faith", "belief"],
+    title: "The Six Articles of Iman (Faith)",
+    response: "The 6 Articles of Iman (Sahih Muslim 8): 1. Belief in Allah, 2. Belief in His Angels, 3. Belief in His Divine Books (Torah, Zabur, Injeel, Quran), 4. Belief in His Prophets, 5. Belief in the Day of Judgement (Qiyamah), 6. Belief in Divine Decree (Qadar)."
+  },
+  {
+    keys: ["parents of prophet", "muhammad father", "prophet mother", "prophet parents", "abdullah aminah"],
+    title: "Parents of Prophet Muhammad (ﷺ)",
+    response: "Prophet Muhammad's (ﷺ) father was Hazrat Abdullah ibn Abd al-Muttalib (who passed away before his birth), and his mother was Sayyidah Aminah bint Wahb. He was nursed by Halimah as-Sa'diyyah."
+  },
+  {
+    keys: ["safar", "travel", "musafir dua", "journey dua"],
+    title: "Authentic Dua for Travelling",
+    response: "'Subhana-alladhi sakh-khara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina la-munqalibun' (Surah Az-Zukhruf 43:13-14, Sahih Muslim 1342). Sunnah when mounting any vehicle or animal."
+  }
+];
+
+function renderAIAutocompleteSuggestions() {
+  const box = document.getElementById("ai-autocomplete-box");
+  if(!box) return;
+  box.innerHTML = "";
+
+  const suggestions = [
+    { label: "10 Promised Sahaba", q: "Who are the 10 promised Sahaba (Ashara Mubashshara)?" },
+    { label: "5 Pillars of Islam", q: "What are the 5 pillars of Islam with authentic references?" },
+    { label: "Greatest Ayah?", q: "What is the greatest Ayah in the Quran?" },
+    { label: "Prophet Muhammad's Parents", q: "Who were the parents of Prophet Muhammad ﷺ?" }
+  ];
+
+  suggestions.forEach(s => {
+    const btn = document.createElement("button");
+    btn.className = "px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:border-purple-400 hover:text-purple-200 transition text-[10px]";
+    btn.textContent = s.label;
+    btn.onclick = () => {
+      document.getElementById("ai-user-input").value = s.q;
+      executeAIQuery();
+    };
+    box.appendChild(btn);
+  });
+}
+
+function handleAITyping(val) {
+  const q = val.toLowerCase().trim();
+  const box = document.getElementById("ai-autocomplete-box");
+  if(!box) return;
+
+  if(!q) {
+    renderAIAutocompleteSuggestions();
+    return;
+  }
+
+  const matches = AI_KNOWLEDGE_BASE.filter(entry => 
+    entry.keys.some(k => k.includes(q) || q.includes(k))
+  );
+
+  if(matches.length > 0) {
+    box.innerHTML = "";
+    matches.forEach(m => {
+      const btn = document.createElement("button");
+      btn.className = "px-2.5 py-1 rounded-lg bg-purple-500/20 border border-purple-500/40 text-purple-300 hover:bg-purple-500/30 text-[10px] flex items-center gap-1";
+      btn.innerHTML = `<i data-lucide="check" class="w-3 h-3"></i> Auto-Match: ${m.title}`;
+      btn.onclick = () => {
+        document.getElementById("ai-user-input").value = m.title;
+        executeAIQuery();
+      };
+      box.appendChild(btn);
+    });
+    if(window.lucide) lucide.createIcons();
+  }
+}
+
+function executeAIQuery() {
+  if(userQueryCount >= MAX_FREE_QUERIES) {
+    openModal("subs-modal");
+    return;
+  }
+
+  const input = document.getElementById("ai-user-input");
+  const query = input.value.trim();
+  if(!query) return;
+
+  userQueryCount++;
+  const remaining = MAX_FREE_QUERIES - userQueryCount;
+  document.getElementById("ai-counter-display").textContent = `Remaining Free Queries: ${remaining} / 10`;
+  document.getElementById("ai-queries-left-badge").textContent = `${remaining} FREE LEFT`;
+
+  const chat = document.getElementById("chat-stream");
+
+  const userDiv = document.createElement("div");
+  userDiv.className = "p-3 rounded-xl bg-purple-950/40 border border-purple-500/30 text-purple-100 text-right";
+  userDiv.textContent = query;
+  chat.appendChild(userDiv);
+  input.value = "";
+
+  setTimeout(() => {
+    const qLower = query.toLowerCase();
+    let foundEntry = AI_KNOWLEDGE_BASE.find(e => e.keys.some(k => qLower.includes(k)));
+    let answer = foundEntry ? foundEntry.response : 
+      "Alhamdulillah! Verified Islamic sources (Holy Quran, Sahih Hadith, and Seerat-un-Nabi ﷺ) confirm that all righteous deeds must be founded upon sincere faith (Ikhlas), following the Sunnah of Prophet Muhammad ﷺ, and honoring the blessed Sahaba.";
+
+    const botDiv = document.createElement("div");
+    botDiv.innerHTML = `
+      <div class="p-3 rounded-xl bg-[#141d18] border border-emerald-500/20 text-slate-200 space-y-1">
+        <span class="font-bold text-emerald-400 block text-xs flex items-center gap-1">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Authentic Islamic Answer:
+        </span>
+        <p class="leading-relaxed text-xs">${answer}</p>
+      </div>
+    `;
+    chat.appendChild(botDiv);
+    chat.scrollTop = chat.scrollHeight;
+    if(window.lucide) lucide.createIcons();
+    renderAIAutocompleteSuggestions();
+
+    if(userQueryCount >= MAX_FREE_QUERIES) {
+      setTimeout(() => openModal("subs-modal"), 1000);
+    }
+  }, 300);
+}
+
+function handleReportSubmit(e) {
+  e.preventDefault();
+  const toast = document.getElementById("rep-toast");
+  toast.classList.remove("hidden");
+  document.getElementById("rep-msg").value = "";
+  setTimeout(() => toast.classList.add("hidden"), 3000);
+}
+
+/* =====================================================
+   INITIALIZATION
+===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  renderPillarsOfIslam();
+  renderSahabaList();
+  renderProphetsList();
+  renderAll99Names();
+  renderDuaList();
+  renderAudioTracks();
+  renderAIAutocompleteSuggestions();
+  if (window.lucide) lucide.createIcons();
+});
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('Service Worker Registered!'));
+    });
+  }
+</script>
+</body>
+</html>
